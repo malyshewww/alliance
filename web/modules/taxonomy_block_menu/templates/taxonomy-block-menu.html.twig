@@ -1,0 +1,7 @@
+{% if content %}
+  <ul>
+    {% for term in content  %}
+      <li><a href="{{ term.url }}">{{ term.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}

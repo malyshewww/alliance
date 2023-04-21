@@ -1,0 +1,20 @@
+uuid: c4fd8e46-a744-4f5c-8d65-ff57a8b6da9d
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_manufacturer
+field_name: field_manufacturer
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

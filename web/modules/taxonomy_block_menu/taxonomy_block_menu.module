@@ -1,0 +1,52 @@
+<?php
+
+
+
+/**
+ * @file
+ * Primary module hooks for taxonomy block menu module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+function taxonomy_block_menu_theme($existing, $type, $theme, $path) {
+  return [
+    'taxonomy_block_menu' => [
+      'variables' => [
+        "content" => [],
+        "title" => "",
+        "attributes" => "",
+        "view_mode" => "",
+      ]
+    ],
+  ];
+}
+
+// function taxonomy_block_menu_views_pre_render(ViewExecutable $view) {
+//   if ($view->id() == 'katalog' && isset($view->args[0]) && is_numeric($view->args[0])) {
+//     $term = Term::load($view->args[0]);
+//     if($term->parent->target_id==0) {
+//       $view->setTitle($term->getName());
+//     }
+//   }
+// }
+
+
+// /**
+//  * Implements hook_block_access().
+//  */
+// function taxonomy_block_menu_block_access(Block $block, $operation, AccountInterface $account) {
+//   $facet = stripos($block->getPluginId(), 'facet_block');
+//   if ($operation === 'view' && $facet !== false && $term = \Drupal::routeMatch()->getParameter('taxonomy_term')) {
+//     $show_facet = FALSE;
+//     $child_tids = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('catalog', $term->id(), 1, FALSE);
+//       if($term->parent->target_id!=0 || empty($child_tids)) {
+//         $show_facet = TRUE;
+//       }
+//     return AccessResult::forbiddenIf($show_facet === FALSE)->addCacheableDependency($block);
+//   }
+
+//   return AccessResult::neutral();
+// }
+

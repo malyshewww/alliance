@@ -1,0 +1,22 @@
+uuid: b25362b4-d374-4364-a6ff-e1867134f942
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: proekty
+label: проекты
+type: 'canonical_entities:node'
+pattern: '[node:field_product_type]/proekty/[node:title]'
+selection_criteria:
+  ee9a2d23-e07b-45ac-ace0-ef8bd056dbde:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ee9a2d23-e07b-45ac-ace0-ef8bd056dbde
+    context_mapping:
+      node: node
+    bundles:
+      projects: projects
+selection_logic: and
+weight: -5
+relationships: {  }

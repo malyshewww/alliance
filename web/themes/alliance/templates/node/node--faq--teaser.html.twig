@@ -1,0 +1,12 @@
+  <h2>{{ label }}</h2>
+  {% for faq in node.field_faq %}
+  <div class="FAQ__item">
+    <div class="FAQ__item-title">
+      <div class="number">/{{ loop.index }}</div><span>{{ faq.entity.field_title.value }}</span><img src="/themes/alliance/dist/img/icons/FAQ.svg" alt="">
+    </div>
+    <div class="FAQ__item-body">
+      {{ faq.entity.field_oty.value | raw }}
+    </div>
+  </div>
+  {% endfor %}
+

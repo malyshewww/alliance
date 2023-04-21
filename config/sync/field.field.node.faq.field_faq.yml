@@ -1,0 +1,37 @@
+uuid: c501d2d9-301d-4bff-8648-51b128c5d2db
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq
+    - node.type.faq
+    - paragraphs.paragraphs_type.faq
+  module:
+    - entity_reference_revisions
+id: node.faq.field_faq
+field_name: field_faq
+entity_type: node
+bundle: faq
+label: Вопрос-ответ
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      faq: faq
+    negate: 0
+    target_bundles_drag_drop:
+      faq:
+        weight: 4
+        enabled: true
+      links:
+        weight: 5
+        enabled: false
+      why_choose:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

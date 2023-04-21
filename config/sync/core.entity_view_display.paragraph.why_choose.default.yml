@@ -1,0 +1,29 @@
+uuid: 160828c1-948e-499b-a127-0d0ec2b7ce1c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.why_choose.field_description
+    - field.field.paragraph.why_choose.field_title
+    - paragraphs.paragraphs_type.why_choose
+id: paragraph.why_choose.default
+targetEntityType: paragraph
+bundle: why_choose
+mode: default
+content:
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

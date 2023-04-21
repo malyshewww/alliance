@@ -1,0 +1,18 @@
+uuid: 6b2896c3-9ae9-42d2-abe5-67cba101afa7
+langcode: ru
+status: true
+dependencies:
+  theme:
+    - alliance
+id: osnovnyedeystviyaadministratora
+theme: alliance
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Основные действия администратора'
+  label_display: '0'
+  provider: core
+visibility: {  }

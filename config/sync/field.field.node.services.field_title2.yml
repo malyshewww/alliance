@@ -1,0 +1,19 @@
+uuid: 040de9cd-62aa-4a2a-8c7d-91636b6f4490
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title2
+    - node.type.services
+id: node.services.field_title2
+field_name: field_title2
+entity_type: node
+bundle: services
+label: Подзаголовок
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

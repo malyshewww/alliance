@@ -1,0 +1,38 @@
+uuid: 753f3d0f-472c-49c5-a7f2-3bb93f7bf76c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_logo
+    - node.type.projects
+  module:
+    - image
+id: node.projects.field_logo
+field_name: field_logo
+entity_type: node
+bundle: projects
+label: Логотип
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

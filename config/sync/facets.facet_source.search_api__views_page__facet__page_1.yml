@@ -1,0 +1,9 @@
+uuid: f8907df6-d677-4f6f-85ea-08db736de12e
+langcode: ru
+status: true
+dependencies: {  }
+id: search_api__views_page__facet__page_1
+name: 'search_api:views_page__facet__page_1'
+filter_key: null
+url_processor: query_string
+breadcrumb: {  }

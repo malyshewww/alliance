@@ -1,0 +1,23 @@
+uuid: d4fec8ee-abaf-4026-b59f-3803bb87ec6d
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: page
+label: page
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  13f3a862-4a96-4bc9-8a15-0493d1be28d5:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 13f3a862-4a96-4bc9-8a15-0493d1be28d5
+    context_mapping:
+      node: node
+    bundles:
+      o_kompanii: o_kompanii
+      page: page
+selection_logic: and
+weight: -5
+relationships: {  }

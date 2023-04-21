@@ -1,0 +1,36 @@
+uuid: 9a2bbe2d-6ab6-43a3-b638-5d676ffc7b3c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - system.menu.secondmenu
+  module:
+    - menu_block
+    - system
+  theme:
+    - alliance
+id: menu_svetodiod
+theme: alliance
+region: secondary_menu
+weight: 0
+provider: null
+plugin: 'menu_block:secondmenu'
+settings:
+  id: 'menu_block:secondmenu'
+  label: 'Меню Светодиодное освещение'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: true
+  parent: 'secondmenu:menu_link_content:fb5f819c-d647-4e9a-b951-caaf35600937'
+  suggestion: secondmenu
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "<front>\r\n/svetodiodnoe-osveschenie\r\n/svetodiodnoe-osveschenie/*"

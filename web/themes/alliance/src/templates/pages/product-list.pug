@@ -1,0 +1,144 @@
+extends ../layout/main
+
+block append variables
+	- const pageTitle = "Приборы учета, контроля, измерения и оборудование электропитания";
+	- const prevPage = {href: '/catalog.html', text: 'Каталог'};
+	//- const pageTitle_OFF = true;
+
+block content
+	main
+		.product-list
+			include ../blocks/breadcrumbs
+			.container
+				.wrapper
+					.menu-button 
+						img(src="img/icons/side-menu.svg", alt="")
+					aside
+						.close
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect width="14.8603" height="2.02641" rx="1.01321" transform="matrix(0.710616 -0.70358 0.710616 0.70358 0 10.5743)" fill="#C9C9C9"/>
+								<rect width="14.8603" height="2.02641" rx="1.01321" transform="matrix(0.710616 0.70358 0.710616 -0.70358 0 1.42574)" fill="#C9C9C9"/>
+							</svg>
+						h2 Категория
+						ul 
+							li 
+								a(href="product-page.html") Приборы учета
+							li 
+								a(href="product-page.html") Приборы электроизмерительные
+							li 
+								a(href="product-page.html") Оборудование электропитания
+					ul.product-list__body 
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product1.png", alt="")
+								.product-list__title Трансформатор тока ТТИ-А 100/5А рансформатор тока ТТИ-А 1 рансформатор тока ТТИ-А 1 10ВА 0,5 IEK
+								.product-list__manufacturer
+									img(src="img/product-list/brend1.png", alt="")
+								.product-list__price 
+									span.now от 133 000 руб./шт
+									span.before 7 990 руб.
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product2.png", alt="")
+								.product-list__title Street X1
+								.product-list__manufacturer
+									img(src="img/product-list/brend2.png", alt="")
+								.product-list__price 
+									span.now 45 575 руб.
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product3.png", alt="")
+								.product-list__title Светодиодный светильник FLA Светодиодный светильник FLA
+								.product-list__manufacturer
+									img(src="img/product-list/brend3.png", alt="")
+								.product-list__price 
+									span.now 500 руб./м²
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product1.png", alt="")
+								.product-list__title Трансформатор тока ТТИ-А 100/5А рансформатор тока ТТИ-А 1 рансформатор тока ТТИ-А 1 10ВА 0,5 IEK
+								.product-list__manufacturer
+									img(src="img/product-list/brend1.png", alt="")
+								.product-list__price 
+									span.now от 133 000 руб./шт
+									span.before 7 990 руб.
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product2.png", alt="")
+								.product-list__title Street X1
+								.product-list__manufacturer
+									img(src="img/product-list/brend2.png", alt="")
+								.product-list__price 
+									span.now 45 575 руб.
+									span.before 7 990 руб.
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product4.png", alt="")
+								.product-list__title Светодиодный светильник FLA
+								.product-list__manufacturer
+									img(src="img/product-list/brend3.png", alt="")
+								.product-list__price 
+									span.now 500 руб./м²
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product1.png", alt="")
+								.product-list__title Трансформатор тока ТТИ-А 100/5А рансформатор тока ТТИ-А 1 рансформатор тока ТТИ-А 1 10ВА 0,5 IEK
+								.product-list__manufacturer
+									img(src="img/product-list/brend1.png", alt="")
+								.product-list__price 
+									span.now от 133 000 руб./шт
+									span.before 7 990 руб.
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product2.png", alt="")
+								.product-list__title Street X1
+								.product-list__manufacturer
+									img(src="img/product-list/brend2.png", alt="")
+								.product-list__price 
+									span.now 45 575 руб.
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product3.png", alt="")
+								.product-list__title Светодиодный светильник FLA
+								.product-list__manufacturer
+									img(src="img/product-list/brend3.png", alt="")
+								.product-list__price 
+									span.now 500 руб./м²
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product1.png", alt="")
+								.product-list__title Трансформатор тока ТТИ-А 100/5А рансформатор тока ТТИ-А 1 рансформатор тока ТТИ-А 1 10ВА 0,5 IEK
+								.product-list__manufacturer
+									img(src="img/product-list/brend1.png", alt="")
+								.product-list__price 
+									span.now от 133 000 руб./шт
+									span.before 7 990 руб.
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product2.png", alt="")
+								.product-list__title Street X1
+								.product-list__manufacturer
+									img(src="img/product-list/brend2.png", alt="")
+								.product-list__price 
+									span.now 45 575 руб.
+									span.before 7 990 руб.
+						li 
+							a(href="product-page.html") 
+								.product-list__img 
+									img(src="img/product-list/product4.png", alt="")
+								.product-list__title Светодиодный светильник FLA
+								.product-list__manufacturer
+									img(src="img/product-list/brend3.png", alt="")
+								.product-list__price 
+									span.now 500 руб./м²

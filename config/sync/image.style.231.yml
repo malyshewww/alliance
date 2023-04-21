@@ -1,0 +1,16 @@
+uuid: af5c3b09-3218-425d-9b56-8617e912b13e
+langcode: ru
+status: true
+dependencies: {  }
+name: '231'
+label: '231'
+effects:
+  8ed1a3db-8555-439d-823b-6d5b929e52fc:
+    uuid: 8ed1a3db-8555-439d-823b-6d5b929e52fc
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 231
+      upscale: false
+pipeline: __default__

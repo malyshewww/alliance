@@ -1,0 +1,10 @@
+uuid: 56cbcdbf-5104-43f8-8cf6-b84172f2f353
+langcode: ru
+status: true
+dependencies: {  }
+id: why_choose
+label: 'почему нас выбирают'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

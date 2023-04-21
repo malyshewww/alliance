@@ -1,0 +1,16 @@
+uuid: 08910d58-360e-4393-92dc-2d1435e7bd96
+langcode: ru
+status: true
+dependencies:
+  config:
+    - image.style.200
+id: '200'
+label: '200'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: '200'
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: '200'

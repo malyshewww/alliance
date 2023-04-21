@@ -1,0 +1,19 @@
+uuid: c3cd9b35-668b-4dae-8474-cf37bdd69d03
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.why_choose
+id: paragraph.why_choose.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: why_choose
+label: Заголовок
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

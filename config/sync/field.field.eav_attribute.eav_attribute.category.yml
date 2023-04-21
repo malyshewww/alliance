@@ -1,0 +1,32 @@
+uuid: ba1f154d-15fc-4d0c-aef7-1b97a471f495
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.eav_attribute.category
+    - taxonomy.vocabulary.product_type
+  module:
+    - eav_field
+_core:
+  default_config_hash: EggWzR6hPKsXqwOS3GUPKdAC_UXnk67MpVim-vPvsD4
+id: eav_attribute.eav_attribute.category
+field_name: category
+entity_type: eav_attribute
+bundle: eav_attribute
+label: Category
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_type: product_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

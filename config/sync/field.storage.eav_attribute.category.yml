@@ -1,0 +1,22 @@
+uuid: 9b7ea34a-b87b-477f-8864-ad721691204a
+langcode: ru
+status: true
+dependencies:
+  module:
+    - eav_field
+    - taxonomy
+_core:
+  default_config_hash: 4jVX_-LWlZ4vAk-nVYLbnluhmX2UEaLHUDoakN6POyA
+id: eav_attribute.category
+field_name: category
+entity_type: eav_attribute
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,34 @@
+uuid: 815e7646-8a69-46e1-84bf-bd867c966e3e
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_projects_step
+    - node.type.services
+    - paragraphs.paragraphs_type.why_choose
+  module:
+    - entity_reference_revisions
+id: node.services.field_projects_step
+field_name: field_projects_step
+entity_type: node
+bundle: services
+label: 'Этапы проекта'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      why_choose: why_choose
+    negate: 0
+    target_bundles_drag_drop:
+      links:
+        weight: 3
+        enabled: false
+      why_choose:
+        weight: 4
+        enabled: true
+field_type: entity_reference_revisions

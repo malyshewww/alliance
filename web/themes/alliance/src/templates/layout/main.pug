@@ -1,0 +1,42 @@
+include variables.pug
+
+block variables
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+		meta(name="theme-color" content="#fff")
+		meta(name="msapplication-navbutton-color" content="#fff")
+		meta(name="apple-mobile-web-app-status-bar-style" content="#fff")
+		title СК Альянс | #{pageTitle}
+		link(rel="shortcut icon" href="img/favicon.svg" type="image/x-icon")
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="img/favicon/site.webmanifest">
+		<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		link(rel="stylesheet" href="css/libs.css")
+		link(rel="stylesheet" href="css/main.css?v3")
+
+
+	body(class=(bodyClass ? bodyClass : 'not-front'))
+		
+		include ../blocks/header
+
+		block content
+
+		include ../blocks/footer
+
+		<div class="up">
+			<svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M5.9083 15.8125L4.9349 15.8125L4.9349 2.16251L1.0632 6.164L0.374374 5.45285L5.42189 0.23584L10.4687 5.45285L9.78025 6.16433L5.90824 2.16251L5.9083 15.8125Z" fill="#1A1A1A"></path>
+			</svg>
+		</div>
+
+
+		script(src="js/libs.js")
+		script(src="js/main.js?v3")

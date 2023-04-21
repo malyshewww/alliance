@@ -1,0 +1,21 @@
+uuid: 2396a74f-a775-4899-8c47-5de9227000db
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_suffix_price
+    - node.type.product
+id: node.product.field_suffix_price
+field_name: field_suffix_price
+entity_type: node
+bundle: product
+label: 'Суффикс цены'
+description: 'руб или руб/шт'
+required: false
+translatable: false
+default_value:
+  -
+    value: руб.
+default_value_callback: ''
+settings: {  }
+field_type: string

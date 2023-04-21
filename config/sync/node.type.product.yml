@@ -1,0 +1,17 @@
+uuid: 93b0db75-93da-404a-8fcc-010ae0a5d88b
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Товар
+type: product
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for alliance filter project module.
+ */
+function alliance_filter_project_theme($existing, $type, $theme, $path) {
+  return [
+    'alliance_filter_project' => [
+      'variables' => [
+        "term" => [],
+      ]
+    ],
+  ];
+}

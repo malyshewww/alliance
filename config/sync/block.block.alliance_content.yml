@@ -1,0 +1,22 @@
+uuid: 5ff77eca-3b04-4a46-8863-ab4e5a3b95e6
+langcode: ru
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - alliance
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: alliance_content
+theme: alliance
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Содержимое страницы'
+  label_display: '0'
+  provider: system
+visibility: {  }

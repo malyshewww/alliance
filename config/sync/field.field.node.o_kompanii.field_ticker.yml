@@ -1,0 +1,19 @@
+uuid: 11459088-200d-4925-8963-8a5a6097186c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ticker
+    - node.type.o_kompanii
+id: node.o_kompanii.field_ticker
+field_name: field_ticker
+entity_type: node
+bundle: o_kompanii
+label: 'Бегущая строка'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

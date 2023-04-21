@@ -1,0 +1,20 @@
+uuid: 6d803514-dcab-4d10-9896-844ad7a93f21
+langcode: ru
+status: true
+dependencies:
+  module:
+    - taxonomy_block_menu
+  theme:
+    - alliance
+id: razdelytaksonomiisierarkhiey
+theme: alliance
+region: sidebar_first
+weight: 0
+provider: null
+plugin: taxonomy_block_menu_term
+settings:
+  id: taxonomy_block_menu_term
+  label: Категория
+  label_display: visible
+  provider: taxonomy_block_menu
+visibility: {  }

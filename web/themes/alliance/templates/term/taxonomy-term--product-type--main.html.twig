@@ -1,0 +1,69 @@
+{% if term.parent.value.0.target_id == 0 %}
+  <section class="home-promo">
+    <h1>{{ content.field_title }}</h1>
+    <div class="home-promo__subtitle">{{ content.field_title2 }}</div><a class="btn" href="#">Рассчитать стоимость</a>
+    <div class="home-promo__img"> {{ content.field_image }}</div>
+  </section>
+  <section class="home-links">
+    <div class="container">
+
+      <ul>
+
+        {% for links in term.field_links %}
+
+        <li> <a href=" {{ links.entity.field_link.0.url }}">
+            <div class="home-links__title">{{ links.entity.field_title.value | raw }}</div>
+            <div class="home-links__descr">{{ links.entity.field_description.value | raw }}</div>
+            <div class="home-links__img">{{ links.entity.field_image | renderThis }}</div></a></li>
+        {% endfor %}
+
+      </ul>
+    </div>
+  </section>
+  <section class="home-calc">
+    <div class="container">
+      <div class="wrapper">
+        <h2>{{ term.title_form.value }}</h2>
+
+        <ul>
+          {% for step in term.field_step_form %}
+            <li value="{{ loop.index }}">{{ step.value }}</li>
+          {% endfor %}
+        </ul>
+        <h3>Ваши контактные данные</h3>
+        <form action="#">
+          <div class="form-item name">
+            <input id="homeName" type="text" name="" placeholder="Ваше имя*">
+          </div>
+          <div class="form-item phone">
+            <input id="homePhone" type="tel" name="" placeholder="Телефон*">
+          </div>
+          <div class="form-item submit">
+            <input class="btn" type="submit" value="Отправить" data-popup="thanks">
+          </div>
+          <div class="form-item person"> <span>Отправляя форму, вы даете согласие на&nbsp</span><a href="/personal" target="_blank">обработку персональных данных </a></div>
+          <div class="form-item req"> <span>*Поля обязательны к заполнению</span></div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="home-why">
+    <div class="container">
+      <h2>Вот почему нас выбирают и возвращаются</h2>
+      <ul>
+        {% for why in term.field_why %}
+          <li>
+            <div class="title">{{ why.entity.field_title.value }}</div>
+            <div class="descr">{{ why.entity.field_description.value | raw }}</div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  <section class="home-info">
+    <div class="container">
+      <h2>{{ term.field_slogan.value }}</h2><a class="btn" href="#">Рассчитать стоимость</a>
+      <div class="home-info__text">{{ content.description }}</div>
+    </div>
+  </section>
+{% endif %}

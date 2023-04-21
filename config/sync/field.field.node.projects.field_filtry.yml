@@ -1,0 +1,29 @@
+uuid: 3cca99dc-5d24-444a-be94-ecc0bfe4830d
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_filtry
+    - node.type.projects
+    - taxonomy.vocabulary.filters
+id: node.projects.field_filtry
+field_name: field_filtry
+entity_type: node
+bundle: projects
+label: Фильтры
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      filters: filters
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

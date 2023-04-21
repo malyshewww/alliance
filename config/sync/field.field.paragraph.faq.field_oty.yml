@@ -1,0 +1,21 @@
+uuid: e2b06bb8-8029-4a45-9015-a470c64393cf
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_oty
+    - paragraphs.paragraphs_type.faq
+  module:
+    - text
+id: paragraph.faq.field_oty
+field_name: field_oty
+entity_type: paragraph
+bundle: faq
+label: Ответ
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

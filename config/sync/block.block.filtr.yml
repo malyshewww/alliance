@@ -1,0 +1,25 @@
+uuid: d9d70f44-b970-4afb-a412-9332ced25712
+langcode: ru
+status: true
+dependencies:
+  module:
+    - alliance_filter_project
+    - system
+  theme:
+    - alliance
+id: filtr
+theme: alliance
+region: filter_project
+weight: -5
+provider: null
+plugin: alliance_filter_project_example
+settings:
+  id: alliance_filter_project_example
+  label: Фильтр
+  label_display: '0'
+  provider: alliance_filter_project
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /svetodiodnoe-osveschenie/proekty

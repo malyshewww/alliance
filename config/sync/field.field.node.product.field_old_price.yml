@@ -1,0 +1,23 @@
+uuid: 9198c0a3-2c08-44b8-9e5e-1dca67d14f24
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_old_price
+    - node.type.product
+id: node.product.field_old_price
+field_name: field_old_price
+entity_type: node
+bundle: product
+label: 'Старая цена'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

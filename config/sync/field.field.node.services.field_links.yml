@@ -1,0 +1,37 @@
+uuid: 5cc76bd7-35cf-4480-95d9-3852b19612e1
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_links
+    - node.type.services
+    - paragraphs.paragraphs_type.links
+  module:
+    - entity_reference_revisions
+id: node.services.field_links
+field_name: field_links
+entity_type: node
+bundle: services
+label: Ссылки
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      links: links
+    negate: 0
+    target_bundles_drag_drop:
+      faq:
+        weight: 4
+        enabled: false
+      links:
+        weight: 5
+        enabled: true
+      why_choose:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

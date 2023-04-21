@@ -1,0 +1,22 @@
+uuid: 42018e19-14a5-4400-a7c6-d8902f8736ab
+langcode: ru
+status: true
+dependencies:
+  theme:
+    - alliance
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: alliance_secondary_local_tasks
+theme: alliance
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Дополнительные вкладки'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

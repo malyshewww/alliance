@@ -1,0 +1,26 @@
+uuid: fb020b9a-1b10-4f52-839f-d06da0293dc2
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.faq.field_faq
+    - field.field.node.faq.field_product_type
+    - node.type.faq
+  module:
+    - user
+id: node.faq.teaser
+targetEntityType: node
+bundle: faq
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_faq: true
+  field_product_type: true
+  langcode: true
+  search_api_excerpt: true

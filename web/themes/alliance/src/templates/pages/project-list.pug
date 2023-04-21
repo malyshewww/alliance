@@ -1,0 +1,259 @@
+extends ../layout/main
+
+block variables
+	- const pageTitle = "Проекты";
+	- const bodyClass = "not-front";
+
+block content
+	include ../blocks/breadcrumbs.pug
+	main 
+		.project-list
+			.container 
+				ul.tabs-heads 
+					li
+						a(href="#") 
+							span Отрасли
+							<svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13.6094 1.38845C13.5057 1.49216 9.41805 5.57984 7.3872 7.61072L1.16493 1.38855" stroke="#303030" stroke-width="1.55556"/>
+							</svg>
+					li 
+						a(href="#") 
+							span Освещение
+							<svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13.6094 1.38845C13.5057 1.49216 9.41805 5.57984 7.3872 7.61072L1.16493 1.38855" stroke="#303030" stroke-width="1.55556"/>
+							</svg>
+					li 
+						a(href="#") 
+							span Регион
+							<svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13.6094 1.38845C13.5057 1.49216 9.41805 5.57984 7.3872 7.61072L1.16493 1.38855" stroke="#303030" stroke-width="1.55556"/>
+							</svg>
+			form
+				.form-item 	
+					input(type="submit" value="Снять фильтры").filtersClear 
+				.tabs-body
+					.container
+						.form-item.filters 
+							div 
+								input#a1(type="checkbox", name="")
+								label(for="a1") Архитектурное освещение
+							div 
+								input#a2(type="checkbox", name="")
+								label(for="a2") Освещение АЗС
+							div 
+								input#a3(type="checkbox", name="")
+								label(for="a3") Освещение логистич-х центров
+							div 
+								input#a4(type="checkbox", name="")
+								label(for="a4") Освещение спортивных сооружений
+							div 
+								input#a5(type="checkbox", name="")
+								label(for="a5") Офисное освещение
+							div 
+								input#a6(type="checkbox", name="")
+								label(for="a6") Производственное освещение
+							div 
+								input#a7(type="checkbox", name="")
+								label(for="a7") Торговое освещение
+							div 
+								input#a8(type="checkbox", name="")
+								label(for="a8") Уличное освещение
+				.tabs-body
+					.container
+						.form-item.filters 
+							div 
+								input#b1(type="checkbox", name="")
+								label(for="b1") Архитектурное освещение
+							div 
+								input#b2(type="checkbox", name="")
+								label(for="b2") Освещение АЗС
+							div 
+								input#b3(type="checkbox", name="")
+								label(for="b3") Освещение логистич-х центров
+							div 
+								input#b4(type="checkbox", name="")
+								label(for="b4") Освещение спортивных сооружений
+				.tabs-body
+					.container
+						.form-item.filters 
+							div 
+								input#c1(type="checkbox", name="")
+								label(for="c1") Архитектурное освещение
+							div 
+								input#c2(type="checkbox", name="")
+								label(for="c2") Освещение АЗС
+							div 
+								input#c3(type="checkbox", name="")
+								label(for="c3") Освещение логистич-х центров
+							div 
+								input#c4(type="checkbox", name="")
+								label(for="c4") Освещение спортивных сооружений
+							div 
+								input#c5(type="checkbox", name="")
+								label(for="c5") Офисное освещение
+							div 
+								input#c6(type="checkbox", name="")
+								label(for="c6") Производственное освещение
+							div 
+								input#c7(type="checkbox", name="")
+								label(for="c7") Торговое освещение
+							div 
+								input#c8(type="checkbox", name="")
+								label(for="c8") Уличное освещение
+							div 
+								input#c9(type="checkbox", name="")
+								label(for="c9") Освещение АЗС
+							div 
+								input#c10(type="checkbox", name="")
+								label(for="c10") Освещение логистич-х центров
+							div 
+								input#c11(type="checkbox", name="")
+								label(for="c11") Освещение спортивных сооружений
+							div 
+								input#c12(type="checkbox", name="")
+								label(for="c12") Офисное освещение
+							div 
+								input#c13(type="checkbox", name="")
+								label(for="c13") Производственное освещение
+							div 
+								input#c14(type="checkbox", name="")
+								label(for="c14") Торговое освещение
+							div 
+								input#c15(type="checkbox", name="")
+								label(for="c15") Уличное освещение
+			.container 
+				ul.project-list__body 
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item1.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item2.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item3.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² Склад  Склад 20 000 м² 20 000 м² Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item4.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item5.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item6.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² Склад  Склад 20 000 м² 20 000 м² Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item1.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item2.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item3.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² Склад  Склад 20 000 м² 20 000 м² Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item4.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item5.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+					li.project-list__item 
+						a(href="project-item.html")
+							.project-list__img 
+								img(src="img/projects/project-item6.png", alt="")
+							.wrapper
+								.project-list__title Склад 20 000 м² Склад  Склад 20 000 м² 20 000 м² Склад 20 000 м² компании Сладкая жизнь
+								.project-list__link 
+									span Смотреть проект
+									<svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
+									</svg>
+				include ../blocks/pager.pug
+			h2.project-list__subtitle За время нашей работы мы реализовали более 700 проектов

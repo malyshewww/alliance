@@ -1,0 +1,16 @@
+uuid: ffef7703-7550-4593-9489-8874f6a5aa82
+langcode: ru
+status: true
+dependencies: {  }
+name: '129'
+label: '129'
+effects:
+  5552d737-8ea0-4e26-ae48-564abb459476:
+    uuid: 5552d737-8ea0-4e26-ae48-564abb459476
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 129
+      upscale: false
+pipeline: __default__

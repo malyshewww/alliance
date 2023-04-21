@@ -1,0 +1,54 @@
+uuid: bf203be9-897c-43e4-a803-313edfa7f081
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.projects.body
+    - field.field.node.projects.field_filtry
+    - field.field.node.projects.field_images
+    - field.field.node.projects.field_logo
+    - field.field.node.projects.field_product_type
+    - field.field.node.projects.field_quote
+    - node.type.projects
+    - responsive_image.styles.430
+  module:
+    - responsive_image
+    - user
+id: node.projects.teaser
+targetEntityType: node
+bundle: projects
+mode: teaser
+content:
+  field_images:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: '430'
+      image_link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  prevnext_next:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
+  prevnext_previous:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
+hidden:
+  body: true
+  field_filtry: true
+  field_logo: true
+  field_product_type: true
+  field_quote: true
+  langcode: true
+  search_api_excerpt: true

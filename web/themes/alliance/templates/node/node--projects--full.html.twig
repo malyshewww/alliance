@@ -1,0 +1,36 @@
+<div class="project-item">
+  <div class="project-item__top">
+    <div class="top">
+      <div class="container">
+        {{ drupal_breadcrumb() }}
+        <h1 class="page-title">{{ label }}</h1>
+      </div>
+    </div>
+    <div class="project-item__descr">
+      {{ content.body }}
+    </div>
+  </div>
+  <div class="project-item__swiper swiper">
+    <div class="swiper-wrapper">
+      {% for image in node.field_images %}
+        <div class="swiper-slide"> {{ image | renderThis }}</div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="project-item__bottom">
+    <div class="project-item__partner">
+      {{ content.field_logo }}
+    </div>
+    <div class="project-item__quote">
+      <span>
+        {{ node.field_quote.value | raw }}
+      </span>
+    </div>
+    {% if content['prevnext_next']['#nid'] is not empty %}
+      <a class="btn" href="{{ content['prevnext_next']['#url'] }}">
+        <div>Следующий проект</div><img src="/themes/alliance/dist/img/project/proj-next.svg" alt="">
+      </a>
+    {% endif %}
+
+  </div>
+</div>

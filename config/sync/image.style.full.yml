@@ -1,0 +1,16 @@
+uuid: fc53064e-5a9d-4543-a5a0-c774dea99c2e
+langcode: ru
+status: true
+dependencies: {  }
+name: full
+label: full
+effects:
+  2f195db8-efbc-4937-9ca0-3b516f724e7f:
+    uuid: 2f195db8-efbc-4937-9ca0-3b516f724e7f
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 1080
+      upscale: false
+pipeline: __default__

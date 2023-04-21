@@ -1,0 +1,17 @@
+name: Alliance
+type: theme
+base theme: classy
+description: A flexible theme with a responsive, mobile-first layout.
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - alliance/global
+regions:
+  mobile_menu: 'Mobile menu'
+  secondary_menu: 'Secondary menu'
+  breadcrumb: 'Breadcrumb'
+  title: 'Title'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  filter_project: 'Filter Project'

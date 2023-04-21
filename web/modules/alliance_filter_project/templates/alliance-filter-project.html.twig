@@ -1,0 +1,31 @@
+<div class="container">
+  <ul class="tabs-heads">
+    {% for term_parent in term %}
+    <li><a href="#"> <span>{{ term_parent.name }}</span><svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.6094 1.38845C13.5057 1.49216 9.41805 5.57984 7.3872 7.61072L1.16493 1.38855" stroke="#303030" stroke-width="1.55556"/>
+        </svg></a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<form>
+  <div class="form-item">
+    <input class="filtersClear" type="submit" value="Снять фильтры">
+  </div>
+  {% for term_parent in term %}
+  <div class="tabs-body">
+    <div class="container">
+      <div class="form-item filters">
+        {% for child in term_parent.child %}
+        <div>
+          <a href="?filter={{ child.tid }}">
+{#            <input id="{{ child.tid }}" type="checkbox" name="">#}
+            <label for="{{ child.tid }}">{{ child.name }}</label>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</form>

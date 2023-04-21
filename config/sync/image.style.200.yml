@@ -1,0 +1,16 @@
+uuid: c22aff15-2285-426b-ad0a-42b738320305
+langcode: ru
+status: true
+dependencies: {  }
+name: '200'
+label: '200'
+effects:
+  31af01b6-e9fb-4bbe-b61c-ea3ca5ce430a:
+    uuid: 31af01b6-e9fb-4bbe-b61c-ea3ca5ce430a
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 200
+      upscale: false
+pipeline: __default__

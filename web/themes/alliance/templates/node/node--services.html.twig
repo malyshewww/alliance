@@ -1,0 +1,114 @@
+<div class="service-cart">
+        <div class="service-cart__top">
+          <div class="top">
+            <div class="container">
+              {{ drupal_breadcrumb() }}
+              <h1 class="page-title">{{ label }} </h1>
+            </div>
+          </div>
+          {% if node.field_title2.value %}
+            <div class="service-cart__subtitle">{{ node.field_title2.value }}</div>
+          {% endif %}
+          <a class="btn" href="#">Рассчитать стоимость</a>
+          <div class="service-cart__bg">
+            {{ content.field_image }}
+          </div>
+        </div>
+        <div class="service-cart__how">
+          <div class="overlay">
+            <div class="overlay__mouse">
+              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.96743 12.9652L7.01165 13.9147L0 6.9569L7.01165 0L7.96792 0.949067L2 7L7.96743 12.9652Z" fill="#484949"/>
+              </svg>
+              <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.97007 12.9652L1.92585 13.9147L8.9375 6.9569L1.92585 0L0.96958 0.949067L6.9375 7L0.97007 12.9652Z" fill="#484949"/>
+              </svg>
+            </div>
+          </div>
+          <h2>Как мы работаем</h2>
+          <div class="service-cart__swiper swiper">
+            <div class="swiper-wrapper">
+              {% for how in node.field_how_work %}
+                <div class="swiper-slide type{{ loop.index }}">
+                  <h3>{{ how.entity.field_title.value }}</h3>
+                  <span>{{ how.entity.field_description.value | raw }}</span>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </div>
+        <div class="home-calc">
+          <div class="container">
+            <div class="wrapper">
+              <h2>{{ node.field_product_type.entity.field_title_form.value }}</h2>
+              <ul>
+                {% for step in node.field_product_type.entity.field_step_form %}
+                  <li value="{{ loop.index }}">{{ step.value }}</li>
+                {% endfor %}
+              </ul>
+              <h3>Ваши контактные данные</h3>
+              <form action="#">
+                <div class="form-item name">
+                  <input id="homeName" type="text" name="" placeholder="Ваше имя*">
+                </div>
+                <div class="form-item phone">
+                  <input id="homePhone" type="tel" name="" placeholder="Телефон*">
+                </div>
+                <div class="form-item submit">
+                  <input class="btn" type="submit" value="Отправить" data-popup="thanks">
+                </div>
+                <div class="form-item person"> <span>Отправляя форму, вы даете согласие на&nbsp</span><a href="#" target="_blank">обработку персональных данных </a></div>
+                <div class="form-item req"> <span>*Поля обязательны к заполнению</span></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="service-cart__perfect">
+          <div class="container">
+            <h2>Сделаем проект - идеально</h2>
+            <div class="wrapper">
+              <div class="service-cart__img">
+                {{ content.field_project_image }}
+              </div>
+              <ul>
+                {% for step in node.field_projects_step %}
+
+                <li>
+                  <h3>{{ step.entity.field_title.value }}</h3><span>{{ step.entity.field_description.value | raw }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="FAQ__block">
+          <div class="container">
+            <h2>Ответы на частые вопросы</h2>
+            {% for faq in node.field_faq %}
+            <div class="FAQ__item">
+              <div class="FAQ__item-title">
+                <div class="number">/{{ loop.index }}</div><span>{{ faq.entity.field_title.value }}</span><img src="/themes/alliance/dist/img/icons/FAQ.svg" alt="">
+              </div>
+              <div class="FAQ__item-body">
+                {{ faq.entity.field_oty.value | raw }}
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+        <div class="home-links">
+          <div class="container">
+            <ul>
+              {% for links in node.field_links %}
+
+                <li> <a href=" {{ links.entity.field_link.0.url }}">
+                    <div class="home-links__title">{{ links.entity.field_title.value | raw }}</div>
+                    <div class="home-links__descr">{{ links.entity.field_description.value | raw }}</div>
+                    <div class="home-links__img">{{ links.entity.field_image | renderThis }}</div></a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>

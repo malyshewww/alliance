@@ -1,0 +1,17 @@
+uuid: 1186532c-13a4-4f0f-8047-86a5d1b6df58
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Проекты
+type: projects
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

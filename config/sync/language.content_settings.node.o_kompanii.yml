@@ -1,0 +1,11 @@
+uuid: 9ba4f0a4-7395-4bf9-912e-04c453251a75
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.o_kompanii
+id: node.o_kompanii
+target_entity_type_id: node
+target_bundle: o_kompanii
+default_langcode: site_default
+language_alterable: false

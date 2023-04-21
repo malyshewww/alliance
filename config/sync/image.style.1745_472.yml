@@ -1,0 +1,16 @@
+uuid: 770dd867-5d48-4473-befc-23a2879e9045
+langcode: ru
+status: true
+dependencies: {  }
+name: '1745_472'
+label: '1745*472'
+effects:
+  7c8faadd-3b7e-4aa5-8134-e76c52af978d:
+    uuid: 7c8faadd-3b7e-4aa5-8134-e76c52af978d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1745
+      height: 472
+      anchor: center-center
+pipeline: __default__

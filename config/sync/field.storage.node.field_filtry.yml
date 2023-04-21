@@ -1,0 +1,20 @@
+uuid: 5c035eb5-cf0a-4ad4-94ad-962da1c4d51c
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_filtry
+field_name: field_filtry
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

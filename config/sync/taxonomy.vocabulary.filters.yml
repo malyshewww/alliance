@@ -1,0 +1,15 @@
+uuid: 63f6e4f0-864b-4250-bf60-81f3aafb4fd0
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Фильтры
+vid: filters
+description: ''
+weight: 0

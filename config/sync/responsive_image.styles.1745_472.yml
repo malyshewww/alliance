@@ -1,0 +1,16 @@
+uuid: 41c3dc5e-734b-4b95-a7fd-4309345ce95b
+langcode: ru
+status: true
+dependencies:
+  config:
+    - image.style.1745_472
+id: '1745_472'
+label: '1745*472'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: '1745_472'
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: '1745_472'

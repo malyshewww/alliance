@@ -1,0 +1,16 @@
+uuid: 0ddd98d4-863b-4a8b-ad91-2607d722d0db
+langcode: ru
+status: true
+dependencies:
+  config:
+    - image.style.231
+id: '231'
+label: '231'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: '231'
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: '231'

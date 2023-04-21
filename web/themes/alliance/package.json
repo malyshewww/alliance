@@ -1,0 +1,33 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Alexey Morozov",
+  "license": "ISC",
+  "main": "gulpfile.js",
+  "type": "module",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-minify": "^3.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-util": "^3.0.8",
+    "gulp-webp": "^4.0.1",
+    "gulp-webp-html-nosvg": "^1.1.1",
+    "imagemin-jpegoptim": "^6.0.0",
+    "imagemin-pngquant": "^7.0.0",
+    "sass": "^1.56.1",
+    "vinyl-ftp": "^0.6.1"
+  },
+  "volta": {
+    "node": "18.12.1"
+  }
+}

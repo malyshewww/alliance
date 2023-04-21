@@ -1,0 +1,16 @@
+uuid: a25f64b7-ab8b-44b2-9a7a-8d2a8f635674
+langcode: ru
+status: true
+dependencies: {  }
+name: '556'
+label: '556'
+effects:
+  468a77fe-ffce-494c-a156-c1aece1a356d:
+    uuid: 468a77fe-ffce-494c-a156-c1aece1a356d
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 556
+      upscale: false
+pipeline: __default__

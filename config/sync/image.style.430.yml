@@ -1,0 +1,16 @@
+uuid: 53a640a0-d1b8-44e7-a842-ddf16e1433c5
+langcode: ru
+status: true
+dependencies: {  }
+name: '430'
+label: '430'
+effects:
+  90be0f93-fa1b-4c58-8ff0-f7ace1a477aa:
+    uuid: 90be0f93-fa1b-4c58-8ff0-f7ace1a477aa
+    id: image_scale
+    weight: 1
+    data:
+      width: 430
+      height: null
+      upscale: false
+pipeline: __default__

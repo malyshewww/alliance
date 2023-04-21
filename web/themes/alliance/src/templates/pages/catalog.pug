@@ -1,0 +1,129 @@
+extends ../layout/main
+
+block append variables
+	- const pageTitle = "Каталог";
+	- const prevPage = {href: '#', text: 'Светодиодное освещение'};
+	//- const pageTitle_OFF = true;
+
+block content
+	main
+		.catalog
+			include ../blocks/breadcrumbs
+			.container 
+				ul.catalog__body 
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item1.png", alt="")
+							.catalog__title Модульное оборудование
+						ul.catalog__submenu 
+							li 
+								a(href="product-list.html") Силовые автоматические выключатели в литом корпусе и доп. устройства
+							li 
+								a(href="product-list.html") Предохранители
+							li 
+								a(href="product-list.html") Выключатели-разъединители
+							li 
+								a(href="product-list.html") Воздушные автоматические выключатели и доп. устройства
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item2.png", alt="")
+							.catalog__title Силовое оборудование защиты и коммутации
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item3.png", alt="")
+							.catalog__title Приборы учета, контроля, измерения и оборудование электропитания
+						ul.catalog__submenu 
+							li 
+								a(href="product-list.html") Силовые автоматические выключатели в литом корпусе и доп. устройства
+							li 
+								a(href="product-list.html") Предохранители
+							li 
+								a(href="product-list.html") Выключатели-разъединители
+							li 
+								a(href="product-list.html") Воздушные автоматические выключатели и доп. устройства
+							li 
+								a(href="product-list.html") Силовые автоматические выключатели в литом корпусе и доп. устройства
+							li 
+								a(href="product-list.html") Предохранители
+							li 
+								a(href="product-list.html") Выключатели-разъединители
+							li 
+								a(href="product-list.html") Воздушные автоматические выключатели и доп. устройства
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item4.png", alt="")
+							.catalog__title Щитовое оборудование
+						ul.catalog__submenu 
+							li 
+								a(href="product-list.html") Силовые автоматические выключатели в литом корпусе и доп. устройства
+							li 
+								a(href="product-list.html") Предохранители
+							li 
+								a(href="product-list.html") Выключатели-разъединители
+							li 
+								a(href="product-list.html") Воздушные автоматические выключатели и доп. устройства
+							li 
+								a(href="product-list.html") Силовые автоматические выключатели в литом корпусе и доп. устройства
+							li 
+								a(href="product-list.html") Предохранители
+							li 
+								a(href="product-list.html") Выключатели-разъединители
+							li 
+								a(href="product-list.html") Воздушные автоматические выключатели и доп. устройства
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item5.png", alt="")
+							.catalog__title Системы для прокладки кабеля
+						ul.catalog__submenu 
+							li 
+								a(href="product-list.html") Силовые автоматические выключатели в литом корпусе и доп. устройства
+							li 
+								a(href="product-list.html") Предохранители
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item6.png", alt="")
+							.catalog__title Изделия электроустановочные, удлинители и силовые разъемы
+						ul.catalog__submenu 
+							li 
+								a(href="product-list.html") Силовые автоматические выключатели в литом корпусе и доп. устройства
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item7.png", alt="")
+							.catalog__title Оборудование коммутационное и устройства управления
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item8.png", alt="")
+							.catalog__title Изделия электромонтажные и инструменты
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item9.png", alt="")
+							.catalog__title Светотехника
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item10.png", alt="")
+							.catalog__title Автоматизация зданий и процессов
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item11.png", alt="")
+							.catalog__title Типовые решения НКУ
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item12.png", alt="")
+							.catalog__title Решения автоматизации
+					li 
+						a(href="product-list.html")
+							.catalog__img 
+								img(src="img/catalog/item13.png", alt="")
+							.catalog__title Типовые решения для АСИП

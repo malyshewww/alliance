@@ -1,0 +1,83 @@
+extends ../layout/main
+
+block append variables
+	- const pageTitle = "Контакты";
+	//- const prevPage = {href: '', text: ''};
+	//- const pageTitle_OFF = true;
+
+block content
+	main
+		.contacts
+			.contacts__promo 			
+				include ../blocks/breadcrumbs
+				ul.contacts__main
+					li 
+						span Телефон
+						a(href="tel:+78005505201") 8 800 550-52-01
+					li 
+						span Почта
+						a(href="mailto:info@allfereks.ru") info@allfereks.ru
+					li 
+						span Адрес
+						span.not-link г. Нижний Новгород, ул.Окская гавань, д.3, стр.2, офис 320
+					li 
+						span Режим работы
+						span.not-link Пн-Пт с 9:00 до 18:00
+				h2 Наши соцсети
+				ul.contacts__social 
+					li 
+						a(href='#' target='_blank')
+							.icon 
+								img(src="img/icons/tg.svg", alt="")
+							span telegram
+					li 
+						a(href='#' target='_blank')
+							.icon 
+								img(src="img/icons/watsup.svg", alt="")
+							span whatsapp
+					li 
+						a(href='#' target='_blank')
+							.icon 
+								img(src="img/icons/vk.svg", alt="")
+							span vkontakte
+				.contacts__map 
+					#map
+			.contacts__info 
+				.container 
+					h2 ООО «ЭффектЭнергоМонтаж» 
+					ul 
+						li 
+							span Юридический адрес
+							span г. Нижний Новгород, ул.Окская гавань, д.3, стр.2, офис 320
+						li
+							span ИНН
+							span 5256137405
+						li
+							span ОГРН
+							span 1155256003264
+						li 
+							a(href="#" target="_blank") 
+								<svg width="11" height="14" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9.8052 7.52737C9.53864 7.2885 9.10803 7.2885 8.84146 7.52737L6.18265 9.90379V0.612479C6.18265 0.275616 5.87507 0 5.49915 0C5.12322 0 4.81564 0.275616 4.81564 0.612479V9.90992L2.16366 7.5335C1.8971 7.29463 1.46649 7.29463 1.19992 7.5335C0.933359 7.77236 0.933359 8.15823 1.19992 8.39709L5.0207 11.8209C5.28726 12.0597 5.71787 12.0597 5.98443 11.8209L9.8052 8.39709C10.0649 8.15823 10.0649 7.76624 9.8052 7.52737Z" fill="#FFB800"/>
+									<rect y="13" width="11" height="1" rx="0.5" fill="#FFB800"/>
+								</svg>
+								span Скачать карточку организации
+			.contacts__form 
+				.container
+					.contacts__form-body
+						h2 Обсудить идею или проект
+						form(action="#")
+							.wrapper
+								.form-item.name
+									input(type="text", name="text" placeholder="Ваше имя*")
+								.form-item.tel
+									input(type="tel", name="phone" placeholder="Телефон*")
+							.form-item.textarea
+									textarea(name="teaxtarea" placeholder="Сообщение")
+							.form-item.req 
+								span *Поля обязательны к заполнению
+							.form-item.person 
+								span Отправляя форму, вы даете согласие на 
+								a(href="#" target="_blank") обработку персональных данных
+							.form-item.submit 
+								input(type="submit", value="Отправить" data-popup="thanks").btn

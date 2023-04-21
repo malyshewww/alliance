@@ -1,0 +1,31 @@
+uuid: c94104e2-5cc1-45a1-87ae-498d128f8de3
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_links
+    - paragraphs.paragraphs_type.links
+    - taxonomy.vocabulary.product_type
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.product_type.field_links
+field_name: field_links
+entity_type: taxonomy_term
+bundle: product_type
+label: Ссылки
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      links: links
+    negate: 0
+    target_bundles_drag_drop:
+      links:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

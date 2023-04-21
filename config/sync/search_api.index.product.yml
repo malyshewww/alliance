@@ -1,0 +1,51 @@
+uuid: 40f141b0-9fae-4faf-8662-e100566800ee
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_type
+    - search_api.server.db
+  module:
+    - search_api
+    - node
+id: product
+name: product
+description: ''
+read_only: false
+field_settings:
+  field_product_type:
+    label: 'Тип продукции'
+    datasource_id: 'entity:node'
+    property_path: field_product_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_product_type
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - product
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_type: {  }
+  hierarchy:
+    weights:
+      preprocess_index: -45
+    fields:
+      field_product_type: taxonomy_term-parent
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: db

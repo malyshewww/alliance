@@ -1,0 +1,19 @@
+uuid: f926785d-28e9-4f3d-b270-db8ad37bfbd6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_title
+    - taxonomy.vocabulary.product_type
+id: taxonomy_term.product_type.field_title
+field_name: field_title
+entity_type: taxonomy_term
+bundle: product_type
+label: Заголовок
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

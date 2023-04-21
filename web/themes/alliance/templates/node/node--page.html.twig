@@ -1,0 +1,25 @@
+<div class="top">
+  <div class="container">
+    {{ drupal_breadcrumb() }}
+    <h1 class="page-title">{{ label }}</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    {{ content.body }}
+    {% if node.field_images is not empty %}
+      <div class="gal">
+        <h2>Фотогалерея</h2>
+        <ul>
+          {% for image in node.field_images %}
+            <li>
+              <a href="{{ image.entity.uri.value|image_style('full') }}" data-fancybox="gall">
+                {{ image | renderThis }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</div>

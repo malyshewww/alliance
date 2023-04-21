@@ -1,0 +1,9 @@
+# Main theme library.
+global:
+  js:
+    dist/js/libs.js: {}
+    dist/js/main.js: {}
+  css:
+    theme:
+      dist/css/libs.css: {}
+      dist/css/main.css: {}

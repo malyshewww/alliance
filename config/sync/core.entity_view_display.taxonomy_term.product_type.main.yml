@@ -1,0 +1,70 @@
+uuid: bbc1520a-70a2-4db7-8c29-7593b7499043
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.main
+    - field.field.taxonomy_term.product_type.field_catalog_image
+    - field.field.taxonomy_term.product_type.field_image
+    - field.field.taxonomy_term.product_type.field_links
+    - field.field.taxonomy_term.product_type.field_slogan
+    - field.field.taxonomy_term.product_type.field_step_form
+    - field.field.taxonomy_term.product_type.field_title
+    - field.field.taxonomy_term.product_type.field_title2
+    - field.field.taxonomy_term.product_type.field_title_form
+    - field.field.taxonomy_term.product_type.field_why
+    - taxonomy.vocabulary.product_type
+  module:
+    - svg_image
+    - text
+id: taxonomy_term.product_type.main
+targetEntityType: taxonomy_term
+bundle: product_type
+mode: main
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title2:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_catalog_image: true
+  field_links: true
+  field_slogan: true
+  field_step_form: true
+  field_title_form: true
+  field_why: true
+  langcode: true

@@ -1,0 +1,18 @@
+uuid: 65b6962c-0484-4e94-b405-a9ac99b9949e
+langcode: ru
+status: true
+dependencies:
+  theme:
+    - alliance
+id: zagolovokstranicy
+theme: alliance
+region: title
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Заголовок страницы'
+  label_display: '0'
+  provider: core
+visibility: {  }

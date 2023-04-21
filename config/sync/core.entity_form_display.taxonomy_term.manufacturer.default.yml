@@ -1,0 +1,38 @@
+uuid: a1e8cf57-8e6f-4611-b44c-f856cee0743a
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.manufacturer.field_image
+    - image.style.thumbnail
+    - taxonomy.vocabulary.manufacturer
+  module:
+    - svg_image
+id: taxonomy_term.manufacturer.default
+targetEntityType: taxonomy_term
+bundle: manufacturer
+mode: default
+content:
+  field_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  menu: true
+  path: true
+  status: true
+  tvi: true

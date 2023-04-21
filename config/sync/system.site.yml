@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: ru
+uuid: 0e98ab86-5e97-460b-8b4f-49e53a997349
+name: 'СК Альянс'
+mail: localhost@localhost
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /taxonomy/term/1
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: ru

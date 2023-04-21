@@ -1,0 +1,16 @@
+nav.pager
+	ul
+		li.pager__item.pager__item--prev
+			a(href="#")
+				<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M7.96743 12.9652L7.01165 13.9147L0 6.9569L7.01165 0L7.96792 0.949067L2 7L7.96743 12.9652Z" fill="#484949"/>
+				</svg>
+
+		- for(let i = 1; i < 7; i++)
+			li.pager__item
+				a(href="", class=(i == 1 ? 'is-active' : ''))=i
+		li.pager__item.pager__item--next
+			a(href="#")
+				<svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.97007 12.9652L1.92585 13.9147L8.9375 6.9569L1.92585 0L0.96958 0.949067L6.9375 7L0.97007 12.9652Z" fill="#484949"/>
+				</svg>

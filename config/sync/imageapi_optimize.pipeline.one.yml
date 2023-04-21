@@ -1,0 +1,33 @@
+uuid: 69ff73b8-295f-4758-9ccf-a587709065c7
+langcode: ru
+status: true
+dependencies:
+  module:
+    - imageapi_optimize_binaries
+    - imageapi_optimize_webp
+name: one
+label: one
+processors:
+  f1d0260d-f3c7-4482-942f-c4ff4d5b884b:
+    id: jpegoptim
+    data:
+      manual_executable_path: ''
+      progressive: null
+      quality: 100
+      size: null
+    weight: -9
+    uuid: f1d0260d-f3c7-4482-942f-c4ff4d5b884b
+  163e0976-e922-4a75-a6cf-5d14797665e2:
+    id: optipng
+    data:
+      manual_executable_path: ''
+      interlace: false
+      level: 5
+    weight: -8
+    uuid: 163e0976-e922-4a75-a6cf-5d14797665e2
+  d4ab7a7a-bc25-4759-9217-e89e013f0fa4:
+    id: imageapi_optimize_webp
+    data:
+      quality: '100'
+    weight: -10
+    uuid: d4ab7a7a-bc25-4759-9217-e89e013f0fa4

@@ -1,0 +1,19 @@
+uuid: d0bb1f1e-79f3-4aac-9ea5-a1756d389721
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_slogan
+    - taxonomy.vocabulary.product_type
+id: taxonomy_term.product_type.field_slogan
+field_name: field_slogan
+entity_type: taxonomy_term
+bundle: product_type
+label: Слоган
+description: 'Свет и радость мы приносим людям'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

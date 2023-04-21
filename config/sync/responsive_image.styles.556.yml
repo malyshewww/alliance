@@ -1,0 +1,16 @@
+uuid: 9c43fc90-9fc4-4177-a385-7dab26038522
+langcode: ru
+status: true
+dependencies:
+  config:
+    - image.style.556
+id: '556'
+label: '556'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: '556'
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: '556'

@@ -1,0 +1,33 @@
+uuid: 75735eea-09c2-4f2f-9a1c-549b4e6bf55e
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_type
+    - node.type.services
+    - taxonomy.vocabulary.product_type
+  content:
+    - 'taxonomy_term:product_type:d3798069-661d-4b0c-8caf-9457d400b2c9'
+id: node.services.field_product_type
+field_name: field_product_type
+entity_type: node
+bundle: services
+label: 'Тип продукции'
+description: 'Необходимо выбрать самый верхний уровень раздела'
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: d3798069-661d-4b0c-8caf-9457d400b2c9
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_type: product_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

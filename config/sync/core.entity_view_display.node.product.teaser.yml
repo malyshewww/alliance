@@ -1,0 +1,90 @@
+uuid: 3ee8a8fc-fcdf-4945-ac98-7ab908f97433
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.product.body
+    - field.field.node.product.field_images
+    - field.field.node.product.field_manufacturer
+    - field.field.node.product.field_old_price
+    - field.field.node.product.field_preffix_price
+    - field.field.node.product.field_price
+    - field.field.node.product.field_product_type
+    - field.field.node.product.field_suffix_price
+    - node.type.product
+    - responsive_image.styles.231
+  module:
+    - responsive_image
+    - shs
+    - user
+id: node.product.teaser
+targetEntityType: node
+bundle: product
+mode: teaser
+content:
+  field_images:
+    type: responsive_image
+    label: above
+    settings:
+      responsive_image_style: '231'
+      image_link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_manufacturer:
+    type: entity_reference_shs
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_old_price:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ' '
+      decimal_separator: .
+      scale: 0
+      prefix_suffix: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_preffix_price:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_price:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ' '
+      decimal_separator: .
+      scale: 0
+      prefix_suffix: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_suffix_price:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_product_type: true
+  langcode: true
+  search_api_excerpt: true

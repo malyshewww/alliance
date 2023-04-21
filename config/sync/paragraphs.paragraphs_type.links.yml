@@ -1,0 +1,10 @@
+uuid: 12032905-fe51-4aac-add5-1b04e953a932
+langcode: ru
+status: true
+dependencies: {  }
+id: links
+label: 'Блок с ссылками'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

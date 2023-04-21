@@ -1,0 +1,16 @@
+.top
+	.container
+
+		ul.breadcrumbs
+			li
+				a(href="index.html") Главная
+
+			if prevPage
+				li 
+					a(href=prevPage.href)=prevPage.text
+
+			li
+				span #{pageTitle}
+
+		if !pageTitle_OFF
+			h1.page-title!=pageTitle

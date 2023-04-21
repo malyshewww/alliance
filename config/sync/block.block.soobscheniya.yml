@@ -1,0 +1,20 @@
+uuid: abb45b40-e978-43ec-93b9-d27d8cbfc24e
+langcode: ru
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - alliance
+id: soobscheniya
+theme: alliance
+region: content
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Сообщения
+  label_display: '0'
+  provider: system
+visibility: {  }

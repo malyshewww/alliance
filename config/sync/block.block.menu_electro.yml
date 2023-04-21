@@ -1,0 +1,36 @@
+uuid: 02ef2992-43a9-4421-ad4b-634855514dfe
+langcode: ru
+status: true
+dependencies:
+  config:
+    - system.menu.secondmenu
+  module:
+    - menu_block
+    - system
+  theme:
+    - alliance
+id: menu_electro
+theme: alliance
+region: secondary_menu
+weight: 0
+provider: null
+plugin: 'menu_block:secondmenu'
+settings:
+  id: 'menu_block:secondmenu'
+  label: 'Меню Электротехническое оборудование'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: true
+  parent: 'secondmenu:menu_link_content:63cc3100-7fd5-440f-bacf-02c3cff6add5'
+  suggestion: secondmenu
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/elektrotekhnicheskoe-oborudovanie\r\n/elektrotekhnicheskoe-oborudovanie/*"
