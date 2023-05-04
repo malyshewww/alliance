@@ -632,7 +632,7 @@ if (mapElem) {
           { hintContent: "ООО «ЭффектЭнергоМонтаж»" },
           {
             iconLayout: "default#image",
-            iconImageHref: "img/icons/map-pin.svg",
+            iconImageHref: "/themes/alliance/dist/img/icons/map-pin.svg",
             iconImageSize: [50, 56],
             iconImageOffset: [-25, -56],
           }

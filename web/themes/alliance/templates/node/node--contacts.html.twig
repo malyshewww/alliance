@@ -1,0 +1,69 @@
+<div class="contacts">
+  <div class="contacts__promo">
+    <div class="top">
+      <div class="container">
+        {{ drupal_breadcrumb() }}
+        <h1 class="page-title">{{ label }}</h1>
+      </div>
+    </div>
+    <ul class="contacts__main">
+      <li> <span>Телефон</span><a href="tel:{{ theme.phone }}">{{ theme.phone }}</a></li>
+      <li> <span>Почта</span><a href="mailto:{{ theme.mail }}">{{ theme.mail }}</a></li>
+      <li> <span>Адрес</span><span class="not-link">{{ theme.address }}</span></li>
+      <li> <span>Режим работы</span><span class="not-link">{{ theme.work }}</span></li>
+    </ul>
+    <h2>Наши соцсети</h2>
+    <ul class="contacts__social">
+      <li> <a href="{{ theme.telegram }}" target="_blank">
+          <div class="icon"> <img src="/themes/alliance/dist/img/icons/tg.svg" alt=""></div><span>telegram</span></a></li>
+      <li> <a href="{{ theme.whatsapp }}" target="_blank">
+          <div class="icon"> <img src="/themes/alliance/dist/img/icons/watsup.svg" alt=""></div><span>whatsapp</span></a></li>
+      <li> <a href="{{ theme.vk }}" target="_blank">
+          <div class="icon"> <img src="/themes/alliance/dist/img/icons/vk.svg" alt=""></div><span>vkontakte</span></a></li>
+    </ul>
+    <div class="contacts__map">
+      <div id="map"></div>
+    </div>
+  </div>
+  <div class="contacts__info">
+    <div class="container">
+      <h2>{{ theme.nameorg }}</h2>
+      <ul>
+        <li> <span>Юридический адрес</span><span>{{ theme.uraddress }}</span></li>
+        <li><span>ИНН</span><span>{{ theme.inn }}</span></li>
+        <li><span>ОГРН</span><span>{{ theme.ogrn }}</span></li>
+        <li> <a href="{{ theme.file }}" target="_blank">
+            <svg width="11" height="14" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.8052 7.52737C9.53864 7.2885 9.10803 7.2885 8.84146 7.52737L6.18265 9.90379V0.612479C6.18265 0.275616 5.87507 0 5.49915 0C5.12322 0 4.81564 0.275616 4.81564 0.612479V9.90992L2.16366 7.5335C1.8971 7.29463 1.46649 7.29463 1.19992 7.5335C0.933359 7.77236 0.933359 8.15823 1.19992 8.39709L5.0207 11.8209C5.28726 12.0597 5.71787 12.0597 5.98443 11.8209L9.8052 8.39709C10.0649 8.15823 10.0649 7.76624 9.8052 7.52737Z" fill="#FFB800"/>
+              <rect y="13" width="11" height="1" rx="0.5" fill="#FFB800"/>
+            </svg>
+            <span>Скачать карточку организации</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="contacts__form">
+    <div class="container">
+      <div class="contacts__form-body">
+        <h2>Обсудить идею или проект</h2>
+        <form action="#">
+          <div class="wrapper">
+            <div class="form-item name">
+              <input type="text" name="text" placeholder="Ваше имя*">
+            </div>
+            <div class="form-item tel">
+              <input type="tel" name="phone" placeholder="Телефон*">
+            </div>
+          </div>
+          <div class="form-item textarea">
+            <textarea name="teaxtarea" placeholder="Сообщение"></textarea>
+          </div>
+          <div class="form-item req"> <span>*Поля обязательны к заполнению</span></div>
+          <div class="form-item person"> <span>Отправляя форму, вы даете согласие на </span><a href="#" target="_blank">обработку персональных данных</a></div>
+          <div class="form-item submit">
+            <input class="btn" type="submit" value="Отправить" data-popup="thanks">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

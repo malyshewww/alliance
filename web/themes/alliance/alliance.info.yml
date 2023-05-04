@@ -15,3 +15,4 @@ regions:
   content: 'Content'
   sidebar_first: 'Sidebar first'
   filter_project: 'Filter Project'
+  footer: 'Footer'

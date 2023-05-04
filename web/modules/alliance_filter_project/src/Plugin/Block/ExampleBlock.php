@@ -2,6 +2,7 @@
 
 namespace Drupal\alliance_filter_project\Plugin\Block;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -37,6 +38,19 @@ class ExampleBlock extends BlockBase implements ContainerFactoryPluginInterface{
    * {@inheritdoc}
    */
   public function build() {
+
+    //$client = \Drupal::httpClient();
+    $post_data = ['action'=>'GoodsFull', 'data'=>['api_key'=>'561157ca-08e5-11e5-811f-001e67acd771']];
+//    $request = $client->post('http://217.118.185.38:85/erp/hs/api', $post_data);
+
+//    $response = \Drupal::httpClient()->post('https://fereks.ru/api/dealers/?token=561157ca-08e5-11e5-811f-001e67acd771', [
+//      'json' => $post_data,
+//      'headers' => [
+//        'Content-type' => 'application/json',
+//      ],
+//    ])->getBody()->getContents();
+    //ksm($request->getBody());
+
     $arguments = $this->routeMatch->getParameters()->all();
     if($arguments['view_id'] == 'project' && !empty($arguments['arg_0'])){
       $tid = $arguments['arg_0'];
