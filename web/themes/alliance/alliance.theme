@@ -98,8 +98,8 @@ function alliance_preprocess_node(&$variables) {
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function alliance_theme_suggestions_node_alter(array &$suggestions, array $variables) {
-  if(isset($variables['node']) && $variables['node']->id() == 10)
-    $suggestions[]='node__contacts';
+  if(isset($variables['elements']['#node']) && $variables['elements']['#node']->id() == 10)
+    $suggestions[] = 'node__contacts';
 }
 function alliance_get_settings(){
   $theme['phone']['#markup'] = theme_get_setting('phone');
