@@ -1,0 +1,23 @@
+uuid: d7a54243-c84a-4abf-82a2-b7cba370c9ab
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_massa_svetilnika
+    - node.type.modification
+id: node.modification.field_massa_svetilnika
+field_name: field_massa_svetilnika
+entity_type: node
+bundle: modification
+label: 'Масса светильника'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ' кг.'
+field_type: decimal

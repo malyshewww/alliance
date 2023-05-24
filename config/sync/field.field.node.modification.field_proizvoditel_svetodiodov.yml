@@ -1,0 +1,19 @@
+uuid: 75df64b3-4d8d-442f-9bfc-bed9c18f1266
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_proizvoditel_svetodiodov
+    - node.type.modification
+id: node.modification.field_proizvoditel_svetodiodov
+field_name: field_proizvoditel_svetodiodov
+entity_type: node
+bundle: modification
+label: 'Производитель светодиодов'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

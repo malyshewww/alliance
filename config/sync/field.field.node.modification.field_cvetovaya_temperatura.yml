@@ -1,0 +1,23 @@
+uuid: a2ef8b3a-30dd-41eb-81d6-3016a81a299f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cvetovaya_temperatura
+    - node.type.modification
+id: node.modification.field_cvetovaya_temperatura
+field_name: field_cvetovaya_temperatura
+entity_type: node
+bundle: modification
+label: 'Цветовая температура, К'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

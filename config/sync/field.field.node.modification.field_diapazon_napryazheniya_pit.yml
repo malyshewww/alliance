@@ -1,0 +1,19 @@
+uuid: d9a0c5c1-90b3-46ec-871b-9ae40dbc9f22
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_diapazon_napryazheniya_pit
+    - node.type.modification
+id: node.modification.field_diapazon_napryazheniya_pit
+field_name: field_diapazon_napryazheniya_pit
+entity_type: node
+bundle: modification
+label: 'Диапазон напряжения питающей сети'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

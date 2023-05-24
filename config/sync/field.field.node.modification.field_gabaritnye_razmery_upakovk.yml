@@ -1,0 +1,19 @@
+uuid: 7a31bc0a-04c8-4acf-a3fa-c0c5539f2ec2
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gabaritnye_razmery_upakovk
+    - node.type.modification
+id: node.modification.field_gabaritnye_razmery_upakovk
+field_name: field_gabaritnye_razmery_upakovk
+entity_type: node
+bundle: modification
+label: 'Габаритные размеры упаковки светильника'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

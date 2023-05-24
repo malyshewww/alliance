@@ -3969,6 +3969,9 @@
 		}
 		.showMore {
 			margin: 40px auto 0 auto;
+      a {
+        margin: 0 auto;
+      }
 		}
 	}
 	&__nav {
@@ -4098,7 +4101,7 @@
 		}
 		.acc-body {
 			transition: all 0.3s;
-			max-height: 0;
+			//max-height: 0;
 			overflow: hidden;
 			height: 100%;
 			& > ul {

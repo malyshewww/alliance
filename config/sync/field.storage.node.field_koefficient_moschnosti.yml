@@ -1,0 +1,20 @@
+uuid: 7992c5ab-b7d2-4b33-9ded-3484d1039c58
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_koefficient_moschnosti
+field_name: field_koefficient_moschnosti
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

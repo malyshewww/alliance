@@ -1,0 +1,19 @@
+uuid: 3db472a1-881a-4d0e-95ab-0179480bdf3f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_naimenovanie
+    - node.type.modification
+id: node.modification.field_naimenovanie
+field_name: field_naimenovanie
+entity_type: node
+bundle: modification
+label: Наименование
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

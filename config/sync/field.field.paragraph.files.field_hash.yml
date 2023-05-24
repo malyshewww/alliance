@@ -1,0 +1,19 @@
+uuid: fd714699-a7b2-4d9c-9d5c-7fca0023a8aa
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hash
+    - paragraphs.paragraphs_type.files
+id: paragraph.files.field_hash
+field_name: field_hash
+entity_type: paragraph
+bundle: files
+label: Хеш
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

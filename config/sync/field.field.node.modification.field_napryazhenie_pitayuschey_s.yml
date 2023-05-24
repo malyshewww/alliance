@@ -1,0 +1,23 @@
+uuid: c62265ed-6b32-4930-9c1c-d24b70822b90
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_napryazhenie_pitayuschey_s
+    - node.type.modification
+id: node.modification.field_napryazhenie_pitayuschey_s
+field_name: field_napryazhenie_pitayuschey_s
+entity_type: node
+bundle: modification
+label: 'Напряжение питающей сети'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

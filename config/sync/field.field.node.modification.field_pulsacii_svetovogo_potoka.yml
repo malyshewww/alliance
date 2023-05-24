@@ -1,0 +1,23 @@
+uuid: 4d27ab02-8c0b-4685-a625-d3e75c09e118
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pulsacii_svetovogo_potoka
+    - node.type.modification
+id: node.modification.field_pulsacii_svetovogo_potoka
+field_name: field_pulsacii_svetovogo_potoka
+entity_type: node
+bundle: modification
+label: 'Пульсации светового потока не более, %'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

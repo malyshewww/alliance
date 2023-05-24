@@ -1,0 +1,29 @@
+uuid: da7c21fc-d713-428a-814f-7578e670d072
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product
+    - node.type.modification
+    - node.type.product
+id: node.modification.field_product
+field_name: field_product
+entity_type: node
+bundle: modification
+label: Товар
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      product: product
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

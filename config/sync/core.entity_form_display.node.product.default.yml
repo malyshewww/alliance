@@ -7,10 +7,9 @@ dependencies:
     - field.field.node.product.field_images
     - field.field.node.product.field_manufacturer
     - field.field.node.product.field_old_price
-    - field.field.node.product.field_preffix_price
     - field.field.node.product.field_price
     - field.field.node.product.field_product_type
-    - field.field.node.product.field_suffix_price
+    - field.field.node.product.field_series
     - image.style.thumbnail
     - node.type.product
   module:
@@ -23,10 +22,8 @@ third_party_settings:
   field_group:
     group_cena:
       children:
-        - field_preffix_price
         - field_price
         - field_old_price
-        - field_suffix_price
       label: Цена
       region: content
       parent_name: ''
@@ -81,14 +78,6 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
-  field_preffix_price:
-    type: string_textfield
-    weight: 13
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_price:
     type: number
     weight: 14
@@ -104,11 +93,11 @@ content:
       display_node_count: false
       create_new_items: false
       create_new_levels: false
-      force_deepest: true
+      force_deepest: false
     third_party_settings: {  }
-  field_suffix_price:
+  field_series:
     type: string_textfield
-    weight: 16
+    weight: 26
     region: content
     settings:
       size: 60

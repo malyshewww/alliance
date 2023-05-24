@@ -1,0 +1,19 @@
+uuid: 6993aecf-602b-413b-b9c1-b2cbc6c8da54
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_naznachenie
+    - node.type.modification
+id: node.modification.field_naznachenie
+field_name: field_naznachenie
+entity_type: node
+bundle: modification
+label: Назначение
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

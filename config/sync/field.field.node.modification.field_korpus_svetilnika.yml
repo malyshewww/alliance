@@ -1,0 +1,19 @@
+uuid: 8f3cf973-63eb-4460-8731-05e9ec17e074
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_korpus_svetilnika
+    - node.type.modification
+id: node.modification.field_korpus_svetilnika
+field_name: field_korpus_svetilnika
+entity_type: node
+bundle: modification
+label: 'Корпус светильника'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 5b5d6aab-dbe7-4c1e-96a8-bd6264b35443
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: modifikacii_svetodiodnogo_osvescheniya
+label: 'Модификации светодиодного освещения'
+type: 'canonical_entities:node'
+pattern: '/svetodiodnoe-osveschenie/mod/[node:field_artikul]'
+selection_criteria:
+  207dda4a-fdb0-450b-a5ef-5546dbfb8f0a:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 207dda4a-fdb0-450b-a5ef-5546dbfb8f0a
+    context_mapping:
+      node: node
+    bundles:
+      modification: modification
+selection_logic: and
+weight: -5
+relationships: {  }

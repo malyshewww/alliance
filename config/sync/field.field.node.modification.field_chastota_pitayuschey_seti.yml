@@ -1,0 +1,23 @@
+uuid: 9ef99d4a-9ce3-4b0c-87cf-171ae9272010
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_chastota_pitayuschey_seti
+    - node.type.modification
+id: node.modification.field_chastota_pitayuschey_seti
+field_name: field_chastota_pitayuschey_seti
+entity_type: node
+bundle: modification
+label: 'Частота питающей сети'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,16 @@
+uuid: 1029827e-7a6f-47a0-9568-bd5e22b16fb6
+langcode: ru
+status: true
+dependencies: {  }
+name: '368'
+label: '368'
+effects:
+  0318b714-c9ac-455c-8090-e92fa50de6c3:
+    uuid: 0318b714-c9ac-455c-8090-e92fa50de6c3
+    id: image_scale
+    weight: 1
+    data:
+      width: 368
+      height: null
+      upscale: false
+pipeline: __default__

@@ -1,0 +1,19 @@
+uuid: d481988a-e1fb-4a14-9411-4f6f09cd4ce4
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gabaritnye_razmery_svetiln
+    - node.type.modification
+id: node.modification.field_gabaritnye_razmery_svetiln
+field_name: field_gabaritnye_razmery_svetiln
+entity_type: node
+bundle: modification
+label: 'Габаритные размеры светильника'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 6f1e4d5b-9df8-4606-a754-8f236f16490a
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_temperatura_ekspluatacii
+    - node.type.modification
+id: node.modification.field_temperatura_ekspluatacii
+field_name: field_temperatura_ekspluatacii
+entity_type: node
+bundle: modification
+label: 'Температура эксплуатации'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

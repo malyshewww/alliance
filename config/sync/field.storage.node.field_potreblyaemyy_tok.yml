@@ -1,17 +1,16 @@
-uuid: e4573791-2b07-4341-b38b-6ed705970ef3
+uuid: 7611d0a4-d030-4356-af3c-e2f1a6e79830
 langcode: ru
 status: true
 dependencies:
   module:
     - node
-id: node.field_preffix_price
-field_name: field_preffix_price
+id: node.field_potreblyaemyy_tok
+field_name: field_potreblyaemyy_tok
 entity_type: node
-type: string
+type: decimal
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  precision: 10
+  scale: 2
 module: core
 locked: false
 cardinality: 1

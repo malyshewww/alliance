@@ -1,0 +1,102 @@
+uuid: 8e074ba0-6ac3-4171-a93a-8fdf4c2391da
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.modification.field_artikul
+    - field.field.node.modification.field_chastota_pitayuschey_seti
+    - field.field.node.modification.field_cvetovaya_temperatura
+    - field.field.node.modification.field_diapazon_chastot_pitayusch
+    - field.field.node.modification.field_diapazon_napryazheniya_pit
+    - field.field.node.modification.field_files
+    - field.field.node.modification.field_gabaritnye_razmery_svetiln
+    - field.field.node.modification.field_gabaritnye_razmery_upakovk
+    - field.field.node.modification.field_hash
+    - field.field.node.modification.field_images
+    - field.field.node.modification.field_indeks_cvetoperedachi
+    - field.field.node.modification.field_klass_zaschity
+    - field.field.node.modification.field_koefficient_moschnosti
+    - field.field.node.modification.field_kolichestvo_svetodiodov
+    - field.field.node.modification.field_korpus_svetilnika
+    - field.field.node.modification.field_kreplenie
+    - field.field.node.modification.field_massa_svetilnika
+    - field.field.node.modification.field_material_rasseivatelya
+    - field.field.node.modification.field_naimenovanie
+    - field.field.node.modification.field_napryazhenie_pitayuschey_s
+    - field.field.node.modification.field_naznachenie
+    - field.field.node.modification.field_potreblyaemaya_moschnost
+    - field.field.node.modification.field_potreblyaemyy_tok
+    - field.field.node.modification.field_price
+    - field.field.node.modification.field_product
+    - field.field.node.modification.field_proizvoditel_svetodiodov
+    - field.field.node.modification.field_pulsacii_svetovogo_potoka
+    - field.field.node.modification.field_rabochiy_tok_svetodiodov
+    - field.field.node.modification.field_resurs_raboty_svetilnika
+    - field.field.node.modification.field_rod_toka
+    - field.field.node.modification.field_srok_proizvodstva
+    - field.field.node.modification.field_stepen_zaschity
+    - field.field.node.modification.field_svetovoy_potok
+    - field.field.node.modification.field_temperatura_ekspluatacii
+    - field.field.node.modification.field_tip_krivoy_sily_sveta
+    - field.field.node.modification.field_udaroprochnost
+    - field.field.node.modification.field_update
+    - field.field.node.modification.field_variant_ispolneniya
+    - field.field.node.modification.field_vid_klimaticheskogo_ispoln
+    - field.field.node.modification.field_zavodskaya_garantiya
+    - node.type.modification
+  module:
+    - user
+id: node.modification.teaser
+targetEntityType: node
+bundle: modification
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_artikul: true
+  field_chastota_pitayuschey_seti: true
+  field_cvetovaya_temperatura: true
+  field_diapazon_chastot_pitayusch: true
+  field_diapazon_napryazheniya_pit: true
+  field_files: true
+  field_gabaritnye_razmery_svetiln: true
+  field_gabaritnye_razmery_upakovk: true
+  field_hash: true
+  field_images: true
+  field_indeks_cvetoperedachi: true
+  field_klass_zaschity: true
+  field_koefficient_moschnosti: true
+  field_kolichestvo_svetodiodov: true
+  field_korpus_svetilnika: true
+  field_kreplenie: true
+  field_massa_svetilnika: true
+  field_material_rasseivatelya: true
+  field_naimenovanie: true
+  field_napryazhenie_pitayuschey_s: true
+  field_naznachenie: true
+  field_potreblyaemaya_moschnost: true
+  field_potreblyaemyy_tok: true
+  field_price: true
+  field_product: true
+  field_proizvoditel_svetodiodov: true
+  field_pulsacii_svetovogo_potoka: true
+  field_rabochiy_tok_svetodiodov: true
+  field_resurs_raboty_svetilnika: true
+  field_rod_toka: true
+  field_srok_proizvodstva: true
+  field_stepen_zaschity: true
+  field_svetovoy_potok: true
+  field_temperatura_ekspluatacii: true
+  field_tip_krivoy_sily_sveta: true
+  field_udaroprochnost: true
+  field_update: true
+  field_variant_ispolneniya: true
+  field_vid_klimaticheskogo_ispoln: true
+  field_zavodskaya_garantiya: true
+  langcode: true
+  search_api_excerpt: true

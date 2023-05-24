@@ -1,0 +1,19 @@
+uuid: 824243d0-7f68-4bc7-bc7d-ad317e408282
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stepen_zaschity
+    - node.type.modification
+id: node.modification.field_stepen_zaschity
+field_name: field_stepen_zaschity
+entity_type: node
+bundle: modification
+label: 'Степень защиты'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

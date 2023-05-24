@@ -6,6 +6,7 @@
  */
 
 use Drupal\file\Entity\File;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
@@ -26,13 +27,78 @@ function alliance_preprocess_page(&$variables) {
  */
 function alliance_preprocess_node(&$variables) {
   $variables['theme'] = alliance_get_settings();
+
+  if($variables['node']->getType() == 'product') {
+    $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+    $ids = $nodeStorage->getQuery()
+      ->condition('status', 1)
+      ->condition('type', 'modification')
+      ->condition('field_product', $variables['node']->id())
+      ->execute();
+    if(!empty($ids)) {
+      $id = reset($ids);
+      $ids = array_values($ids);
+      $node_loaded = Node::load($id);
+      if ($variables['node']->field_images->isEmpty()) {
+        $variables['node']->field_images = $node_loaded->field_images;
+      }
+
+
+      $fields = [
+        'kolvo' => 'field_kolichestvo_svetodiodov',
+        'moschnost' => 'field_potreblyaemaya_moschnost',
+        'potok' => 'field_svetovoy_potok'
+      ];
+      $minmax = [];
+      $database = \Drupal::database();
+      foreach ($fields as $key => $field) {
+        $query = $database->select('node__' . $field, $key);
+        $query->condition($key . '.entity_id', $ids, 'IN');
+        $query->fields($key, [$field . '_value']);
+        $query->orderBy($key . '.' . $field . '_value', 'DESC');
+        $res = $query->execute()->fetchAssoc();
+        if(!empty($res))
+          $minmax[$key]['max']['#markup'] = reset($res);
+      }
+      foreach ($fields as $key => $field) {
+        $query = $database->select('node__' . $field, $key);
+        $query->condition($key . '.entity_id', $ids, 'IN');
+        $query->fields($key, [$field . '_value']);
+        $query->orderBy($key . '.' . $field . '_value', 'ASC');
+        $res = $query->execute()->fetchAssoc();
+        if(!empty($res))
+          $minmax[$key]['min']['#markup'] = reset($res);
+      }
+      $variables['minmax'] = $minmax;
+
+      $query = $database->select('node__field_price', 'price');
+      $query->condition('price.entity_id', $ids, 'IN');
+      $query->fields('price', ['entity_id']);
+      $query->orderBy('price.field_price_value', 'ASC');
+      $res = $query->execute()->fetchAssoc();
+      $node_min_price = Node::load(reset($res));
+
+      if($variables['node']->field_price->isEmpty())
+        $variables['price'] = $node_min_price->field_price->view('full');
+      else
+        $variables['price'] = $variables['node']->field_price->view('full');
+
+      $variables['price'][0]['#markup'] = 'от '.$variables['price'][0]['#markup'];
+
+    }
+
+  }
+  if($variables['node']->getType() == 'modification') {
+    $node = $variables['node'];
+    $variables['otdacha']['#markup'] = round($node->field_svetovoy_potok->value/$node->field_potreblyaemaya_moschnost->value);
+  }
 }
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function alliance_theme_suggestions_node_alter(array &$suggestions, array $variables) {
-  if(isset($variables['elements']['#node']) && $variables['elements']['#node']->id() == 10)
+  if(isset($variables['node']) && $variables['node']->id() == 10)
     $suggestions[]='node__contacts';
 }
 function alliance_get_settings(){
@@ -51,4 +117,12 @@ function alliance_get_settings(){
   $file = File::load(reset($fid));
   $theme['file'] = \Drupal::service('file_url_generator')->generateAbsoluteString($file->uri->value);
   return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function alliance_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+ if(isset($variables['element']['#field_type']) && isset($variables['element']['#bundle']) && $variables['element']['#field_name']!='field_price')
+   $suggestions[] = 'field__'.$variables['element']['#bundle'].'__'.$variables['element']['#field_type'];
 }

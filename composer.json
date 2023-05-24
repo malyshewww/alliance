@@ -44,6 +44,7 @@
         "drupal/twig_tweak": "^3.2",
         "drupal/twigsuggest": "^1.0@RC",
         "drupal/views_field_view": "^1.0@beta",
+        "drupal/views_infinite_scroll": "^2.0",
         "drush/drush": "^11.5"
     },
     "conflict": {

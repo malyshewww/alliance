@@ -1,0 +1,35 @@
+uuid: abf75392-6d54-4075-b070-8240c8aeb3ca
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.files.field_file
+    - field.field.paragraph.files.field_file_name
+    - field.field.paragraph.files.field_hash
+    - paragraphs.paragraphs_type.files
+  module:
+    - tuman_file_formatter
+id: paragraph.files.preview
+targetEntityType: paragraph
+bundle: files
+mode: preview
+content:
+  field_file:
+    type: tuman_file_formatter_preview
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_file_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_hash: true
+  search_api_excerpt: true

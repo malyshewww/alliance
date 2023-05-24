@@ -1,0 +1,467 @@
+uuid: 5aa7eae7-c0e0-4daf-8b46-c51636de472c
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.small
+    - field.field.node.modification.field_artikul
+    - field.field.node.modification.field_chastota_pitayuschey_seti
+    - field.field.node.modification.field_cvetovaya_temperatura
+    - field.field.node.modification.field_diapazon_chastot_pitayusch
+    - field.field.node.modification.field_diapazon_napryazheniya_pit
+    - field.field.node.modification.field_files
+    - field.field.node.modification.field_gabaritnye_razmery_svetiln
+    - field.field.node.modification.field_gabaritnye_razmery_upakovk
+    - field.field.node.modification.field_hash
+    - field.field.node.modification.field_images
+    - field.field.node.modification.field_indeks_cvetoperedachi
+    - field.field.node.modification.field_klass_zaschity
+    - field.field.node.modification.field_koefficient_moschnosti
+    - field.field.node.modification.field_kolichestvo_svetodiodov
+    - field.field.node.modification.field_korpus_svetilnika
+    - field.field.node.modification.field_kreplenie
+    - field.field.node.modification.field_massa_svetilnika
+    - field.field.node.modification.field_material_rasseivatelya
+    - field.field.node.modification.field_naimenovanie
+    - field.field.node.modification.field_napryazhenie_pitayuschey_s
+    - field.field.node.modification.field_naznachenie
+    - field.field.node.modification.field_potreblyaemaya_moschnost
+    - field.field.node.modification.field_potreblyaemyy_tok
+    - field.field.node.modification.field_price
+    - field.field.node.modification.field_product
+    - field.field.node.modification.field_proizvoditel_svetodiodov
+    - field.field.node.modification.field_pulsacii_svetovogo_potoka
+    - field.field.node.modification.field_rabochiy_tok_svetodiodov
+    - field.field.node.modification.field_resurs_raboty_svetilnika
+    - field.field.node.modification.field_rod_toka
+    - field.field.node.modification.field_srok_proizvodstva
+    - field.field.node.modification.field_stepen_zaschity
+    - field.field.node.modification.field_svetovoy_potok
+    - field.field.node.modification.field_temperatura_ekspluatacii
+    - field.field.node.modification.field_tip_krivoy_sily_sveta
+    - field.field.node.modification.field_udaroprochnost
+    - field.field.node.modification.field_update
+    - field.field.node.modification.field_variant_ispolneniya
+    - field.field.node.modification.field_vid_klimaticheskogo_ispoln
+    - field.field.node.modification.field_zavodskaya_garantiya
+    - node.type.modification
+    - responsive_image.styles.368
+  module:
+    - entity_reference_revisions
+    - field_group
+    - responsive_image
+    - user
+third_party_settings:
+  field_group:
+    group_kharakteristiki:
+      children:
+        - field_rod_toka
+        - field_udaroprochnost
+        - field_gabaritnye_razmery_upakovk
+        - field_kolichestvo_svetodiodov
+        - field_massa_svetilnika
+        - field_kreplenie
+        - field_zavodskaya_garantiya
+        - field_pulsacii_svetovogo_potoka
+        - field_proizvoditel_svetodiodov
+        - field_vid_klimaticheskogo_ispoln
+        - field_material_rasseivatelya
+        - field_tip_krivoy_sily_sveta
+        - field_klass_zaschity
+        - field_resurs_raboty_svetilnika
+        - field_indeks_cvetoperedachi
+        - field_rabochiy_tok_svetodiodov
+        - field_potreblyaemyy_tok
+        - field_koefficient_moschnosti
+        - field_svetovoy_potok
+        - field_stepen_zaschity
+        - field_diapazon_chastot_pitayusch
+        - field_srok_proizvodstva
+        - field_diapazon_napryazheniya_pit
+        - field_cvetovaya_temperatura
+        - field_potreblyaemaya_moschnost
+        - field_napryazhenie_pitayuschey_s
+        - field_chastota_pitayuschey_seti
+        - field_variant_ispolneniya
+        - field_korpus_svetilnika
+        - field_temperatura_ekspluatacii
+        - field_gabaritnye_razmery_svetiln
+        - field_naznachenie
+      label: Характеристики
+      parent_name: ''
+      region: content
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        description: ''
+id: node.modification.small
+targetEntityType: node
+bundle: modification
+mode: small
+content:
+  field_artikul:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_chastota_pitayuschey_seti:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 42
+    region: content
+  field_cvetovaya_temperatura:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 39
+    region: content
+  field_diapazon_chastot_pitayusch:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 36
+    region: content
+  field_diapazon_napryazheniya_pit:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 38
+    region: content
+  field_files:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_gabaritnye_razmery_svetiln:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 46
+    region: content
+  field_gabaritnye_razmery_upakovk:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_hash:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_images:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: '368'
+      image_link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_indeks_cvetoperedachi:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 30
+    region: content
+  field_klass_zaschity:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 28
+    region: content
+  field_koefficient_moschnosti:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 33
+    region: content
+  field_kolichestvo_svetodiodov:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_korpus_svetilnika:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 44
+    region: content
+  field_kreplenie:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_massa_svetilnika:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_material_rasseivatelya:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_naimenovanie:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_napryazhenie_pitayuschey_s:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 41
+    region: content
+  field_naznachenie:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 47
+    region: content
+  field_potreblyaemaya_moschnost:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 40
+    region: content
+  field_potreblyaemyy_tok:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 32
+    region: content
+  field_price:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ' '
+      decimal_separator: .
+      scale: 0
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_product:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_proizvoditel_svetodiodov:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_pulsacii_svetovogo_potoka:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_rabochiy_tok_svetodiodov:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 31
+    region: content
+  field_resurs_raboty_svetilnika:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 29
+    region: content
+  field_rod_toka:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_srok_proizvodstva:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 37
+    region: content
+  field_stepen_zaschity:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 35
+    region: content
+  field_svetovoy_potok:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 34
+    region: content
+  field_temperatura_ekspluatacii:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 45
+    region: content
+  field_tip_krivoy_sily_sveta:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 27
+    region: content
+  field_udaroprochnost:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_update:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_variant_ispolneniya:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 43
+    region: content
+  field_vid_klimaticheskogo_ispoln:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  field_zavodskaya_garantiya:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

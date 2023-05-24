@@ -1,0 +1,23 @@
+uuid: 831ee556-12cd-46d8-b95b-f6aaaf87fba8
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_indeks_cvetoperedachi
+    - node.type.modification
+id: node.modification.field_indeks_cvetoperedachi
+field_name: field_indeks_cvetoperedachi
+entity_type: node
+bundle: modification
+label: 'Индекс цветопередачи, CRI'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

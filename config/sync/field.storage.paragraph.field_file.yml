@@ -1,0 +1,23 @@
+uuid: 44fa5a4d-3949-423c-935d-8106faa602c2
+langcode: ru
+status: true
+dependencies:
+  module:
+    - file
+    - paragraphs
+id: paragraph.field_file
+field_name: field_file
+entity_type: paragraph
+type: file
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

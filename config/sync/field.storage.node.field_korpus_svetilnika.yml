@@ -1,0 +1,21 @@
+uuid: 090cc22f-c825-4666-91ad-c28ac6930096
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_korpus_svetilnika
+field_name: field_korpus_svetilnika
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

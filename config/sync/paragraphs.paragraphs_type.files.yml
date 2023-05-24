@@ -1,0 +1,10 @@
+uuid: a9755f8a-9992-451d-9050-19d8d48ec7f3
+langcode: ru
+status: true
+dependencies: {  }
+id: files
+label: Файлы
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

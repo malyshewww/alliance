@@ -1,0 +1,23 @@
+uuid: 2bc13c81-40de-4f4c-a8bf-d387f3c04e84
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_svetovoy_potok
+    - node.type.modification
+id: node.modification.field_svetovoy_potok
+field_name: field_svetovoy_potok
+entity_type: node
+bundle: modification
+label: 'Световой поток'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

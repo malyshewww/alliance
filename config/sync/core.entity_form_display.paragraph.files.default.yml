@@ -1,0 +1,42 @@
+uuid: fd71002b-d78d-409e-8088-ff5743eb5968
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.files.field_file
+    - field.field.paragraph.files.field_file_name
+    - field.field.paragraph.files.field_hash
+    - paragraphs.paragraphs_type.files
+  module:
+    - file
+id: paragraph.files.default
+targetEntityType: paragraph
+bundle: files
+mode: default
+content:
+  field_file:
+    type: file_generic
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_file_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_hash:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

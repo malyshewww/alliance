@@ -8,10 +8,9 @@ dependencies:
     - field.field.node.product.field_images
     - field.field.node.product.field_manufacturer
     - field.field.node.product.field_old_price
-    - field.field.node.product.field_preffix_price
     - field.field.node.product.field_price
     - field.field.node.product.field_product_type
-    - field.field.node.product.field_suffix_price
+    - field.field.node.product.field_series
     - node.type.product
     - responsive_image.styles.231
   module:
@@ -51,14 +50,6 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-  field_preffix_price:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_price:
     type: number_decimal
     label: hidden
@@ -70,14 +61,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_suffix_price:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -86,5 +69,6 @@ content:
 hidden:
   body: true
   field_product_type: true
+  field_series: true
   langcode: true
   search_api_excerpt: true

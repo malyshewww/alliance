@@ -1,0 +1,20 @@
+uuid: fffd2d8e-9444-4db5-855c-09af05a564ed
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_massa_svetilnika
+field_name: field_massa_svetilnika
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

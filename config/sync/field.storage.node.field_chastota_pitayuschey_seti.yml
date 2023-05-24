@@ -1,0 +1,20 @@
+uuid: d314e4b3-bdcf-47e1-bd4f-91e42cb974f3
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_chastota_pitayuschey_seti
+field_name: field_chastota_pitayuschey_seti
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

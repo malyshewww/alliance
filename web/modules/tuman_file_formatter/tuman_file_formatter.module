@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for tuman file formatter module.
+ */
+/**
+ * Implements hook_theme().
+ */
+function tuman_file_formatter_theme() {
+  return [
+    'tuman_file_formatter' => [
+      'variables' => [
+        'url' => NULL,
+        'extension' => NULL,
+        'size' => NULL,
+        'name' => NULL
+      ],
+      'template' => 'tuman-file-formatter',
+    ],
+    'tuman_file_formatter_preview' => [
+      'variables' => [
+        'url' => NULL,
+        'extension' => NULL,
+        'size' => NULL,
+        'name' => NULL
+      ],
+      'template' => 'tuman-file-formatter-preview',
+    ],
+
+  ];
+
+}

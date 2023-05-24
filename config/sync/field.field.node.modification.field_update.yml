@@ -1,0 +1,23 @@
+uuid: c76dfa14-c169-4206-a8ad-35c4605a1f7f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_update
+    - node.type.modification
+id: node.modification.field_update
+field_name: field_update
+entity_type: node
+bundle: modification
+label: Обновлено
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Вкл
+  off_label: Выкл
+field_type: boolean

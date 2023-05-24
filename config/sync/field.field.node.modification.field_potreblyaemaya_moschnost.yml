@@ -1,0 +1,23 @@
+uuid: 4cc71418-0b97-417d-9238-1bd68d5554c9
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_potreblyaemaya_moschnost
+    - node.type.modification
+id: node.modification.field_potreblyaemaya_moschnost
+field_name: field_potreblyaemaya_moschnost
+entity_type: node
+bundle: modification
+label: 'Потребляемая мощность'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

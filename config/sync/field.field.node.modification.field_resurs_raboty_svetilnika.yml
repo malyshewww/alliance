@@ -1,0 +1,23 @@
+uuid: fe9b9d17-d40a-4ac7-a2c5-c4944381f87f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resurs_raboty_svetilnika
+    - node.type.modification
+id: node.modification.field_resurs_raboty_svetilnika
+field_name: field_resurs_raboty_svetilnika
+entity_type: node
+bundle: modification
+label: 'Ресурс работы светильника, ч. не менее'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

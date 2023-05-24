@@ -1,0 +1,23 @@
+uuid: dfd94c0a-8e09-4285-a228-7d6ad125e5c0
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rabochiy_tok_svetodiodov
+    - node.type.modification
+id: node.modification.field_rabochiy_tok_svetodiodov
+field_name: field_rabochiy_tok_svetodiodov
+entity_type: node
+bundle: modification
+label: 'Рабочий ток светодиодов'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

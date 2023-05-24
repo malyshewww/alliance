@@ -1,0 +1,23 @@
+uuid: 6625293a-a506-4f26-8ce2-1ac9097f8fd3
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price
+    - node.type.modification
+id: node.modification.field_price
+field_name: field_price
+entity_type: node
+bundle: modification
+label: Цена
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ' руб.'
+field_type: decimal

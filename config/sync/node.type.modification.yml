@@ -1,0 +1,17 @@
+uuid: 9777ea6a-b04b-45a5-af23-fe579709cf8f
+langcode: ru
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Модификации
+type: modification
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

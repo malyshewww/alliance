@@ -1,0 +1,18 @@
+<li> <a class="newprod" href="{{ url }}">{{ node.field_naimenovanie.value }}</a></li>
+<li>{{ node.field_artikul.value }}</li>
+<li> <a href="{{ node.field_images.0.entity.uri.value|image_style('full') }}" data-fancybox="">
+    {{ content.field_images.0 }}
+  </a></li>
+<li>
+  <ul class="files">
+    {% for file in node.field_files %}
+      {{ file.entity.field_file|renderThis('preview') }}
+    {% endfor %}
+  </ul>
+</li>
+<li>{{ node.field_potreblyaemaya_moschnost.value }}</li>
+<li>{{ otdacha }}</li>
+<li>{{ node.field_svetovoy_potok.value }}</li>
+<li>{{ node.field_stepen_zaschity.value }}</li>
+<li>{{ content.field_price }}</li>
+<li> <a class="moreAndMore" href="{{ url }}">Подробнее </a></li>

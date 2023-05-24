@@ -1,0 +1,19 @@
+uuid: 3104bc80-f2da-4c94-86bd-92b3c4ee3217
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_udaroprochnost
+    - node.type.modification
+id: node.modification.field_udaroprochnost
+field_name: field_udaroprochnost
+entity_type: node
+bundle: modification
+label: Ударопрочность
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

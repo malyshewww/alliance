@@ -1,13 +1,15 @@
-<a href="{{ url }}"> 
-	<div class="product-list__img"> 
-		{{ content.field_images.0}}
+<a href="{{ url }}">
+	<div class="product-list__img">
+    {% if node.field_images.0 is not empty %}
+      {{ node.field_images.0 | renderThis }}
+    {% endif %}
 	</div>
     <div class="product-list__title">{{ label }}</div>
     <div class="product-list__manufacturer">{{ node.field_manufacturer.entity.field_image | renderThis }}</div>
-    <div class="product-list__price"> 
-	    <span class="now">{{ node.field_preffix_price.value }} {{ content.field_price }} {{ node.field_suffix_price.value }}</span>
+    <div class="product-list__price">
+	    <span class="now">{{ price }} </span>
 	    {% if node.field_old_price.value is not empty %}
-	    	<span class="before">{{ node.field_preffix_price.value }} {{ content.field_old_price }} {{ node.field_suffix_price.value }}</span>
+	    	<span class="before"> {{ content.field_old_price }} </span>
 	    {% endif %}
     </div>
-</a> 
+</a>

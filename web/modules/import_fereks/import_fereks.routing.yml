@@ -1,0 +1,8 @@
+import_fereks.example:
+  path: '/import-fereks/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\import_fereks\Controller\ImportFereksController::build'
+  requirements:
+    _permission: 'access content'
+
