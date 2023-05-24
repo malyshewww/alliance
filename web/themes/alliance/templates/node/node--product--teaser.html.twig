@@ -1,7 +1,7 @@
 <a href="{{ url }}">
 	<div class="product-list__img">
     {% if node.field_images.0 is not empty %}
-      {{ node.field_images.0 | renderThis }}
+      {{ node.field_images.0 | renderThis('teaser') }}
     {% endif %}
 	</div>
     <div class="product-list__title">{{ label }}</div>

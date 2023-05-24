@@ -1,0 +1,40 @@
+uuid: f0234b5d-bbe6-4c71-81f5-c6bcddc95535
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_files
+    - node.type.product
+    - paragraphs.paragraphs_type.files
+  module:
+    - entity_reference_revisions
+id: node.product.field_files
+field_name: field_files
+entity_type: node
+bundle: product
+label: Файлы
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      files: files
+    negate: 0
+    target_bundles_drag_drop:
+      faq:
+        weight: 5
+        enabled: false
+      files:
+        weight: 6
+        enabled: true
+      links:
+        weight: 7
+        enabled: false
+      why_choose:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

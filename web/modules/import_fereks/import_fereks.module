@@ -4,3 +4,34 @@
  * @file
  * Primary module hooks for Import Fereks module.
  */
+function import_fereks_cron(){
+  import_fereks_start();
+}
+
+function import_fereks_start() {
+
+  $post_data = ['action'=>'GoodsFull', 'data'=>['api_key'=>'561157ca-08e5-11e5-811f-001e67acd771']];
+
+  $response = \Drupal::httpClient()->post('https://fereks.ru/api/dealers/?token=561157ca-08e5-11e5-811f-001e67acd771', [
+    'json' => $post_data,
+    'headers' => [
+      'Content-type' => 'application/json',
+    ],
+  ])->getBody()->getContents();
+
+  $products = json_decode($response, TRUE);
+
+  if($products['error'] === FALSE){
+    $queue = \Drupal::queue('import_fereks');
+    $queue->deleteQueue();
+    $queue->createQueue();
+
+    foreach ($products['data'] as $product) {
+      $queue->createItem(['data' => $product, 'type' => 'product']);
+      $queue->createItem(['data' => ['uid' => $product['uid'], 'files' => $product['ДоступныеФайлы']], 'hash'=> $product['Хеш'],  'type' => 'files']);
+    }
+  } else{
+    \Drupal::logger('import_fereks')->error("Ошибка при запросе к API fereks");
+  }
+
+}

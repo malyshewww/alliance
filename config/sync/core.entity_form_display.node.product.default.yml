@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.product.body
+    - field.field.node.product.field_files
     - field.field.node.product.field_images
     - field.field.node.product.field_manufacturer
     - field.field.node.product.field_old_price
@@ -14,6 +15,7 @@ dependencies:
     - node.type.product
   module:
     - field_group
+    - paragraphs
     - path
     - shs
     - svg_image
@@ -56,6 +58,25 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_files:
+    type: paragraphs
+    weight: 27
+    region: content
+    settings:
+      title: Файл
+      title_plural: Файлы
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: files
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
     third_party_settings: {  }
   field_images:
     type: image_image

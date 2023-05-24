@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.product.body
+    - field.field.node.product.field_files
     - field.field.node.product.field_images
     - field.field.node.product.field_manufacturer
     - field.field.node.product.field_old_price
@@ -11,8 +12,10 @@ dependencies:
     - field.field.node.product.field_product_type
     - field.field.node.product.field_series
     - node.type.product
+    - responsive_image.styles.368
   module:
-    - svg_image
+    - entity_reference_revisions
+    - responsive_image
     - text
     - user
 id: node.product.default
@@ -27,18 +30,21 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  field_images:
-    type: image
+  field_files:
+    type: entity_reference_revisions_entity_view
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_images:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: '368'
+      image_link: file
     third_party_settings: {  }
     weight: 103
     region: content

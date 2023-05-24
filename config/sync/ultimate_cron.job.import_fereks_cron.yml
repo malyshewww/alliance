@@ -1,0 +1,29 @@
+uuid: 2201e2d1-e2fa-43ed-9ce3-ad6a6408a613
+langcode: ru
+status: true
+dependencies:
+  module:
+    - import_fereks
+title: 'Default cron handler'
+id: import_fereks_cron
+weight: 0
+module: import_fereks
+callback: import_fereks_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ 0 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

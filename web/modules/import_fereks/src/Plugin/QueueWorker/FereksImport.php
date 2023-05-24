@@ -53,11 +53,12 @@ class FereksImport extends QueueWorkerBase {
 
       if (!empty($node_loaded_by_uuid)) {
         $node_loaded_by_uuid = reset($node_loaded_by_uuid);
-        // if($node_loaded_by_uuid->field_hash->value != $data['Хеш'])
-        $this->updateNode($node_loaded_by_uuid, $data);
-        //      else
-        //        $node_loaded_by_uuid->set('field_update', 1);
-        //        $node_loaded_by_uuid->save();
+        if($node_loaded_by_uuid->field_hash->value != $data['Хеш'])
+          $this->updateNode($node_loaded_by_uuid, $data);
+        else {
+          $node_loaded_by_uuid->set('field_update', 1);
+          $node_loaded_by_uuid->save();
+        }
       }
       else {
         $node = Node::create([
@@ -193,116 +194,122 @@ class FereksImport extends QueueWorkerBase {
     if (!empty($node_loaded_by_uuid)) {
       $node_loaded_by_uuid = reset($node_loaded_by_uuid);
 
-      $post_data = [
-        'action' => 'GoodsFiles',
-        'data' => [
-          'api_key' => '561157ca-08e5-11e5-811f-001e67acd771',
-          'files' => [
-            [
-              'uid' => $uid,
-              'files' => $files
+      foreach ($node_loaded_by_uuid->field_files as $node_files) {
+        $hash[$node_files->entity->field_file_name->value] = $node_files->entity->field_hash->value;
+      }
+      if (!empty(array_diff($hash, $files))) {
+        //если есть различия в хешах
+        $post_data = [
+          'action' => 'GoodsFiles',
+          'data' => [
+            'api_key' => '561157ca-08e5-11e5-811f-001e67acd771',
+            'files' => [
+              [
+                'uid' => $uid,
+                'files' => array_keys($files)
+              ]
             ]
           ]
-        ]
-      ];
+        ];
 
-      $dir = 'public://fereks/' . $uid;
-      if (!is_dir($dir)) {
-        mkdir($dir);
-      }
-      $real_dir = \Drupal::service('file_system')->realpath($dir);
-      $files = glob($real_dir . "/*");
-      if (count($files) > 0) {
-        foreach ($files as $file) {
-          if (file_exists($file)) {
-            unlink($file);
-          }
+        $dir = 'public://fereks/' . $uid;
+        if (!is_dir($dir)) {
+          mkdir($dir);
         }
-      }
-      $response = \Drupal::httpClient()
-        ->post('https://fereks.ru/api/dealers/?token=561157ca-08e5-11e5-811f-001e67acd771', [
-          'json' => $post_data,
-          'headers' => [
-            'Content-type' => 'application/json',
-          ],
-        ])
-        ->getBody()
-        ->getContents();
-      $file = 'public://fereks/' . $uid . '/file.zip';
-      file_put_contents($file, $response);
-      // get the absolute path to $file
-      $path = \Drupal::service('file_system')->realpath($file);
-      $zip = new ZipArchive;
-      $res = $zip->open($path);
-      if ($res === TRUE) {
-        // extract it to the path we determined above
-        $zip->extractTo($real_dir);
-        $zip->close();
-        ksm("WOOT! " . $file . " extracted to " . $path);
-      }
-      else {
-        ksm("Doh! I couldn't open " . $file);
-      }
-      $files = glob($real_dir . "/*.json");
-      if (isset($files[0])) {
-        $json = file_get_contents($files[0]);
-        $json = $this->removeBOM($json);
-        $json_data = json_decode($json, 'TRUE');
-        $json_data = reset($json_data);
-        ksm($json_data);
-      }
-      $image_file_id = NULL;
-      $paragraph_array = [];
-      foreach ($json_data as $name => $value) {
-        if ($name == 'Рендер') {
-          if (!$node_loaded_by_uuid->field_images->isEmpty()) {
-            $node_loaded_by_uuid->field_images->entity->delete();
-          }
-          $file = File::create([
-            'filename' => $value['ИмяФайла'],
-            'uri' => $dir . '/' . $value['ИмяФайла'],
-            'status' => 1,
-            'uid' => 1,
-          ]);
-          $file->save();
-          $image_file_id = $file->id();
-        }
-        else {
-          $file = File::create([
-            'filename' => $value['ИмяФайла'],
-            'uri' => $dir . '/' . $value['ИмяФайла'],
-            'status' => 1,
-            'uid' => 1,
-          ]);
-          $file->save();
-          if (!$node_loaded_by_uuid->get('field_files')->isEmpty()) {
-            foreach ($node_loaded_by_uuid->field_files as $paragraph) {
-              $paragraph->entity->field_file->entity->delete();
-              $paragraph->entity->delete();
+        $real_dir = \Drupal::service('file_system')->realpath($dir);
+        $files = glob($real_dir . "/*");
+        if (count($files) > 0) {
+          foreach ($files as $file) {
+            if (file_exists($file)) {
+              unlink($file);
             }
           }
-          $paragraph = Paragraph::create([
-            'type' => 'files',
-            'field_file_name' => $name,
-            'field_file' => ['target_id' => $file->id()],
-            'field_hash' => $value['Хеш']
-          ]);
-          $paragraph->save();
-          $paragraph_array[] =
-            [
-              'target_id' => $paragraph->id(),
-              'target_revision_id' => $paragraph->getRevisionId(),
-            ];
-
         }
+        $response = \Drupal::httpClient()
+          ->post('https://fereks.ru/api/dealers/?token=561157ca-08e5-11e5-811f-001e67acd771', [
+            'json' => $post_data,
+            'headers' => [
+              'Content-type' => 'application/json',
+            ],
+          ])
+          ->getBody()
+          ->getContents();
+        $file = 'public://fereks/' . $uid . '/file.zip';
+        file_put_contents($file, $response);
+        // get the absolute path to $file
+        $path = \Drupal::service('file_system')->realpath($file);
+        $zip = new ZipArchive;
+        $res = $zip->open($path);
+        if ($res === TRUE) {
+          // extract it to the path we determined above
+          $zip->extractTo($real_dir);
+          $zip->close();
+          ksm("WOOT! " . $file . " extracted to " . $path);
+        }
+        else {
+          ksm("Doh! I couldn't open " . $file);
+        }
+        $files = glob($real_dir . "/*.json");
+        if (isset($files[0])) {
+          $json = file_get_contents($files[0]);
+          $json = $this->removeBOM($json);
+          $json_data = json_decode($json, 'TRUE');
+          $json_data = reset($json_data);
+          ksm($json_data);
+        }
+        $image_file_id = NULL;
+        $paragraph_array = [];
+        foreach ($json_data as $name => $value) {
+          if ($name == 'Рендер') {
+            if (!$node_loaded_by_uuid->field_images->isEmpty()) {
+              $node_loaded_by_uuid->field_images->entity->delete();
+            }
+            $file = File::create([
+              'filename' => $value['ИмяФайла'],
+              'uri' => $dir . '/' . $value['ИмяФайла'],
+              'status' => 1,
+              'uid' => 1,
+            ]);
+            $file->save();
+            $image_file_id = $file->id();
+          }
+          else {
+            $file = File::create([
+              'filename' => $value['ИмяФайла'],
+              'uri' => $dir . '/' . $value['ИмяФайла'],
+              'status' => 1,
+              'uid' => 1,
+            ]);
+            $file->save();
+            if (!$node_loaded_by_uuid->get('field_files')->isEmpty()) {
+              foreach ($node_loaded_by_uuid->field_files as $paragraph) {
+                $paragraph->entity->field_file->entity->delete();
+                $paragraph->entity->delete();
+              }
+            }
+            $paragraph = Paragraph::create([
+              'type' => 'files',
+              'field_file_name' => $name,
+              'field_file' => ['target_id' => $file->id()],
+              'field_hash' => $value['Хеш']
+            ]);
+            $paragraph->save();
+            $paragraph_array[] =
+              [
+                'target_id' => $paragraph->id(),
+                'target_revision_id' => $paragraph->getRevisionId(),
+              ];
+
+          }
+        }
+        if (!empty($image_file_id)) {
+          $node_loaded_by_uuid->set('field_images', ['target_id' => $image_file_id]);
+        }
+        if (!empty($paragraph_array)) {
+          $node_loaded_by_uuid->set('field_files', $paragraph_array);
+        }
+        $node_loaded_by_uuid->save();
       }
-      if (!empty($image_file_id)) {
-        $node_loaded_by_uuid->set('field_images', ['target_id' => $image_file_id]);
-      }
-      if (!empty($paragraph_array)) {
-        $node_loaded_by_uuid->set('field_files', $paragraph_array);
-      }
-      $node_loaded_by_uuid->save();
     }
   }
   public function removeBOM($str="") {

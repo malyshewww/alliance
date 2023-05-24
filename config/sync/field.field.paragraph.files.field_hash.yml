@@ -10,7 +10,7 @@ field_name: field_hash
 entity_type: paragraph
 bundle: files
 label: Хеш
-description: ''
+description: 'Поле для API, не заполняем вручную'
 required: false
 translatable: false
 default_value: {  }

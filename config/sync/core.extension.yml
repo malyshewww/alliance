@@ -76,6 +76,7 @@ module:
   tuman_file_formatter: 0
   twig_render_this: 0
   twig_tweak: 0
+  ultimate_cron: 0
   user: 0
   views_field_view: 0
   views_infinite_scroll: 0

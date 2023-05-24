@@ -1,9 +1,9 @@
-uuid: 3ee8a8fc-fcdf-4945-ac98-7ab908f97433
+uuid: 8edc65ac-ada0-4ab8-a68e-7c3440343b20
 langcode: ru
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.small
     - field.field.node.product.body
     - field.field.node.product.field_files
     - field.field.node.product.field_images
@@ -13,64 +13,84 @@ dependencies:
     - field.field.node.product.field_product_type
     - field.field.node.product.field_series
     - node.type.product
-    - responsive_image.styles.231
+    - responsive_image.styles.368
   module:
     - responsive_image
-    - shs
+    - text
     - user
-id: node.product.teaser
+id: node.product.small
 targetEntityType: node
 bundle: product
-mode: teaser
+mode: small
 content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
   field_images:
     type: responsive_image
     label: hidden
     settings:
-      responsive_image_style: '231'
+      responsive_image_style: '368'
       image_link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 103
     region: content
   field_manufacturer:
-    type: entity_reference_shs
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 104
     region: content
   field_old_price:
     type: number_decimal
-    label: hidden
+    label: above
     settings:
-      thousand_separator: ' '
+      thousand_separator: ''
       decimal_separator: .
-      scale: 0
-      prefix_suffix: false
+      scale: 2
+      prefix_suffix: true
     third_party_settings: {  }
-    weight: 5
+    weight: 108
     region: content
   field_price:
     type: number_decimal
-    label: hidden
+    label: above
     settings:
-      thousand_separator: ' '
+      thousand_separator: ''
       decimal_separator: .
-      scale: 0
-      prefix_suffix: false
+      scale: 2
+      prefix_suffix: true
     third_party_settings: {  }
-    weight: 3
+    weight: 105
+    region: content
+  field_product_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_series:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 100
     region: content
 hidden:
-  body: true
   field_files: true
-  field_product_type: true
-  field_series: true
   langcode: true
   search_api_excerpt: true
