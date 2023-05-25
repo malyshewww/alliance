@@ -218,7 +218,7 @@ display:
           admin_label: ''
           entity_type: block_content
           plugin_id: entity_operations
-          label: Операции
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -272,22 +272,22 @@ display:
             previous: '‹ Предыдущий'
           expose:
             items_per_page: false
-            items_per_page_label: 'Элементов на страницу'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- Все -'
+            items_per_page_options_all_label: '- All -'
             offset: false
-            offset_label: Пропустить
+            offset_label: Offset
       exposed_form:
         type: basic
         options:
-          submit_button: Применить
+          submit_button: Apply
           reset_button: true
-          reset_button_label: Сбросить
-          exposed_sorts_label: 'Сортировать по'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: 'По возрастанию'
-          sort_desc_label: 'По убыванию'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       access:
         type: perm
         options:

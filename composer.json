@@ -17,6 +17,7 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.3",
+        "drupal/antibot": "^2.0",
         "drupal/core-composer-scaffold": "^9.5",
         "drupal/core-project-message": "^9.5",
         "drupal/core-recommended": "^9.5",
@@ -34,9 +35,11 @@
         "drupal/paragraphs": "^1.15",
         "drupal/pathauto": "^1.11",
         "drupal/prevnext": "^2.0",
+        "drupal/restui": "^1.21",
         "drupal/search_api": "^1.29",
         "drupal/shs": "^2.0@RC",
         "drupal/svg_image": "^3.0",
+        "drupal/symfony_mailer": "^1.2",
         "drupal/taxonomy_menu": "^3.6",
         "drupal/taxonomy_menu_ui": "^3.0",
         "drupal/tvi": "^2.0@alpha",
@@ -46,6 +49,8 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/views_field_view": "^1.0@beta",
         "drupal/views_infinite_scroll": "^2.0",
+        "drupal/webform": "^6.1",
+        "drupal/webform_rest": "^4.0",
         "drush/drush": "^11.5"
     },
     "conflict": {

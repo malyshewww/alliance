@@ -48,17 +48,19 @@
                 {% endfor %}
               </ul>
               <h3>Ваши контактные данные</h3>
-              <form action="#">
+              <form action="" class="modal-form">
+                <input type="hidden" name="webform_id" value="callback">
+                <input type="hidden" name="url" value="{{ url('<current>') }}">
                 <div class="form-item name">
-                  <input id="homeName" type="text" name="" placeholder="Ваше имя*">
+                  <input id="homeName" type="text" name="name" required placeholder="Ваше имя*">
                 </div>
                 <div class="form-item phone">
-                  <input id="homePhone" type="tel" name="" placeholder="Телефон*">
+                  <input id="homePhone" type="tel" name="phone" required placeholder="Телефон*">
                 </div>
                 <div class="form-item submit">
-                  <input class="btn" type="submit" value="Отправить" data-popup="thanks">
+                  <input class="btn" type="submit" value="Отправить">
                 </div>
-                <div class="form-item person"> <span>Отправляя форму, вы даете согласие на&nbsp</span><a href="#" target="_blank">обработку персональных данных </a></div>
+                <div class="form-item person"> <span>Отправляя форму, вы даете согласие на&nbsp</span><a href="/policy" target="_blank">обработку персональных данных </a></div>
                 <div class="form-item req"> <span>*Поля обязательны к заполнению</span></div>
               </form>
             </div>

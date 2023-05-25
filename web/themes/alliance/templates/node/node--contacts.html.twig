@@ -45,22 +45,23 @@
     <div class="container">
       <div class="contacts__form-body">
         <h2>Обсудить идею или проект</h2>
-        <form action="#">
+        <form action="#" class="modal-form">
+          <input type="hidden" name="webform_id" value="idea">
           <div class="wrapper">
             <div class="form-item name">
-              <input type="text" name="text" placeholder="Ваше имя*">
+              <input type="text" name="name" placeholder="Ваше имя*">
             </div>
             <div class="form-item tel">
               <input type="tel" name="phone" placeholder="Телефон*">
             </div>
           </div>
           <div class="form-item textarea">
-            <textarea name="teaxtarea" placeholder="Сообщение"></textarea>
+            <textarea name="messages" placeholder="Сообщение"></textarea>
           </div>
           <div class="form-item req"> <span>*Поля обязательны к заполнению</span></div>
-          <div class="form-item person"> <span>Отправляя форму, вы даете согласие на </span><a href="#" target="_blank">обработку персональных данных</a></div>
+          <div class="form-item person"> <span>Отправляя форму, вы даете согласие на </span><a href="/policy" target="_blank">обработку персональных данных</a></div>
           <div class="form-item submit">
-            <input class="btn" type="submit" value="Отправить" data-popup="thanks">
+            <input class="btn" type="submit" value="Отправить">
           </div>
         </form>
       </div>

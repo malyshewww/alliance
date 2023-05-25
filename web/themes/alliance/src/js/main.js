@@ -652,3 +652,41 @@ if (mapElem) {
     }
   });
 }
+var form = document.querySelectorAll('.modal-form');
+
+if(form) {
+  form.forEach(function (item) {
+    item.onsubmit = function(event){
+      var xhr = new XMLHttpRequest();
+      var formData = new FormData(item);
+
+
+      fetch('/session/token').then(function (response) {
+        return response.text();
+      }).then(function (token) {
+
+        //open the request
+        xhr.open('POST','/webform_rest/submit?_format_json')
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("X-CSRF-Token", token);
+        //send the form data
+        xhr.send(JSON.stringify(Object.fromEntries(formData)));
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == XMLHttpRequest.DONE) {
+
+            item.reset(); //reset form after AJAX success or do something else
+            if(xhr.status == 200) {
+//              item.closest('.wrap_form').style.display = 'none';
+//              item.closest('.wrap_form').nextElementSibling.style.display = 'initial';
+              document.querySelector("#thanks").classList.add("active");
+
+            }
+          }
+        }
+      });
+      //Fail the onsubmit to avoid page refresh.
+      return false;
+    }
+  });
+}

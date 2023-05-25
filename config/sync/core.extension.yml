@@ -7,6 +7,7 @@ module:
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
   alliance_filter_project: 0
+  antibot: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -58,12 +59,16 @@ module:
   path_alias: 0
   prevnext: 0
   responsive_image: 0
+  rest: 0
+  restui: 0
   search: 0
   search_api: 0
   search_api_db: 0
+  serialization: 0
   shortcut: 0
   shs: 0
   svg_image: 0
+  symfony_mailer: 0
   system: 0
   taxonomy: 0
   taxonomy_block_menu: 0
@@ -81,6 +86,9 @@ module:
   views_field_view: 0
   views_infinite_scroll: 0
   views_ui: 0
+  webform: 0
+  webform_rest: 0
+  webform_ui: 0
   pathauto: 1
   views: 10
   paragraphs: 11

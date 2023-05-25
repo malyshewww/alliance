@@ -3,7 +3,7 @@ _core:
 langcode: ru
 uuid: 0e98ab86-5e97-460b-8b4f-49e53a997349
 name: 'СК Альянс'
-mail: localhost@localhost
+mail: info@allfereks.ru
 slogan: ''
 page:
   403: ''
