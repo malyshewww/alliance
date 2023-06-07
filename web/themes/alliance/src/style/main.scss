@@ -84,6 +84,19 @@
 	}
 	&__bottom {
 		padding-top: 28px;
+		& a.is-active {
+			position: relative;
+			color: #303030;
+			&::after {
+				content: '';
+				width: 100%;
+				position: absolute;
+				left: 0;
+				bottom: -3px;
+				height: 1px;
+				background-color: #303030;
+			}
+		}
 	}
 	&__subnav {
 		& > ul {
@@ -117,18 +130,7 @@
 					}
 				}
 				& > a, & > span {
-          &.active, &.is-active {
-            color: $black;
-            &::after {
-              content: '';
-              position: absolute;
-              bottom: 25px;
-              left: 0;
-              width: 100%;
-              height: 1px;
-              background-color: $grey;
-            }
-          }
+          
 					width: fit-content;
 					display: block;
 					height: auto;
