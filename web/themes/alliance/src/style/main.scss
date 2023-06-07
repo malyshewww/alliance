@@ -176,6 +176,19 @@
 			font-size: 14px;
 			line-height: 14px;
 			transition: color 0.3s;
+			position: relative;
+			&.is-active {
+				color: #303030;
+				&::after {
+					content: '';
+					width: 100%;
+					position: absolute;
+					left: 0;
+					bottom: -3px;
+					height: 1px;
+					background-color: #303030;
+				}
+			}
 		}
 	}
 }
