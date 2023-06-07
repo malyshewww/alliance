@@ -84,7 +84,7 @@
 	}
 	&__bottom {
 		padding-top: 28px;
-		& a.is-active {
+		& a.is-active, & a.active {
 			position: relative;
 			color: #303030;
 			&::after {
@@ -145,7 +145,7 @@
 					}
 				}
 				& > a, & > span {
-          
+
 					width: fit-content;
 					display: block;
 					height: auto;
@@ -192,7 +192,7 @@
 			line-height: 14px;
 			transition: color 0.3s;
 			position: relative;
-			&.is-active {
+			&.is-active, &.active {
 				color: #303030;
 				&::after {
 					content: '';

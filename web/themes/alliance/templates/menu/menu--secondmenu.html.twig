@@ -42,9 +42,15 @@
           item.in_active_trail ? 'active',
         ]
       %}
+      {%
+        set aclass = [
+        'cat',
+        item.in_active_trail ? 'is-active active',
+      ]
+      %}
       <li{{ item.attributes.addClass(classes) }}>
       {% if loop.index == 1 %}
-        {{ link(item.title, item.url, { 'class': 'cat'}) }}
+        {{ link(item.title, item.url, { 'class': aclass }) }}
       {% else %}
         {{ link(item.title, item.url) }}
       {% endif %}
