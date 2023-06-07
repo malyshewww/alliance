@@ -585,7 +585,7 @@ const homeText = document.querySelector(".home-info__text");
 
 if (homeText) {
   if (homeText.clientHeight > 130) {
-    homeText.classList.add("hidden");
+    homeText.classList.add("hidde");
     homeText.insertAdjacentHTML(
       "afterend",
       `
@@ -594,7 +594,7 @@ if (homeText) {
     );
     let showAllMain = document.querySelector(".showAll");
     showAllMain.addEventListener("click", () => {
-      homeText.classList.remove("hidden");
+      homeText.classList.remove("hidde");
       showAllMain.remove();
     });
   }
