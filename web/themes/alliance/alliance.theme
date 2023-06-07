@@ -132,7 +132,7 @@ function alliance_preprocess_menu(&$variables) {
     if($variables['menu_block_configuration']['level'] == 1) {
 
       if($node = \Drupal::routeMatch()->getParameter('node'))
-        if($node->hasField('field_product_type'))
+        if($node->hasField('field_product_type') && $node->getType() == 'product')
           $addActive = TRUE;
 
       if($term = \Drupal::routeMatch()->getParameter('taxonomy_term'))
