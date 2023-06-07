@@ -65,6 +65,21 @@ if (asideMenu) {
   });
 }
 
+document.querySelectorAll('li.expended > a').forEach(item => {
+  item.insertAdjacentHTML('beforebegin', `<span>${item.innerHTML}</span>`);
+  item.closest('li.expended').querySelector('ul.mobile-submenu').insertAdjacentHTML('afterbegin', `
+  <li>
+    <a href="${item.getAttribute('href')}">Обзор</a>
+  </li>`);
+  item.remove();
+});
+
+document.querySelectorAll('.mobile-menu a').forEach(item => {
+  if (item.innerHTML.toLowerCase().trim() == 'каталог') {
+    item.classList.add('cat-mob');
+  }
+})
+
 const mobMenu = document.querySelectorAll("li.expended > span");
 
 if (mobMenu.length) {
@@ -72,7 +87,7 @@ if (mobMenu.length) {
     item.classList.add("active");
     let panel = item.nextElementSibling;
     panel.style.paddingTop = "24px";
-    panel.style.maxHeight = panel.scrollHeight + 24 + "px";
+    panel.style.maxHeight = panel.scrollHeight + 48 + "px";
     if (panel.classList.contains("mobile-subsubmenu")) {
       panel.closest(".mobile-submenu").style.maxHeight =
         parseInt(panel.closest(".mobile-submenu").style.maxHeight) +

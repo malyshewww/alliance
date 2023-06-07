@@ -29,7 +29,7 @@
           <div class="service-cart__swiper swiper">
             <div class="swiper-wrapper">
               {% for how in node.field_how_work %}
-                <div class="swiper-slide type{{ loop.index }}">
+                <div class="swiper-slide">
                   <h3>{{ how.entity.field_title.value }}</h3>
                   <span>{{ how.entity.field_description.value | raw }}</span>
                 </div>

@@ -69,6 +69,7 @@
     </div>
   {% endif %}
     {{ drupal_region('sidebar_first') }}
+    <div style="width:100%">
   {% if rows %}
       {{ rows }}
   {% elseif empty %}
@@ -80,6 +81,7 @@
   {% if pager %}
     {{ pager }}
   {% endif %}
+    </div>
   {% if attachment_after %}
     <div class="attachment attachment-after">
       {{ attachment_after }}

@@ -2063,13 +2063,13 @@
 			padding: 40px 30px 40px 40px;
 			border-radius: 30px;
 			margin-top: 82px;
-			&.type1 {
+			&:nth-child(3n) {
 				background-color: $blue4;
 			}
-			&.type2 {
+			&:nth-child(3n+1) {
 				background-color: $yellow2;
 			}
-			&.type3 {
+			&:nth-child(3n+2) {
 				background-color: $grey6;
 			}
 			h3 {
@@ -2761,7 +2761,7 @@
 		margin: 40px auto 0 auto;
 		display: flex;
 		justify-content: space-between;
-		width: 576px;
+		width: 356px;
 		li {
 			a {
 				display: flex;
@@ -3284,6 +3284,7 @@
 		opacity: 0;
 		visibility: hidden;
 		transition: all 0.3s;
+		width: 100%;
 		& > li {
 			& > a {
 				font-weight: 400;
@@ -3523,6 +3524,7 @@
 		& > li {
 			width: calc((100% / 3) - 20px);
 			height: 434px;
+			max-width: 305px;
 			& > a {
 				width: 100%;
 				height: 100%;
@@ -3534,7 +3536,7 @@
 	&__img {
 		width: 100%;
 		height: 305px;
-		padding: 36px;
+		padding: 10px;
 		background: #FFFFFF;
 		border: 1px solid $grey6;
 		border-radius: 20px;
@@ -3724,7 +3726,6 @@
 		}
 		&__img {
 			height: 200px;
-			padding: 20px;
 		}
 		&__title {
 			font-size: 14px;
@@ -3816,7 +3817,7 @@
 		.swiper-slide {
 			width: 100%;
 			height: 100%;
-			padding: 79px;
+			padding: 30px;
 			picture {
 				width: 100%;
 				height: 100%;
@@ -4500,7 +4501,7 @@
 			width: 100%;
 			height: 300px;
 			.swiper-slide {
-				padding: 30px;
+				padding: 20px;
 			}
 		}
 		&__info {
