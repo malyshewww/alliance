@@ -129,6 +129,21 @@
 						transition: opacity 0.3s;
 					}
 				}
+				&.active {
+					span {
+						color: #303030;
+						position: relative;
+						&::after {
+							content: '';
+							width: 100%;
+							position: absolute;
+							left: 0;
+							bottom: -3px;
+							height: 1px;
+							background-color: #303030;
+						}
+					}
+				}
 				& > a, & > span {
           
 					width: fit-content;
@@ -139,7 +154,7 @@
 					line-height: 14px;
 					color: $grey;
 					transition: all 0.3s;
-          cursor: pointer;
+          			cursor: pointer;
 					&.cat {
 						position: relative;
 						display: flex;
