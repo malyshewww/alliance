@@ -126,3 +126,27 @@ function alliance_theme_suggestions_field_alter(array &$suggestions, array $vari
  if(isset($variables['element']['#field_type']) && isset($variables['element']['#bundle']) && $variables['element']['#field_name']!='field_price')
    $suggestions[] = 'field__'.$variables['element']['#bundle'].'__'.$variables['element']['#field_type'];
 }
+function alliance_preprocess_menu(&$variables) {
+  if ($variables['menu_name'] === 'secondmenu') {
+    $addActive = FALSE;
+    if($variables['menu_block_configuration']['level'] == 1) {
+
+      if($node = \Drupal::routeMatch()->getParameter('node'))
+        if($node->hasField('field_product_type') && $node->getType() == 'product')
+          $addActive = TRUE;
+
+      if($term = \Drupal::routeMatch()->getParameter('taxonomy_term'))
+        if ($term->vid->target_id == 'product_type' && $term->parent->target_id!=0)
+          $addActive = TRUE;
+
+      if($addActive){
+        foreach ($variables['items'] as $key => $item){
+          if($item['url']->getRouteName() == 'view.catalog.page_1'){
+            $variables['items'][$key]['url']->setOption('attributes', ['class' => ['active']]);
+          }
+        }
+      }
+    }
+  }
+}
+

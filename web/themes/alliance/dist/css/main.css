@@ -576,11 +576,11 @@ input, textarea, select {
 .header__bottom {
   padding-top: 28px;
 }
-.header__bottom a.is-active {
+.header__bottom a.is-active, .header__bottom a.active {
   position: relative;
   color: #303030;
 }
-.header__bottom a.is-active::after {
+.header__bottom a.is-active::after, .header__bottom a.active::after {
   content: "";
   width: 100%;
   position: absolute;
@@ -714,10 +714,10 @@ input, textarea, select {
   transition: color 0.3s;
   position: relative;
 }
-.header__submenu > li > a.is-active {
+.header__submenu > li > a.is-active, .header__submenu > li > a.active {
   color: #303030;
 }
-.header__submenu > li > a.is-active::after {
+.header__submenu > li > a.is-active::after, .header__submenu > li > a.active::after {
   content: "";
   width: 100%;
   position: absolute;
