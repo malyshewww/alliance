@@ -2,7 +2,12 @@
   <section class="home-promo">
     <h1>{{ content.field_title }}</h1>
     <div class="home-promo__subtitle">{{ content.field_title2 }}</div><a class="btn" href="#">Рассчитать стоимость</a>
-    <div class="home-promo__img"> {{ content.field_image }}</div>
+    <div class="home-promo__video">
+      <video autoplay="" muted="" loop="" playsinline="">
+        <source src="/themes/alliance/dist/video/video.mp4" type="video/mp4">
+        <source src="/themes/alliance/dist/video/video.webm" type="video/webm">
+      </video>
+    </div>
   </section>
   <section class="home-links">
     <div class="container">
