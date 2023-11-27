@@ -1082,21 +1082,21 @@
 			z-index: 2;
 		}
 
-		&::before {
-			content: url('../img/index/light.png');
-			position: absolute;
-			left: 0;
-			top: 0;
-			z-index: 1;
-		}
+		// &::before {
+		// 	content: url('../img/index/light.png');
+		// 	position: absolute;
+		// 	left: 0;
+		// 	top: 0;
+		// 	z-index: 1;
+		// }
 
-		&::after {
-			content: url('../img/index/gears.png');
-			position: absolute;
-			right: 36px;
-			bottom: -3px;
-			z-index: 1;
-		}
+		// &::after {
+		// 	content: url('../img/index/gears.png');
+		// 	position: absolute;
+		// 	right: 36px;
+		// 	bottom: -3px;
+		// 	z-index: 1;
+		// }
 
 		.wrapper {
 			display: flex;
