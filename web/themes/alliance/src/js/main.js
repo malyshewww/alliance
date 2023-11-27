@@ -18,7 +18,7 @@ if (up) {
     }
   });
   up.addEventListener('click', () => {
-    document.querySelector('header').scrollIntoView({block: "start", behavior: "smooth"})
+    document.querySelector('header').scrollIntoView({ block: "start", behavior: "smooth" })
   })
 }
 
@@ -615,7 +615,45 @@ if (faqBtn) {
       faqBtnFixed.classList.remove("active");
     }
   });
-}
+};
+
+const homeSwiper = new Swiper(".home-promo__swiper", {
+  spaceBetween: 15,
+  slidesPerView: 1,
+  loop: true,
+  navigation: {
+    nextEl: ".home-promo__swiper-btn--next",
+    prevEl: ".home-promo__swiper-btn--prev",
+  },
+  on: {
+    transitionStart: function () {
+      let videos = document.querySelectorAll('.home-promo__swiper video');
+      videos.forEach(video => {
+        video.pause();
+      })
+    },
+
+    transitionEnd: function () {
+      let activeIndex = this.activeIndex;
+      let activeSlide = document.querySelectorAll('.home-promo__swiper .swiper-slide')[activeIndex];
+      let activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+      activeSlideVideo.play();
+    },
+  },
+  breakpoints: {
+    1063: {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+      centeredSlides: true,
+    },
+  },
+});
+
+// homeSwiper.on('slideChange', () => {
+//   document.querySelector('.home-promo__swiper .swiper-slide-active video').play();
+// })
+
+
 const mapElem = document.getElementById("map");
 // Карта на странице контактов
 if (mapElem) {
@@ -658,20 +696,20 @@ if (mapElem) {
       });
     };
   }
-  if(mapElem.getBoundingClientRect().top < window.innerHeight){
+  if (mapElem.getBoundingClientRect().top < window.innerHeight) {
     loadMap();
   }
   window.addEventListener('scroll', function () {
-    if(!isLoaded && mapElem.getBoundingClientRect().top < window.innerHeight){
+    if (!isLoaded && mapElem.getBoundingClientRect().top < window.innerHeight) {
       loadMap();
     }
   });
 }
 var form = document.querySelectorAll('.modal-form');
 
-if(form) {
+if (form) {
   form.forEach(function (item) {
-    item.onsubmit = function(event){
+    item.onsubmit = function (event) {
       var xhr = new XMLHttpRequest();
       var formData = new FormData(item);
 
@@ -681,19 +719,19 @@ if(form) {
       }).then(function (token) {
 
         //open the request
-        xhr.open('POST','/webform_rest/submit?_format_json')
+        xhr.open('POST', '/webform_rest/submit?_format_json')
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.setRequestHeader("X-CSRF-Token", token);
         //send the form data
         xhr.send(JSON.stringify(Object.fromEntries(formData)));
 
-        xhr.onreadystatechange = function() {
+        xhr.onreadystatechange = function () {
           if (xhr.readyState == XMLHttpRequest.DONE) {
 
             item.reset(); //reset form after AJAX success or do something else
-            if(xhr.status == 200) {
-//              item.closest('.wrap_form').style.display = 'none';
-//              item.closest('.wrap_form').nextElementSibling.style.display = 'initial';
+            if (xhr.status == 200) {
+              //              item.closest('.wrap_form').style.display = 'none';
+              //              item.closest('.wrap_form').nextElementSibling.style.display = 'initial';
               document.querySelector("#thanks").classList.add("active");
 
             }

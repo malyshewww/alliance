@@ -104,7 +104,6 @@
           <div class="container">
             <ul>
               {% for links in node.field_links %}
-
                 <li> <a href=" {{ links.entity.field_link.0.url }}">
                     <div class="home-links__title">{{ links.entity.field_title.value | raw }}</div>
                     <div class="home-links__descr">{{ links.entity.field_description.value | raw }}</div>

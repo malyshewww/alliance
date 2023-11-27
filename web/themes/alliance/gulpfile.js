@@ -36,15 +36,16 @@ const sass = gulpSass(dartSass);
 
 // Пути
 const path = {
-	dist:{
+	dist: {
 		html: 'dist/',
 		allFiles: 'dist/**/*.*',
 		js: 'dist/js/',
 		css: 'dist/css/',
 		img: 'dist/img/',
-		fonts: 'dist/fonts/'
+		fonts: 'dist/fonts/',
+		video: 'dist/video/'
 	},
-	src:{
+	src: {
 		allFiles: 'src/**/*.*',
 		pug: 'src/templates/**/*.pug',
 		pages: 'src/templates/pages/*.pug',
@@ -54,14 +55,15 @@ const path = {
 		styleLibs: "src/style/libs/**/*.css",
 		images: 'src/img/**/*.{jpg,jpeg,png,gif,webp}',
 		otherImagesFiles: 'src/img/**/*.{svg,pdf,mp4}',
-		fonts: 'src/fonts/**/*.*'
+		fonts: 'src/fonts/**/*.*',
+		video: 'src/video/**/*.*'
 	},
 };
 
 
-function browsersync(){
+function browsersync() {
 	browserSync.init({
-		server:{
+		server: {
 			baseDir: "./dist",
 		},
 		host: 'localhost',
@@ -71,7 +73,7 @@ function browsersync(){
 };
 
 
-function pugDist(){
+function pugDist() {
 	return src([path.src.pages])
 		.pipe(pug({
 			pretty: true
@@ -81,7 +83,7 @@ function pugDist(){
 };
 
 
-function stylesDist(){
+function stylesDist() {
 	return src(path.src.style)
 		.pipe(sourcemaps.init())
 		.pipe(sass({
@@ -93,40 +95,40 @@ function stylesDist(){
 		.pipe(sourcemaps.write())
 		.pipe(dest(path.dist.css))
 };
-function stylesLibs(){
+function stylesLibs() {
 	return src(path.src.styleLibs)
 		.pipe(concat('libs.css'))
 		.pipe(dest(path.dist.css))
 };
-function stylesMin(){
+function stylesMin() {
 	return src(path.dist.css + "*.css")
 		.pipe(cleanCss())
 		.pipe(dest(path.dist.css))
 };
 
 
-function jsDist(){
+function jsDist() {
 	return src(path.src.js)
 		.pipe(dest(path.dist.js))
 };
-function jsLibs(){
+function jsLibs() {
 	return src(path.src.jsLibs)
 		.pipe(concat('libs.js'))
 		.pipe(dest(path.dist.js))
 };
-function jsMin(){
+function jsMin() {
 	return src(path.dist.js + "/*.js")
 		.pipe(cleanJs({
 			noSource: true,
-			ext:{
-				min:'.js',
+			ext: {
+				min: '.js',
 			},
 		}))
 		.pipe(dest(path.dist.js))
 };
 
 
-function images(){
+function images() {
 	return src(path.src.images)
 		.pipe(newer(path.dist.img))
 		.pipe(webp())
@@ -134,17 +136,17 @@ function images(){
 		.pipe(src(path.src.images))
 		.pipe(newer(path.dist.img))
 		.pipe(imagemin([
-			imagemin.gifsicle({interlaced: true}),
+			imagemin.gifsicle({ interlaced: true }),
 			jpegoptim({
 				progressive: true,
 				stripAll: true,
-					max: 85
+				max: 85
 			}),
 			pngquant(),
 			imagemin.svgo({
 				plugins: [
-					{removeViewBox: true},
-					{cleanupIDs: false}
+					{ removeViewBox: true },
+					{ cleanupIDs: false }
 				]
 			})
 		], {
@@ -157,13 +159,18 @@ function images(){
 };
 
 
-function fontsDist(){
+function fontsDist() {
 	return src(path.src.fonts)
 		.pipe(dest(path.dist.fonts))
 };
 
+function videoDist() {
+	return src(path.src.video)
+		.pipe(dest(path.dist.video))
+};
 
-function cleanDist(){
+
+function cleanDist() {
 	return src(path.dist.allFiles)
 		.pipe(clean());
 };
@@ -177,7 +184,7 @@ const connect = {
 	password: 'PoNAHsoeH', // Пароль
 	parallel: 5 // Количество одновременных потоков
 };
-function uploadFtp(){
+function uploadFtp() {
 	connect.log = util.log;
 	const ftpConnect = vinylFTP.create(connect);
 	return src(`${path.dist.html}/**/*.*`)
@@ -186,7 +193,7 @@ function uploadFtp(){
 
 
 
-function watcher(){
+function watcher() {
 	gulpWatch([path.src.pug], { usePolling: true }, pugDist)
 	gulpWatch([path.src.style], { usePolling: true }, stylesDist)
 	gulpWatch([path.src.styleLibs], { usePolling: true }, stylesLibs)
@@ -195,13 +202,14 @@ function watcher(){
 	gulpWatch([path.src.images], { usePolling: true }, images)
 	gulpWatch([path.src.otherImagesFiles], { usePolling: true }, images)
 	gulpWatch([path.src.fonts], { usePolling: true }, fontsDist)
+	gulpWatch([path.src.video], { usePolling: true }, videoDist)
 	gulpWatch([path.src.allFiles], { usePolling: true }).on('change', browserSync.reload)
 };
 
-const watchLocal = series(parallel(pugDist, stylesDist, stylesLibs, jsDist, jsLibs, images, fontsDist), parallel(browsersync, watcher));
-const watch = series(parallel(pugDist, stylesDist, stylesLibs, jsDist, jsLibs, images, fontsDist), parallel(watcher));
-const build = series(cleanDist, parallel(pugDist, stylesDist, stylesLibs, jsDist, jsLibs, images, fontsDist), parallel(stylesMin, jsMin));
-const ftp =  series(parallel(uploadFtp));
+const watchLocal = series(parallel(pugDist, stylesDist, stylesLibs, jsDist, jsLibs, images, fontsDist, videoDist), parallel(browsersync, watcher));
+const watch = series(parallel(pugDist, stylesDist, stylesLibs, jsDist, jsLibs, images, fontsDist, videoDist), parallel(watcher));
+const build = series(cleanDist, parallel(pugDist, stylesDist, stylesLibs, jsDist, jsLibs, images, fontsDist, videoDist), parallel(stylesMin, jsMin));
+const ftp = series(parallel(uploadFtp));
 
 
 
