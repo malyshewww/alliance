@@ -656,12 +656,6 @@ const homeSwiper = new Swiper(".home-promo__swiper", {
   },
 });
 
-homeSwiper.on('slideChange', () => {
-  // console.log(homeSwiper.slides[homeSwiper.realIndex]);
-  // console.log(document.querySelector('.swiper-slide-active'));
-})
-
-
 const mapElem = document.getElementById("map");
 // Карта на странице контактов
 if (mapElem) {
