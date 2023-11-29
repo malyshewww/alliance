@@ -617,6 +617,9 @@ if (faqBtn) {
   });
 };
 
+//изменение подзаголовка слайдера главной страницы главного экрана
+const homeTitle = document.querySelector('.home-promo__slide-title');
+
 const homeSwiper = new Swiper(".home-promo__swiper", {
   spaceBetween: 15,
   slidesPerView: 1,
@@ -630,7 +633,11 @@ const homeSwiper = new Swiper(".home-promo__swiper", {
       let videos = document.querySelectorAll('.home-promo__swiper video');
       videos.forEach(video => {
         video.pause();
-      })
+      });
+
+
+      console.log(document.querySelector('.swiper-slide-active .home-promo__slide').dataset.title);
+      homeTitle.textContent = document.querySelector('.swiper-slide-active .home-promo__slide').dataset.title;
     },
 
     transitionEnd: function () {
@@ -649,9 +656,10 @@ const homeSwiper = new Swiper(".home-promo__swiper", {
   },
 });
 
-// homeSwiper.on('slideChange', () => {
-//   document.querySelector('.home-promo__swiper .swiper-slide-active video').play();
-// })
+homeSwiper.on('slideChange', () => {
+  // console.log(homeSwiper.slides[homeSwiper.realIndex]);
+  // console.log(document.querySelector('.swiper-slide-active'));
+})
 
 
 const mapElem = document.getElementById("map");
