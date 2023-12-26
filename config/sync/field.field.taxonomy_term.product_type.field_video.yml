@@ -1,0 +1,43 @@
+uuid: 2b135621-7db0-4ccf-adeb-fabf6e938505
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_video
+    - paragraphs.paragraphs_type.video
+    - taxonomy.vocabulary.product_type
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.product_type.field_video
+field_name: field_video
+entity_type: taxonomy_term
+bundle: product_type
+label: Видео
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      video: video
+    negate: 0
+    target_bundles_drag_drop:
+      faq:
+        weight: 6
+        enabled: false
+      files:
+        weight: 7
+        enabled: false
+      links:
+        weight: 8
+        enabled: false
+      video:
+        weight: 9
+        enabled: true
+      why_choose:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,27 @@
+uuid: bda284b0-8f50-4546-a8c3-279c63cc73f8
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_webm
+    - paragraphs.paragraphs_type.video
+  module:
+    - file
+id: paragraph.video.field_video_webm
+field_name: field_video_webm
+entity_type: paragraph
+bundle: video
+label: 'Видео в формате webm'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'video/[date:custom:Y]-[date:custom:m]'
+  file_extensions: webm
+  max_filesize: '40 MB'
+  description_field: false
+field_type: file

@@ -1,0 +1,41 @@
+uuid: 340877be-ca71-4a05-8934-9543ee595aa6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video.field_title
+    - field.field.paragraph.video.field_video_mp4
+    - field.field.paragraph.video.field_video_webm
+    - paragraphs.paragraphs_type.video
+  module:
+    - file
+id: paragraph.video.default
+targetEntityType: paragraph
+bundle: video
+mode: default
+content:
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_video_mp4:
+    type: file_generic
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_video_webm:
+    type: file_generic
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

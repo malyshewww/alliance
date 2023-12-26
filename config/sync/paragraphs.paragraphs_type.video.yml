@@ -1,0 +1,10 @@
+uuid: b284dc82-4940-4ed7-8e31-6d791ce0ce54
+langcode: ru
+status: true
+dependencies: {  }
+id: video
+label: Видео
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

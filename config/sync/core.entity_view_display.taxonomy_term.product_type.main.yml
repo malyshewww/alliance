@@ -12,6 +12,7 @@ dependencies:
     - field.field.taxonomy_term.product_type.field_title
     - field.field.taxonomy_term.product_type.field_title2
     - field.field.taxonomy_term.product_type.field_title_form
+    - field.field.taxonomy_term.product_type.field_video
     - field.field.taxonomy_term.product_type.field_why
     - taxonomy.vocabulary.product_type
   module:
@@ -66,5 +67,7 @@ hidden:
   field_slogan: true
   field_step_form: true
   field_title_form: true
+  field_video: true
   field_why: true
   langcode: true
+  search_api_excerpt: true

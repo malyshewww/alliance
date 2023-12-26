@@ -3,46 +3,32 @@
     <div class="home-promo__swiper-wrapper">
       <div class="container">
         <h1>{{ content.field_title }}</h1>
-        <div class="home-promo__slide-title">Освещение стадиона Химик</div>
-        <div class="home-promo__swiper-btns">
-          <div class="home-promo__swiper-btn home-promo__swiper-btn--prev swiper-button-prev"></div>
-          <div class="home-promo__swiper-btn home-promo__swiper-btn--next swiper-button-next"></div>
-        </div>
+        {% if term.field_video.0 is not empty %}
+          <div class="home-promo__slide-title">{{ term.field_video.0.entity.field_title.value }}</div>
+          <div class="home-promo__swiper-btns">
+            <div class="home-promo__swiper-btn home-promo__swiper-btn--prev swiper-button-prev"></div>
+            <div class="home-promo__swiper-btn home-promo__swiper-btn--next swiper-button-next"></div>
+          </div>
+        {% endif %}
       </div>
-      <div class="swiper home-promo__swiper">
+      {% if term.field_video.0 is not empty %}
+        <div class="swiper home-promo__swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="home-promo__slide" data-title="Освещение стадиона Химик">
-              <div class="home-promo__slide-video">
-              <video muted="" loop="" playsinline="">
-                <source src="/themes/alliance/dist/video/promo-1.mp4" type="video/mp4">
-                <source src="/themes/alliance/dist/video/promo-1.webm" type="video/webm">
-              </video>
+          {% for video in term.field_video  %}
+            <div class="swiper-slide">
+              <div class="home-promo__slide" data-title="{{ video.entity.field_title.value }}">
+                <div class="home-promo__slide-video">
+                <video muted="" loop="" playsinline="">
+                  <source src="{{ file_url(video.entity.field_video_mp4.entity.uri.value) }}" type="video/mp4">
+                  <source src="{{ file_url(video.entity.field_video_webm.entity.uri.value) }}" type="video/webm">
+                </video>
+                </div>
               </div>
             </div>
-          </div>
-           <div class="swiper-slide">
-            <div class="home-promo__slide" data-title="Освещение стадиона Химик 2">
-              <div class="home-promo__slide-video">
-              <video muted="" loop="" playsinline="">
-                <source src="/themes/alliance/dist/video/promo-1.mp4" type="video/mp4">
-                <source src="/themes/alliance/dist/video/promo-1.webm" type="video/webm">
-              </video>
-              </div>
-            </div>
-          </div>
-           <div class="swiper-slide">
-            <div class="home-promo__slide" data-title="Освещение стадиона Химик 3">
-              <div class="home-promo__slide-video">
-              <video muted="" loop="" playsinline="">
-                <source src="/themes/alliance/dist/video/promo-1.mp4" type="video/mp4">
-                <source src="/themes/alliance/dist/video/promo-1.webm" type="video/webm">
-              </video>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
+      {% endif %}
     <div>
   </section>
   {# <section class="home-promo">
