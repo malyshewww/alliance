@@ -11,8 +11,8 @@ function import_fereks_cron(){
 function import_fereks_start() {
 
   $post_data = ['action'=>'GoodsFull', 'data'=>['api_key'=>'561157ca-08e5-11e5-811f-001e67acd771']];
-
-  $response = \Drupal::httpClient()->post('https://fereks.ru/api/dealers/?token=561157ca-08e5-11e5-811f-001e67acd771', [
+  try {
+    $response = \Drupal::httpClient()->post('https://fereks.ru/api/dealers/?token=561157ca-08e5-11e5-811f-001e67acd771', [
     'json' => $post_data,
     'headers' => [
       'Content-type' => 'application/json',
@@ -20,8 +20,15 @@ function import_fereks_start() {
   ])->getBody()->getContents();
 
   $products = json_decode($response, TRUE);
+    
+  } catch (Exception $e) {
+   
+    \Drupal::logger('import_fereks')->error("Ошибка при запросе к API fereks");
+  }
 
-  if($products['error'] === FALSE){
+  
+
+  if(isset($products['error']) && $products['error'] === FALSE){
     $queue = \Drupal::queue('import_fereks');
     $queue->deleteQueue();
     $queue->createQueue();
@@ -31,7 +38,10 @@ function import_fereks_start() {
       $queue->createItem(['data' => ['uid' => $product['uid'], 'files' => $product['ДоступныеФайлы']], 'hash'=> $product['Хеш'],  'type' => 'files']);
     }
   } else{
-    \Drupal::logger('import_fereks')->error("Ошибка при запросе к API fereks");
+    $error = "Текст ошибки не вернулся";
+    if(!empty($products['error_txt']))
+      $error = $products['error_txt'];
+      \Drupal::logger('import_fereks')->error("Ошибка API fereks: ".$error);
   }
 
 }

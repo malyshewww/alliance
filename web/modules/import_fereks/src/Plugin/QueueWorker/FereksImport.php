@@ -197,7 +197,7 @@ class FereksImport extends QueueWorkerBase {
       foreach ($node_loaded_by_uuid->field_files as $node_files) {
         $hash[$node_files->entity->field_file_name->value] = $node_files->entity->field_hash->value;
       }
-      if (!empty(array_diff($hash, $files))) {
+      if (!empty($hash) && !empty(array_diff($hash, $files))) {
         //если есть различия в хешах
         $post_data = [
           'action' => 'GoodsFiles',
