@@ -6,77 +6,39 @@ block variables
 
 block content
 	main 
-		section.home-promo
-			h1 Проектирование, поставка и монтаж светодиодного освещения для B2B и B2G
-			.home-promo__subtitle Светодиодные светильники ведущих российских брендов FEREKS, IEK Lighting, LEDEL
-			a.btn(href="#") Рассчитать стоимость
-			.home-promo__img 
-				img(src="img/index/promo.svg", alt="")
-		section.home-links 
+		section.section-home
+			.container-fluid
+				.section-home__body
+					.section-home__actions.home-actions
+						ul.home-actions__list
+							each advantage in homeActions
+								li.home-actions__item 
+									img.home-actions__icon(src=`/img/index/icon-${advantage.icon}@2x.png`, alt=advantage.text)
+									div.home-actions__text.text-text8-medium= advantage.text
+					.section-home__title.title-h1 LED-освещение под ключ для бизнеса, города и промышленности
+					.section-home__sub-title.title-h5 Промышленное, архитектурное, наружное и внутреннее освещение для коммерческих и инфраструктурных объектов
+					button.btn Получить расчёт
+					.section-home__advantages.home-advantages
+						ul.home-advantages__list
+							each advantage in homeAdvantages
+								li.home-advantages__item 
+									.home-advantages__item-title.title-h2= advantage.title
+									.home-advantages__item-text.text-text5-flex= advantage.text
+						a(href="#").home-advantages__btn.title-h6.title-h6-medium Смотреть проекты
+		section.section-navigation
 			.container 
-				ul
-					li 
-						a(href="#")
-							.home-links__title Каталог
-							.home-links__descr Промышленное, офисное, уличное освещение.<br><br>Более 100 моделей светильников.
-							.home-links__img
-								img(src="img/index/cart1.svg", alt="")
-					li 
-						a(href="#")
-							.home-links__title Услуги
-							.home-links__descr Рассказываем подробно про весь цикл : от проектирования и выбора светильников до обслуживания и гарантии.
-							.home-links__img
-								img(src="img/index/cart2.svg", alt="")
-					li 
-						a(href="#")
-							.home-links__title Проекты
-							.home-links__descr Представляем кейсы в разных сферах бизнеса: от стадионов до складских помещений.
-							.home-links__img
-								img(src="img/index/cart3.svg", alt="")
-					li 
-						a(href="#")
-							.home-links__title Вопрос—ответ
-							.home-links__descr Мы собрали ответы на ваши часто задаваемые вопросы про продукцию, доставку, гарантию и т.д.
-							.home-links__img
-								img(src="img/index/cart4.svg", alt="")
-		section.home-calc 
+				.section-navigation__body
+					each element in navigation
+						.navigation-card(class=`navigation-card--${element.img}`)
+							h4.navigation-card__title.title-h4= element.title
+							.navigation-card__text.text-text6-regular= element.text
+							a(href="#").navigation-card__link.btn-arrow Подробнее
+		section.our-clients
 			.container 
-				.wrapper 
-					h2 Бесплатно приедем и проведем светотехнический расчет
-					ul 
-						li(value="1") Оставьте заявку на сайте — это займет меньше минуты
-						li(value="2") Мы обсудим ваш проект, выберем время для встречи и проектирования
-						li(value="3") Бесплатно проведем светотехнический расчет на объекте
-					h3 Ваши контактные данные
-					form(action="#")
-						.form-item.name 
-							input#homeName(type="text", name="" placeholder="Ваше имя*") 
-						.form-item.phone 
-							input#homePhone(type="tel", name="" placeholder="Телефон*")
-						.form-item.submit 
-							input(type="submit", value="Отправить" data-popup="thanks").btn
-						.form-item.person 
-							span Отправляя форму, вы даете согласие на&nbsp
-							a(href="#" target="_blank") обработку персональных данных 
-						.form-item.req 
-							span *Поля обязательны к заполнению
-		section.home-why 
-			.container 
-				h2 Вот почему нас выбирают и возвращаются
-				ul 
-					li
-						.title Надежность
-						.descr Являемся официальным дистрибьютором производителей FEREKS и IEK
-						a(href="#" target="_blank").download Посмотреть дилерский сертификат
-					li
-						.title Точность
-						.descr Бесплатное светотехническое проектирование на вашем объекте с использованием программного обеспечения
-					li
-						.title Качество
-						.descr Высокая степень пылевлагозащиты IP и наличие клапана выравнивания давления у светодиодных светильников
-						a(href="#" target="_blank") Подробнее
-		section.home-info 
-			.container 
-				h2 Свет и радость мы приносим людям
-				a.btn(href="#") Рассчитать стоимость
-				.home-info__text "АЛЬЯНС ФЕРЕКС" - официальный дистрибьютор ведущего российского завода производителя светодиодных светильников ТМ "ФЕРЕКС".<br><br>Выпускаемые изделия отличаются высокой эффективностью, качеством исполнения и разумной ценой. В ассортименте компании представлено более 100 моделей для любой сферы. В их числе светодиодные светильники для освещения торговых, производственных, логистических, строительных комплексов, спортивных объектов, офисного, уличного, паркового освещения, архитектурной подсветки зданий, а также взрывозащищенные модели.<br><br>Бренд "ФЕРЕКС" - один из самых крупных на рынке освещения. Решения от "ФЕРЕКС" внедрены во всех регионах России, в странах СНГ и Европы. "АЛЬЯНС ФЕРЕКС" - официальный дистрибьютор ведущего российского завода производителя светодиодных светильников ТМ "ФЕРЕКС".<br><br>Выпускаемые изделия отличаются высокой эффективностью, качеством исполнения и разумной ценой. В ассортименте компании представлено более 100 моделей для любой сферы. В их числе светодиодные светильники для освещения торговых, производственных, логистических, строительных комплексов, спортивных объектов, офисного, уличного, паркового освещения, архитектурной подсветки зданий, а также взрывозащищенные модели.<br><br>Бренд "ФЕРЕКС" - один из самых крупных на рынке освещения. Решения от "ФЕРЕКС" внедрены во всех регионах России, в странах СНГ и Европы.
+				.section-heading
+					.section-heading__title.title-h2 Наши клиенты
+			.our-clients__marquee
+				.our-clients__marquee-body
+					each i in [1, 2, 3, 4, 5, 6]
+						.our-clients__image
+							img(src=`/img/index/clients-${i}.svg` alt=`Клиент ${i}`)

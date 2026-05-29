@@ -1,0 +1,21 @@
+@mixin hover {
+  @media (any-hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin media($width, $type: "max") {
+  @if $type == "max" {
+    @media screen and (max-width: $width) {
+      @content;
+    }
+  } @else if $type == "min" {
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  } @else {
+    @error "Второй аргумент должен быть 'max' или 'min' либо вовсе отсутствовать";
+  }
+}

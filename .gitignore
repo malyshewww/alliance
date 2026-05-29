@@ -11,6 +11,7 @@
 /web/themes/contrib/
 /web/profiles/contrib/
 /web/libraries/
+/web/rewrite.php
 
 # Ignore sensitive information
 /web/sites/*/settings.php

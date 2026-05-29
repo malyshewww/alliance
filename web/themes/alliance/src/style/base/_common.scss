@@ -1,0 +1,44 @@
+.site-phone,
+.site-email {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 25%;
+  transition: text-decoration-color $time;
+  @include hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+.btn-arrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  color: $grey2;
+  transition: color $time;
+  &::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    mask-image: url("../img/icons/arrow-short-right.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: currentColor;
+  }
+  @include hover {
+    color: $black;
+  }
+}
+
+.section-heading {
+  margin-bottom: 48px;
+  // .section-heading__title
+  &__title {
+  }
+}

@@ -1,0 +1,93 @@
+:is(.title-h1, .title-h2, .title-h3, .title-h4, .title-h5, .title-h6) {
+  font-family: var(--font);
+  font-weight: 600;
+}
+
+.title-h1 {
+  font-size: 60px;
+  line-height: 100%;
+}
+.title-h2 {
+  font-size: 36px;
+  line-height: 110%;
+}
+.title-h3 {
+  font-size: 32px;
+  line-height: 120%;
+}
+.title-h4 {
+  font-size: 28px;
+  line-height: 110%;
+}
+.title-h5 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 110%;
+}
+
+.title-h4-medium {
+  font-weight: 500;
+}
+
+.title-h6 {
+  font-size: 20px;
+  line-height: 130%;
+}
+
+.title-h6-medium {
+  font-size: 20px;
+  line-height: 130%;
+  font-weight: 500;
+}
+
+.text-text1-regular {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.text-text2-regular {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.text-text3-flex {
+  font-size: 18px;
+}
+.text-text4-medium {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.text-text5-flex {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+}
+.text-text6-regular {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+}
+.text-text7-regular {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.text-text8-medium {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.28px;
+}
+.text-text9-regular {
+  font-size: 14px;
+  font-weight: 400;
+}
+.text-text10-regular {
+  font-size: 13px;
+  font-weight: 400;
+}
+.text-text11-medium {
+  font-size: 13px;
+  font-weight: 500;
+}

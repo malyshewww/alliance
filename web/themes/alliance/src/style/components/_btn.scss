@@ -1,0 +1,30 @@
+.btn {
+  padding: 10px 52px;
+  border: 2px solid $orange;
+  border-radius: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $orange;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  width: fit-content;
+  color: $black;
+  transition: all 0.3s;
+  height: 53px;
+  font-family: var(--font);
+  @include hover {
+    background-color: transparent;
+  }
+}
+
+.btn.btn--border {
+  border: 2px solid var(--4);
+  background-color: transparent;
+  color: var(--1);
+  @include hover {
+    border-color: var(--yellow);
+  }
+}
