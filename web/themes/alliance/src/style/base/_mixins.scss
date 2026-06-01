@@ -19,3 +19,9 @@
     @error "Второй аргумент должен быть 'max' или 'min' либо вовсе отсутствовать";
   }
 }
+
+@mixin no-scroll() {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

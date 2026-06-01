@@ -1,19 +1,51 @@
+@import "../base/_mixins.scss";
+
 .header-menu {
-  position: absolute;
-  top: calc(var(--header-height));
+  position: fixed;
+  top: 0;
   width: 100%;
   background-color: $white;
   border-radius: 0 0 60px 60px;
   background-color: $white;
   box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.15);
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  z-index: 11;
+  transition:
+    opacity 0.5s,
+    visibility 0.5s;
+  @include media($lg) {
+    box-shadow: none;
+    border-radius: 0;
+    height: 100%;
+    max-height: 100dvh;
+  }
   // .header-menu__container
   &__container {
     max-width: 1920px;
     margin: 0 auto;
-    padding: 0px 80px 80px;
+    padding: calc(var(--header-height) - 5px) 80px 80px;
     padding-left: calc(305px);
     width: 100%;
+    @include media($xxl) {
+      padding: calc(var(--header-height) - 5px)
+        calc(var(--container-padding) / 2) 80px;
+      padding-left: calc(137px + 28px + 15px);
+    }
+    @include media($lg) {
+      padding: calc(var(--header-height) + 28px)
+        calc(var(--container-padding) / 2) 24px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      @include no-scroll();
+      height: 100%;
+    }
+  }
+  .menu-open & {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
   }
   // .header-menu__main
 }
@@ -22,8 +54,29 @@
   display: grid;
   grid-template-columns: 1fr minmax(350px, 586px);
   gap: 56px;
+  @include media($vl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media($lg) {
+    grid-template-columns: 100%;
+    gap: 36px;
+  }
   &--reverse {
-    grid-template-columns: 1fr minmax(350px, 640px);
+    grid-template-columns: minmax(350px, 640px) 1fr;
+    & .main-menu {
+      order: 1;
+      max-width: 614px;
+      @include media($lg) {
+        max-width: 100%;
+      }
+    }
+    @include media($vl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media($lg) {
+      grid-template-columns: 100%;
+      gap: 32px;
+    }
   }
 }
 
@@ -33,10 +86,29 @@
   justify-content: space-between;
   gap: 20px;
   max-width: 640px;
+  .header-menu & {
+    padding-top: 27px;
+    @include media($lg) {
+      padding-top: 0;
+    }
+  }
+  @include media($lg) {
+    max-width: 100%;
+  }
+  @include media($md) {
+    flex-direction: column;
+    gap: 24px;
+    .footer__main & {
+      gap: 32px;
+    }
+  }
   & ul {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @include media($md) {
+      gap: 16px;
+    }
   }
   & a {
     font-size: 17px;
@@ -57,6 +129,15 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    @include media($md) {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 16px;
+      .footer__main & {
+        grid-template-columns: 100%;
+        gap: 20px;
+      }
+    }
   }
   // .main-menu__caption
   &__caption {
@@ -70,17 +151,55 @@
 .menu-contacts {
   border-radius: 30px;
   padding: 36px;
+  @include media($md) {
+    padding: 20px;
+    border-radius: 20px;
+  }
   &--bg-gray {
     background: var(--6);
   }
   &--bg-white {
     background: var(--white);
   }
+  &__bottom {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    align-items: center;
+    gap: 24px;
+    .header-menu & {
+      display: none;
+      @include media($lg) {
+        display: block;
+      }
+    }
+    @include media($lg) {
+      & .btn {
+        width: 100%;
+      }
+    }
+    @include media($md) {
+      margin-top: 36px;
+      display: block;
+    }
+  }
+  &__bottom-text {
+    color: $grey2;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: 0.28px;
+    @include media($md) {
+      display: none;
+    }
+  }
 }
 
 .contacts-details {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 24px;
 }
 

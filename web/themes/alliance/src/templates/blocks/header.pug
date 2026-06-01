@@ -11,12 +11,16 @@ header.header
 						each element in menu
 							li
 								a(href=element.href) #{element.text}
-				.header__burger
+				.header__burger.jsBurger
 					.header__burger-icon
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+						<svg class="icon-lines" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
 							<path d="M2.5 15H17.5" stroke="#303030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							<path d="M2.5 10H17.5" stroke="#303030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							<path d="M2.5 5H17.5" stroke="#303030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<path d="M15 5L5 15" stroke="#303030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M5 5L15 15" stroke="#303030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
 					.header__burger-text.text-text4-medium Меню
 			.header__actions
@@ -24,27 +28,30 @@ header.header
 					a(href="tel:88005505201").site-phone.text-text4-medium  8 800 550-52-01
 					a(href="mailto:info@allfereks.ru").site-email.text-text4-medium  info@allfereks.ru
 				button.btn.btn--border Получить расчёт
-
-.header-menu
-	.header-menu__container
-		.expanded-menu
-			.expanded-menu__main.main-menu
-				each element in headerMenu
-					.main-menu__item
-						.main-menu__caption= element.caption
-						ul
-							each item in element.list
-								li
-									a(href=item.href) #{item.text}
-			.menu-contacts.menu-contacts--bg-gray
-				.contacts-details
-					.contacts-detail
-						.contacts-detail__caption ТЕЛЕФОН
-						a(href="tel:88005505201").site-phone.title-h5  8 800 550-52-01
-					.contacts-detail
-						.contacts-detail__caption ПОЧТА
-						a(href="mailto:info@allfereks.ru").site-email.title-h5  info@allfereks.ru
-					.contacts-detail
-						.contacts-detail__caption АДРЕС
-						address.site-address.title-h5 г. Нижний Новгород, ул.Окская гавань, д.3, стр.2, офис 320
+	.header-menu
+		.header-menu__container
+			.expanded-menu
+				.expanded-menu__main.main-menu
+					each element in headerMenu
+						.main-menu__item
+							.main-menu__caption= element.caption
+							ul
+								each item in element.list
+									li
+										a(href=item.href) #{item.text}
+				.menu-contacts.menu-contacts--bg-gray
+					.contacts-details
+						.contacts-detail
+							.contacts-detail__caption ТЕЛЕФОН
+							a(href="tel:88005505201").site-phone.title-h5  8 800 550-52-01
+							+social
+						.contacts-detail
+							.contacts-detail__caption ПОЧТА
+							a(href="mailto:info@allfereks.ru").site-email.title-h5  info@allfereks.ru
+						.contacts-detail
+							.contacts-detail__caption АДРЕС
+							address.site-address.title-h5 г. Нижний Новгород, ул.Окская гавань, д.3, стр.2, офис 320
+					.menu-contacts__bottom 
+						button(type="button").btn Получить расчёт
+.menu-overlay.jsMenuOverlay
 

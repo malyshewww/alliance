@@ -1,4 +1,5 @@
 include variables.pug
+include ../blocks/mixins.pug
 
 block variables
 
@@ -24,7 +25,6 @@ html(lang="ru")
 
 
 	body(class=(bodyClass ? bodyClass : 'not-front'))
-		
 		include ../blocks/header
 
 		block content

@@ -5,8 +5,23 @@
   display: flex;
   align-items: center;
   position: sticky;
+  width: 100%;
   top: 0;
   z-index: 10;
+  transition: border-radius 0.15s;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: $white;
+    z-index: 12;
+  }
+  .menu-open & {
+    border-radius: 0 0 0 0;
+  }
+  @include media($lg) {
+    border-radius: 0 0 20px 20px;
+  }
   // .header__container
   &__container {
     max-width: 1920px;
@@ -19,11 +34,23 @@
     display: flex;
     align-items: center;
     gap: 88px;
+    position: relative;
+    z-index: 12;
+    @include media($xxl) {
+      gap: 28px;
+    }
+    @include media($lg) {
+      gap: 12px;
+    }
   }
   // .header__logo
   &__logo {
     max-width: 137px;
     flex-shrink: 0;
+    @include media($lg) {
+      max-width: 96px;
+      max-height: 40px;
+    }
   }
   // .header__main
   &__main {
@@ -34,6 +61,16 @@
     padding-left: 32px;
     border-radius: 20px;
     border: 2px solid var(--6);
+    @include media($lg) {
+      padding: 0;
+      border: none;
+      order: 1;
+    }
+    & .nav {
+      @include media($lg) {
+        display: none;
+      }
+    }
   }
   // .header__burger
   &__burger {
@@ -44,6 +81,19 @@
     border-radius: 12px;
     background-color: var(--5);
     padding: 12px 24px;
+    cursor: pointer;
+    &.active {
+      & .icon-close {
+        display: block;
+      }
+      & .icon-lines {
+        display: none;
+      }
+    }
+    @include media($md) {
+      padding: 8px 20px;
+      height: 36px;
+    }
   }
   // .header__burger-icon
   &__burger-icon {
@@ -53,9 +103,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    & .icon-close {
+      display: none;
+    }
   }
   // .header__burger-text
   &__burger-text {
+    @include media($lg) {
+      display: none;
+    }
   }
   // .header__actions
   &__actions {
@@ -63,6 +119,11 @@
     display: flex;
     align-items: center;
     gap: 40px;
+    & .btn {
+      @include media($xl) {
+        display: none;
+      }
+    }
   }
   // .header__contacts
   &__contacts {
@@ -86,6 +147,9 @@
         left: -22px;
         color: var(--yellow);
       }
+      @include media($xl) {
+        display: none;
+      }
     }
   }
 }
@@ -103,5 +167,27 @@
     font-style: normal;
     font-weight: 500;
     line-height: 22px;
+  }
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.31);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 0.5s,
+    visibility 0.5s;
+  .menu-open & {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
   }
 }

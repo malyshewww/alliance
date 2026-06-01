@@ -1,9 +1,12 @@
+@import "base/_mixins.scss";
+
 $font: "Roboto Flex", sans-serif;
 $font2: "Roboto Flex", sans-serif;
 
 :root {
   --font: "Roboto Flex", sans-serif;
   --header-height: 112px;
+  --container-padding: 30px;
 
   --2: #8f8f8f;
   --1: #303030;
@@ -39,8 +42,14 @@ $md: 767.98px;
 $lg: 1024px;
 $vl: 1280px;
 $xl: 1440px;
-$xxl: 1600px;
+$xxl: 1640px;
 $hd: 1920px;
+
+@include media($lg) {
+  :root {
+    --header-height: 56px;
+  }
+}
 
 @keyframes rotate {
   0% {
@@ -62,15 +71,19 @@ $hd: 1920px;
 .container {
   // width: 1340px;
   max-width: 1340px;
-  padding: 0 15px;
+  padding: 0 calc(var(--container-padding) / 2);
   margin: 0 auto;
   position: relative;
 }
 
 .container-fluid {
   max-width: 1920px;
+  width: 100%;
   padding: 0 80px;
   margin: 0 auto;
+  @include media($xxl) {
+    padding: 0 calc(var(--container-padding) / 2);
+  }
 }
 
 @media (max-width: 1370px) {
@@ -95,6 +108,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+html.lock {
+  & body {
+    overflow: hidden;
+  }
 }
 
 .footer {

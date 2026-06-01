@@ -6,39 +6,90 @@ block variables
 
 block content
 	main 
-		section.section-home
-			.container-fluid
-				.section-home__body
-					.section-home__actions.home-actions
-						ul.home-actions__list
-							each advantage in homeActions
-								li.home-actions__item 
-									img.home-actions__icon(src=`/img/index/icon-${advantage.icon}@2x.png`, alt=advantage.text)
-									div.home-actions__text.text-text8-medium= advantage.text
-					.section-home__title.title-h1 LED-освещение под ключ для бизнеса, города и промышленности
-					.section-home__sub-title.title-h5 Промышленное, архитектурное, наружное и внутреннее освещение для коммерческих и инфраструктурных объектов
-					button.btn Получить расчёт
-					.section-home__advantages.home-advantages
-						ul.home-advantages__list
-							each advantage in homeAdvantages
-								li.home-advantages__item 
-									.home-advantages__item-title.title-h2= advantage.title
-									.home-advantages__item-text.text-text5-flex= advantage.text
-						a(href="#").home-advantages__btn.title-h6.title-h6-medium Смотреть проекты
-		section.section-navigation
-			.container 
-				.section-navigation__body
-					each element in navigation
-						.navigation-card(class=`navigation-card--${element.img}`)
-							h4.navigation-card__title.title-h4= element.title
-							.navigation-card__text.text-text6-regular= element.text
-							a(href="#").navigation-card__link.btn-arrow Подробнее
-		section.our-clients
-			.container 
-				.section-heading
-					.section-heading__title.title-h2 Наши клиенты
-			.our-clients__marquee
-				.our-clients__marquee-body
-					each i in [1, 2, 3, 4, 5, 6]
-						.our-clients__image
-							img(src=`/img/index/clients-${i}.svg` alt=`Клиент ${i}`)
+		.main-sections
+			section.section-home
+				.container-fluid
+					.section-home__body
+						.section-home__actions.home-actions
+							ul.home-actions__list
+								each advantage in homeActions
+									li.home-actions__item 
+										img.home-actions__icon(src=`/img/index/icon-${advantage.icon}@2x.png`, alt=advantage.text)
+										div.home-actions__text.text-text8-medium= advantage.text
+						h1.section-home__title.title-h1 LED-освещение под ключ для бизнеса, города и промышленности
+						.section-home__sub-title.title-h5 Промышленное, архитектурное, наружное и внутреннее освещение для коммерческих и инфраструктурных объектов
+						button.btn Получить расчёт
+						.section-home__advantages.home-advantages
+							ul.home-advantages__list
+								each advantage in homeAdvantages
+									li.home-advantages__item 
+										.home-advantages__item-title.title-h2= advantage.title
+										.home-advantages__item-text.text-text5-flex= advantage.text
+							a(href="#").home-advantages__btn.title-h6.title-h6-medium Смотреть проекты
+			section.section-navigation
+				.container 
+					.section-navigation__body
+						each element in navigation
+							.navigation-card(class=`navigation-card--${element.img}`)
+								h4.navigation-card__title.title-h4= element.title
+								.navigation-card__text.text-text6-regular= element.text
+								a(href="#").navigation-card__link.btn-arrow Подробнее
+			section.our-clients
+				.container 
+					.section-heading
+						h2.section-heading__title.title-h2 Наши клиенты
+				.our-clients__marquee-wrap
+					.our-clients__marquee-body
+						each i in [1, 2, 3, 4, 5, 6]
+							.our-clients__image
+								img(src=`/img/index/clients-${i}.svg` alt=`Клиент ${i}`)
+			section.realize-projects
+				.container 
+					.section-heading
+						h2.section-heading__title.title-h2 Реализованные проекты
+						.slider-controls 
+							button(type="button").slider-button.slider-button--prev 
+							button(type="button").slider-button.slider-button--next
+					.realize-projects__slider
+						.swiper 
+							.swiper-wrapper 
+								each project, index in realizeProjects
+									.swiper-slide
+										.realize-projects__item
+											.realize-projects__image.image-ibg
+												img(src=`/img/index/realize-img-${index+1}.jpg`, alt=project.caption)
+											.realize-projects__content 
+												.realize-projects__caption.title-h5= project.caption
+												.realize-projects__details 
+													each detail in project.details
+														span.realize-projects__detail.text-text8-medium= detail
+												.realize-projects__text.text-text6-regular
+													each par in project.content 	
+														p!= par
+												a(href="#").btn-arrow Подробнее
+					a(href="#").realize-projects__btn.btn.btn--border Все проекты 
+			section.industries
+				.container 
+					.section-heading 
+						h2.section-heading__title.title-h2 Отрасли и типы объектов
+					.industries__body 
+						each card in industriesCards
+							.industries-card(class=`industries-card--${card.key}`)
+								.industries-card__title.title-h5= card.title
+								.industries-card__sub-title.text-text6-regular= card.subTitle
+			section.why-choose-us
+				.container 
+					.section-heading 
+						h2.section-heading__title.title-h2 Почему выбирают нас
+					.why-choose-us__body 
+						.why-choose-us__advantages
+							each advantage, index in whyChooseUsAdvantages
+								.why-choose-us__advantage(class=`why-choose-us__advantage--${index+1}`)
+									.why-choose-us__advantage-icon
+									.why-choose-us__advantage-title.title-h5= advantage.title
+									.why-choose-us__advantage-text.text-text6-regular= advantage.text
+						.why-choose-us__main 
+							.why-choose-us__main-title.title-h4 Получите бесплатный светотехнический расчёт
+							.why-choose-us__main-text.text-text2-regular Подберём эффективное решение под задачи вашего объекта и подготовим расчёт освещённости
+							button(type="button").btn Получить расчёт
+

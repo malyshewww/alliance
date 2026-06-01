@@ -1,3 +1,5 @@
+@import "../base/_mixins.scss";
+
 :is(.title-h1, .title-h2, .title-h3, .title-h4, .title-h5, .title-h6) {
   font-family: var(--font);
   font-weight: 600;
@@ -6,10 +8,17 @@
 .title-h1 {
   font-size: 60px;
   line-height: 100%;
+  @include media($lg) {
+    font-size: 28px;
+    line-height: 110%;
+  }
 }
 .title-h2 {
   font-size: 36px;
   line-height: 110%;
+  @include media($lg) {
+    font-size: 24px;
+  }
 }
 .title-h3 {
   font-size: 32px;
@@ -18,11 +27,19 @@
 .title-h4 {
   font-size: 28px;
   line-height: 110%;
+  @include media($md) {
+    font-size: 20px;
+    line-height: 130%;
+  }
 }
 .title-h5 {
   font-size: 24px;
   font-weight: 500;
   line-height: 110%;
+  @include media($md) {
+    font-size: 18px;
+    line-height: 120%;
+  }
 }
 
 .title-h4-medium {
@@ -32,12 +49,20 @@
 .title-h6 {
   font-size: 20px;
   line-height: 130%;
+  @include media($md) {
+    font-size: 16px;
+    line-height: 120%;
+  }
 }
 
 .title-h6-medium {
   font-size: 20px;
   line-height: 130%;
   font-weight: 500;
+  @include media($md) {
+    font-size: 16px;
+    line-height: 120%;
+  }
 }
 
 .text-text1-regular {
@@ -49,6 +74,11 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
+  @include media($md) {
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.16px;
+  }
 }
 .text-text3-flex {
   font-size: 18px;
@@ -57,11 +87,20 @@
   font-size: 17px;
   font-weight: 500;
   line-height: 22px;
+  @include media($md) {
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 0.28px;
+  }
 }
 .text-text5-flex {
   font-size: 16px;
   font-weight: 500;
   line-height: normal;
+  @include media($md) {
+    font-size: 14px;
+    line-height: 140%;
+  }
 }
 .text-text6-regular {
   font-size: 16px;

@@ -1,11 +1,11 @@
 .btn {
-  padding: 10px 52px;
-  border: 2px solid $orange;
+  padding: 10px 50px;
+  border: 2px solid var(--yellow);
   border-radius: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $orange;
+  background-color: var(--yellow);
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
