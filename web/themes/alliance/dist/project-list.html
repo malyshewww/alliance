@@ -46,8 +46,14 @@
             </div>
           </div>
           <div class="header__actions">
-            <div class="header__contacts"><a class="site-phone text-text4-medium" href="tel:88005505201"> 8 800 550-52-01</a><a class="site-email text-text4-medium" href="mailto:info@allfereks.ru"> info@allfereks.ru</a></div>
-            <button class="btn btn--border">Получить расчёт</button>
+            <div class="header__contacts">
+              <div class="header-phone-wrap"><a class="site-phone text-text4-medium" href="tel:88005505201"> 8 800 550-52-01</a>
+                <div class="header-social">
+                  <div class="social"> <a class="social__link social__link--tg" href="#" target="_blank"></a><a class="social__link social__link--wa" href="#" target="_blank"></a><a class="social__link social__link--max" href="#" target="_blank"></a></div>
+                </div>
+              </div><a class="site-email text-text4-medium" href="mailto:info@allfereks.ru"> info@allfereks.ru</a>
+            </div>
+            <button class="btn btn--border" data-popup="popup-request">Получить расчёт</button>
           </div>
         </div>
       </div>
@@ -98,7 +104,7 @@
                 </div>
               </div>
               <div class="menu-contacts__bottom"> 
-                <button class="btn" type="button">Получить расчёт</button>
+                <button class="btn" type="button" data-popup="popup-request">Получить расчёт</button>
               </div>
             </div>
           </div>
@@ -445,7 +451,7 @@
                 </div>
               </div>
               <div class="menu-contacts__bottom"> 
-                <button class="btn" type="button">Получить расчёт</button>
+                <button class="btn" type="button" data-popup="popup-request">Получить расчёт</button>
                 <div class="menu-contacts__bottom-text">Подберём эффективное решение  и подготовим расчёт освещённости</div>
               </div>
             </div>
@@ -513,6 +519,60 @@
       <div class="popup__window">
         <div class="popup__close"></div>
         <h2>Спасибо</h2><span class="popup__subtitle">В ближайшее время с вами свяжется наш менеджер, чтобы обсудить ваши задачи</span>
+      </div>
+    </div>
+    <div class="popup" id="popup-request">
+      <div class="popup__window">
+        <div class="popup__close"></div>
+        <div class="popup__title title-h3">Запросить расчёт</div><span class="popup__subtitle text-text6-regular">Выполним бесплатный светотехнический расчёт и подберём оптимальное решение под ваш объект</span>
+        <form class="form" action="" id="requestForm"> 
+          <div class="form__items">
+            <div class="form-item req"> <span class="text-text9-regular">*Поля обязательны к заполнению</span></div>
+            <div class="form-item name form-item--error">
+              <input id="homeName" type="text" name="name" placeholder="Ваше имя*">
+              <div class="form-item--error-message">Обязательное поле</div>
+            </div>
+            <div class="form-item phone"> 
+              <input id="homePhone" type="tel" name="" placeholder="Телефон*">
+            </div>
+            <div class="form-item email"> 
+              <input id="homeEmail" type="email" name="email" placeholder="Электронная почта*">
+            </div>
+            <div class="form-item textarea"> 
+              <textarea id="homeMessage" placeholder="Комментарий" name="message"></textarea>
+            </div>
+            <div class="form-item load-file" data-load-wrapper>
+              <div class="load-file__list" data-file-list></div>
+              <label class="load-file__label" data-load-file>
+                <input class="load-file__input visuallyHidden" type="file" data-upload-file name="upload">Прикрепить файл
+              </label>
+              <div class="file-info text-text9-regular">Допустимые форматы: PDF, DOCX, JPG, XLS, XLSX, ZIP. <br /> Максимальный размер — 10 МБ </div>
+            </div>
+          </div>
+          <div class="form__bottom">
+            <div class="form-item submit"> 
+              <input class="btn" type="submit" value="Отправить">
+            </div>
+            <div class="form-item person"> <span>Отправляя форму, вы даете согласие на&nbsp;<a href="#" target="_blank">обработку персональных данных</a></span></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="popup" id="popup-error">
+      <div class="popup__window">
+        <div class="popup__close"></div>
+        <div class="popup__title title-h3">Произошла ошибка</div><span class="popup__subtitle">Не удалось отправить форму. Перезагрузите страницу или попробуйте позже</span>
+        <div class="popup__actions">
+          <button class="btn btn-reload" type="button">Перезагрузить страницу</button>
+        </div>
+      </div>
+    </div>
+    <div class="cookie-popup">
+      <div class="cookie-popup__body">
+        <div class="cookie-popup__text"><span>Мы используем cookies</span>
+          <p>Используя сайт, вы соглашаетесь с <a href="#" target="_blank">обработкой данных</a> с&nbsp;целью сбора аналитики</p>
+        </div>
+        <button class="cookie-popup__button btn" type="button" id="acceptCookie">Хорошо</button>
       </div>
     </div><div class="up">
 <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">

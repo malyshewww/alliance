@@ -445,6 +445,150 @@ function popups(elem = document) {
 }
 popups();
 
+function attachFile(formId) {
+  const form = document.getElementById(formId);
+  if (!form) return;
+
+  const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB в байтах
+
+  const inputUpload = form.querySelector("[data-upload-file]");
+  const fileList = form.querySelector("[data-file-list]");
+  const loadFile = form.querySelector("[data-load-file]");
+
+  // Текущий файл (для отслеживания)
+  let currentFile = null;
+
+  function checkFileSize(file) {
+    return file.size <= MAX_FILE_SIZE;
+  }
+
+  function showSizeError(parentElement) {
+    parentElement.classList.add("error");
+    const errorMessage = parentElement.querySelector(".error-message");
+    if (!errorMessage) {
+      const message = document.createElement("div");
+      message.className = "form-item--error-message text-text9-regular";
+      message.textContent = "Размер файла не должен превышать 10 МБ";
+      parentElement.appendChild(message);
+    }
+  }
+
+  function removeSizeError(parentElement) {
+    parentElement.classList.remove("error");
+    const errorMessage = parentElement.querySelector(
+      ".form-item--error-message",
+    );
+    if (errorMessage) {
+      errorMessage.remove();
+    }
+  }
+
+  function uploadFile(event) {
+    const files = event.target.files;
+    if (!files || files.length === 0) return;
+
+    const file = files[0];
+    const parentElement = event.target.closest("[data-load-wrapper]") || form;
+
+    removeSizeError(parentElement);
+
+    if (!checkFileSize(file)) {
+      showSizeError(parentElement);
+      event.target.value = "";
+      return;
+    }
+
+    currentFile = file;
+    renderFile(file);
+  }
+
+  function deleteFile(event) {
+    const deleteButton = event.target.closest('[data-action="delete"]');
+    if (!deleteButton) return;
+
+    const parentNode = deleteButton.closest(".file-item");
+    if (!parentNode) return;
+
+    parentNode.remove();
+    currentFile = null;
+
+    if (inputUpload) {
+      inputUpload.value = "";
+    }
+
+    checkEmptyList();
+
+    const parentElement = form.querySelector("[data-load-wrapper]") || form;
+    removeSizeError(parentElement);
+  }
+
+  function checkEmptyList() {
+    const existingFiles = fileList.querySelectorAll(".file-item").length;
+
+    if (existingFiles === 0) {
+      // Возвращаем исходный вид с кнопкой загрузки
+      if (loadFile && !fileList.contains(loadFile)) {
+        fileList.appendChild(loadFile);
+      }
+    }
+  }
+
+  function renderFile(file) {
+    if (!file) return;
+
+    // Формируем разметку для нового файла
+    const fileItem = document.createElement("div");
+    fileItem.className = "file-item";
+    fileItem.innerHTML = `
+      <span class="file-item__text">${escapeHtml(file.name)} / ${formatFileSize(file.size)}</span>
+      <button class="file-item__button" type="button" data-action="delete" aria-label="Удалить файл"></button>
+    `;
+
+    // Очищаем список и добавляем новый файл
+    fileList.innerHTML = "";
+    fileList.appendChild(fileItem);
+
+    // Удаляем loadFile, если он всё ещё в DOM
+    if (loadFile && loadFile.parentNode) {
+      loadFile.remove();
+    }
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function formatFileSize(bytes) {
+    if (bytes === 0) return "0 Bytes";
+    const k = 1024;
+    const sizes = ["Bytes", "KB", "MB", "GB"];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+  }
+
+  // Навешиваем обработчики событий
+  if (fileList) {
+    fileList.addEventListener("click", deleteFile);
+  }
+
+  if (form) {
+    form.addEventListener("change", uploadFile);
+  }
+
+  checkEmptyList();
+}
+
+// Запускаем функцию
+attachFile("requestForm");
+
+const btnReload = document.querySelector(".btn-reload");
+
+if (btnReload) {
+  btnReload.addEventListener("click", () => window.location.reload());
+}
+
 // Маска телефона
 function maskPhone(elem = document) {
   let inputs = elem.querySelectorAll('input[type="tel"]');
@@ -870,3 +1014,59 @@ if (form) {
     };
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const cookiePopup = document.querySelector(".cookie-popup");
+
+  if (!cookiePopup) return;
+
+  const cookiePopupBtn = cookiePopup.querySelector("#acceptCookie");
+  function getCookie(name) {
+    const matches = document.cookie.match(
+      new RegExp(
+        "(?:^|; )" +
+          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
+          "=([^;]*)",
+      ),
+    );
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+
+  function setCookie(name, value = true, options = {}) {
+    options = {
+      path: "/",
+      ...options,
+    };
+
+    let updatedCookie =
+      encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+    for (const optionKey in options) {
+      updatedCookie += "; " + optionKey;
+      const optionValue = options[optionKey];
+      if (optionValue !== true) {
+        updatedCookie += "=" + optionValue;
+      }
+    }
+
+    document.cookie = updatedCookie;
+  }
+
+  // Проверяем наличие и актуальность куки
+  const cookieValue = getCookie("acceptCookie");
+
+  function hideModal() {
+    cookiePopup.classList.remove("active");
+    cookiePopup.remove();
+  }
+
+  cookiePopupBtn.addEventListener("click", () => {
+    if (!cookieValue) {
+      setCookie("acceptCookie");
+    }
+    hideModal();
+  });
+  if (!cookieValue) {
+    cookiePopup.classList.add("active");
+  }
+});

@@ -16,6 +16,8 @@
 
 @import "components/_btn.scss";
 
+@import "components/_cookie.scss";
+
 @import "pages/_index.scss";
 
 // Если шапка закреплена, добавить ей сдвиг в админке
@@ -4142,18 +4144,34 @@
     line-height: 1.31em;
   }
 
+  &__title {
+    margin-bottom: 16px;
+  }
+
   &__subtitle {
+    font-size: 16px;
+    font-style: normal;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 22px;
-    color: $black2;
+    line-height: 140%;
+    color: $black3;
+  }
+
+  &__actions {
+    margin-top: 36px;
+  }
+
+  & .form {
+    gap: 48px;
+    @include media($md) {
+      gap: 20px;
+    }
   }
 
   form {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-top: 42px;
+    margin-top: 48px;
 
     .wrapper {
       display: flex;
@@ -4163,23 +4181,42 @@
     }
 
     .form-item {
+      margin: 0;
       &.name,
-      &.phone {
+      &.phone,
+      &.email,
+      &.message {
         input {
           width: 100%;
-          height: 56px;
-          padding: 20px 40px;
-          color: $grey2;
-          font-weight: 400;
+          height: 62px;
+          padding: 20px 30px;
+          color: $black;
           font-size: 16px;
-          line-height: 1em;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          font-family: $font;
           background: $grey6;
-          border-radius: 63px;
+          border-radius: 30px;
           transition: color 0.3s;
+          &::placeholder {
+            color: $grey2;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+            font-family: inherit;
+          }
 
           &:focus {
             color: $black;
           }
+        }
+      }
+
+      &.email {
+        grid-column: span 2;
+        @include media($md) {
+          grid-column: unset;
         }
       }
 
@@ -4189,31 +4226,47 @@
         line-height: 17px;
         color: $grey;
         width: 235px;
+        @include media($md) {
+          width: 100%;
+        }
       }
 
       &.req {
         font-weight: 400;
         font-size: 13px;
         line-height: 13px;
-        color: #c2c2c2;
+        color: $grey2;
       }
 
       &.textarea {
-        margin-top: 4px;
-
+        grid-column: span 2;
+        @include media($md) {
+          grid-column: unset;
+        }
         textarea {
           width: 100%;
-          height: 100px;
-          padding: 20px 40px;
-          color: $grey2;
-          font-weight: 400;
+          height: 160px;
+          padding: 20px 30px;
+          color: $black;
           font-size: 16px;
-          line-height: 1em;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
           background: $grey6;
           border-radius: 30px;
+          font-family: $font;
+          transition: color 0.3s;
           border: none;
           resize: none;
+          display: flex;
           transition: color 0.3s;
+          &::placeholder {
+            color: $grey2;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+            font-family: inherit;
+          }
 
           &:focus {
             outline: none;
@@ -4221,6 +4274,151 @@
           }
         }
       }
+    }
+  }
+}
+
+.load-file {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  &__label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: $font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    position: relative;
+    &::before {
+      content: "";
+      background-color: $grey3;
+      display: block;
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      mask-image: url("../img/icons/paperclip.svg");
+      mask-repeat: no-repeat;
+      mask-position: center;
+      transition: background-color 0.3s;
+    }
+    @include hover {
+      cursor: pointer;
+      color: $black;
+      &::before {
+        background-color: currentColor;
+      }
+    }
+  }
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  & .form-item--error-message {
+    color: $red;
+  }
+}
+
+.file-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  &::before {
+    content: "";
+    background-color: $grey3;
+    display: block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mask-image: url("../img/icons/paperclip.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transition: background-color 0.3s;
+  }
+  &__text {
+    font-family: $font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    max-width: 231px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: right;
+  }
+  &__button {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      mask-image: url("../img/icons/close.svg");
+      mask-size: 10px 10px;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: $grey3;
+    }
+    @include hover {
+      cursor: pointer;
+      &::after {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+.file-info {
+  color: $grey2;
+}
+
+.form {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    @include media($md) {
+      grid-template-columns: 1fr;
+    }
+  }
+  & .form-item {
+    &:first-child,
+    &:last-child {
+      grid-column: span 2;
+      @include media($md) {
+        grid-column: unset;
+      }
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    @include media($md) {
+      flex-direction: column;
+      align-items: stretch;
     }
   }
 }
@@ -4245,10 +4443,10 @@
 
       .form-item {
         &.name,
-        &.phone {
+        &.phone,
+        &.email {
           input {
             padding: 15px;
-            height: 45px;
             font-size: 14px;
           }
         }

@@ -25,9 +25,12 @@ header.header
 					.header__burger-text.text-text4-medium Меню
 			.header__actions
 				.header__contacts
-					a(href="tel:88005505201").site-phone.text-text4-medium  8 800 550-52-01
+					.header-phone-wrap
+						a(href="tel:88005505201").site-phone.text-text4-medium  8 800 550-52-01
+						.header-social
+							+social
 					a(href="mailto:info@allfereks.ru").site-email.text-text4-medium  info@allfereks.ru
-				button.btn.btn--border Получить расчёт
+				button.btn.btn--border(data-popup="popup-request") Получить расчёт
 	.header-menu
 		.header-menu__container
 			.expanded-menu
@@ -52,6 +55,6 @@ header.header
 							.contacts-detail__caption АДРЕС
 							address.site-address.title-h5 г. Нижний Новгород, ул.Окская гавань, д.3, стр.2, офис 320
 					.menu-contacts__bottom 
-						button(type="button").btn Получить расчёт
+						button(type="button" data-popup="popup-request").btn Получить расчёт
 .menu-overlay.jsMenuOverlay
 

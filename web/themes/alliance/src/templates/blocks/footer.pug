@@ -29,7 +29,7 @@ footer.footer
 							.contacts-detail__caption АДРЕС
 							address.site-address.title-h5 г. Нижний Новгород, ул.Окская гавань, д.3, стр.2, офис 320
 					.menu-contacts__bottom 
-						button(type="button").btn Получить расчёт
+						button(type="button" data-popup="popup-request").btn Получить расчёт
 						.menu-contacts__bottom-text Подберём эффективное решение  и подготовим расчёт освещённости
 		.footer__bottom.text-text5-flex
 			.footer__copyright © 2026 ООО «ЭффектЭнергоМонтаж»
@@ -64,6 +64,7 @@ footer.footer
 					span Отправляя форму, вы даете согласие на&nbsp
 					a(href="#" target="_blank") обработку персональных данных
 
+
 //- Задать вопрос (Я здесь блядь задаю вопросы!)
 .popup(id="question")
 	.popup__window
@@ -93,3 +94,52 @@ footer.footer
 		.popup__close
 		h2 Спасибо
 		span.popup__subtitle В ближайшее время с вами свяжется наш менеджер, чтобы обсудить ваши задачи
+
+
+//- Окно Запросить расчет
+.popup(id="popup-request")
+	.popup__window
+		.popup__close
+		.popup__title.title-h3 Запросить расчёт
+		span.popup__subtitle.text-text6-regular Выполним бесплатный светотехнический расчёт и подберём оптимальное решение под ваш объект
+		form(action="")#requestForm.form 
+			.form__items
+				.form-item.req 
+					span.text-text9-regular *Поля обязательны к заполнению
+				.form-item.name.form-item--error
+					input#homeName(type="text", name="name" placeholder="Ваше имя*")
+					.form-item--error-message Обязательное поле
+				.form-item.phone 
+					input#homePhone(type="tel", name="" placeholder="Телефон*")
+				.form-item.email 
+					input#homeEmail(type="email", name="email" placeholder="Электронная почта*")
+				.form-item.textarea 
+					textarea#homeMessage(placeholder="Комментарий" name="message")
+				.form-item.load-file(data-load-wrapper)
+					.load-file__list(data-file-list)
+					label.load-file__label(data-load-file)
+						input(type="file" data-upload-file name="upload").load-file__input.visuallyHidden
+						| Прикрепить файл
+					.file-info.text-text9-regular Допустимые форматы: PDF, DOCX, JPG, XLS, XLSX, ZIP. <br /> Максимальный размер — 10 МБ 
+					//- .form-item--error-message.text-text9-regular Вес файла превышает 10 МБ
+			.form__bottom
+				.form-item.submit 
+					input(type="submit", value="Отправить").btn
+				.form-item.person 
+					span Отправляя форму, вы даете согласие на&nbsp;#[a(href="#" target="_blank") обработку персональных данных]
+
+//- Окно ошибки при отправке формы
+.popup(id="popup-error")
+	.popup__window
+		.popup__close
+		.popup__title.title-h3 Произошла ошибка
+		span.popup__subtitle Не удалось отправить форму. Перезагрузите страницу или попробуйте позже
+		.popup__actions
+			button(type="button").btn.btn-reload Перезагрузить страницу
+
+.cookie-popup
+	.cookie-popup__body
+		.cookie-popup__text
+			span Мы используем cookies
+			p Используя сайт, вы соглашаетесь с #[a(href="#" target="_blank") обработкой данных] с&nbsp;целью сбора аналитики
+		button(type="button").cookie-popup__button.btn#acceptCookie Хорошо

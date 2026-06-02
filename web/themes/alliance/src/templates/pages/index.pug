@@ -11,14 +11,21 @@ block content
 				.container-fluid
 					.section-home__body
 						.section-home__actions.home-actions
-							ul.home-actions__list
-								each advantage in homeActions
-									li.home-actions__item 
-										img.home-actions__icon(src=`/img/index/icon-${advantage.icon}@2x.png`, alt=advantage.text)
-										div.home-actions__text.text-text8-medium= advantage.text
+							.home-actions__body
+								ul.home-actions__list
+									each advantage in homeActions
+										li.home-actions__item 
+											img.home-actions__icon(src=`/img/index/icon-${advantage.icon}@2x.png`, alt=advantage.text)
+											div.home-actions__text.text-text8-medium= advantage.text
+							.home-actions__body
+								ul.home-actions__list
+									each advantage in homeActions
+										li.home-actions__item 
+											img.home-actions__icon(src=`/img/index/icon-${advantage.icon}@2x.png`, alt=advantage.text)
+											div.home-actions__text.text-text8-medium= advantage.text
 						h1.section-home__title.title-h1 LED-освещение под ключ для бизнеса, города и промышленности
 						.section-home__sub-title.title-h5 Промышленное, архитектурное, наружное и внутреннее освещение для коммерческих и инфраструктурных объектов
-						button.btn Получить расчёт
+						button(type="button" data-popup="popup-request").btn Получить расчёт
 						.section-home__advantages.home-advantages
 							ul.home-advantages__list
 								each advantage in homeAdvantages
@@ -91,5 +98,5 @@ block content
 						.why-choose-us__main 
 							.why-choose-us__main-title.title-h4 Получите бесплатный светотехнический расчёт
 							.why-choose-us__main-text.text-text2-regular Подберём эффективное решение под задачи вашего объекта и подготовим расчёт освещённости
-							button(type="button").btn Получить расчёт
+							button(type="button" data-popup="popup-request").btn Получить расчёт
 

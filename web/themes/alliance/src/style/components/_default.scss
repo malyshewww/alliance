@@ -17,6 +17,7 @@ $font2: "Roboto Flex", sans-serif;
   --white: #ffffff;
 }
 
+$red: #e40000;
 $orange: #ffb800;
 $orange2: #ffcd76;
 $yellow: #ffd012;
@@ -27,6 +28,7 @@ $blue3: #cfdfff;
 $blue4: #f3f6fd;
 $black: #303030;
 $black2: #484949;
+$black3: #4f4f4f;
 $grey: #757575;
 $grey2: #8f8f8f;
 $grey3: #c9c9c9;
@@ -557,11 +559,12 @@ form {
 
     .form-item--error-message {
       color: #e40000;
+      font-size: 14px;
+      font-style: normal;
       font-weight: 400;
-      font-size: 13px;
-      line-height: 17px;
-      margin-left: 25px;
-      margin-top: 5px;
+      line-height: normal;
+      letter-spacing: 0.28px;
+      margin-top: 8px;
     }
   }
 }

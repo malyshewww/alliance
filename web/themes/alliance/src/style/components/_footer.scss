@@ -72,6 +72,12 @@
   &__info-link {
     flex-shrink: 0;
   }
+  &__link {
+    transition: color 0.3s;
+    @include hover {
+      color: $black;
+    }
+  }
 }
 
 .up {

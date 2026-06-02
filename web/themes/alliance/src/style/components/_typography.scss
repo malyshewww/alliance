@@ -23,6 +23,10 @@
 .title-h3 {
   font-size: 32px;
   line-height: 120%;
+  @include media($lg) {
+    font-size: 22px;
+    line-height: 130%;
+  }
 }
 .title-h4 {
   font-size: 28px;
@@ -120,7 +124,10 @@
 }
 .text-text9-regular {
   font-size: 14px;
+  font-style: normal;
   font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.28px;
 }
 .text-text10-regular {
   font-size: 13px;

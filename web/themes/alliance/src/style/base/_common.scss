@@ -130,9 +130,11 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 25%;
   text-decoration-color: currentColor;
-  transition: text-decoration-color 0.3s;
+  transition:
+    text-decoration-color 0.3s,
+    color 0.3s;
   @include hover {
-    text-decoration-color: transparent;
+    color: $black;
   }
 }
 
@@ -154,6 +156,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition:
+      background-color 0.3s,
+      border-color 0.3s;
+    @include hover {
+      cursor: pointer;
+      background-color: $grey6;
+    }
     &::before {
       content: "";
       display: block;

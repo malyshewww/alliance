@@ -16,7 +16,8 @@
   height: 53px;
   font-family: var(--font);
   @include hover {
-    background-color: transparent;
+    background-color: #ffc60a;
+    border-color: #ffc60a;
   }
 }
 
