@@ -1,0 +1,107 @@
+.filters {
+  // .filters__close
+  &__close {
+    display: none;
+  }
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  // .filters__item
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  // .filters__item-caption
+  &__item-caption {
+    color: $grey;
+  }
+}
+.custom-select {
+  position: relative;
+  // .custom-select__button
+  &__button {
+    height: 64px;
+    padding: 18px 30px;
+    position: relative;
+    border-radius: 30px;
+    border: 2px solid $grey5;
+    &.active ~ .custom-select {
+      opacity: 1;
+      pointer-events: all;
+      transform: scale(1);
+    }
+  }
+  // .custom-select__text
+  &__text {
+    color: $black;
+  }
+  // .custom-select__dropdown
+  &__dropdown {
+    border-radius: 20px;
+    background: $white;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.15);
+    padding: 20px 15px 20px 30px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: calc(100% + 8px);
+    transform-origin: top left;
+    z-index: 2;
+    // transform: scaleY(0);
+    // opacity: 0;
+    // pointer-events: none;
+  }
+  // .custom-select__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: fit-content;
+    max-height: 223px;
+  }
+  // .custom-select__item
+  &__item {
+    & label {
+      display: block;
+      padding-bottom: 8px;
+      font-family: $font;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%;
+    }
+    & input {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+    &:last-child {
+      & label {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.filters {
+  // .filters__btn-reset
+  &__btn-reset {
+    display: none;
+  }
+  // .filter__actions
+  &__actions {
+    display: none;
+  }
+}
+
+.btn-reset {
+}

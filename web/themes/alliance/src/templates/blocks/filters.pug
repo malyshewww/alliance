@@ -1,0 +1,48 @@
+.filters 
+    .filters__body
+        button(type="button").filters__close
+        .filters__item
+            .filters__item-caption.text-text8-medium Освещение
+            .custom-select
+                .custom-select__button 
+                    span.custom-select__text.text-text5-flex Уличное
+                .custom-select__dropdown 
+                    ul.custom-select__list
+                        li.custom-select__item
+                            label(for="lum-all") Все типы освещения
+                            input#lum-all(type="radio" name="lum")
+                        li.custom-select__item
+                            label(for="lum-arch") Архитектурное освещение
+                            input#lum-arch(type="radio" name="lum")
+        .filters__item 
+            .filters__item-caption.text-text8-medium Отрасли
+            .custom-select
+                .custom-select__button 
+                    span.custom-select__text.text-text5-flex Промышленность
+                .custom-select__dropdown 
+                    ul.custom-select__list
+                        li.custom-select__item
+                            label(for="industry-one") Промышленность 1
+                            input#industry-one(type="radio" name="industry")
+                        li.custom-select__item
+                            label(for="industry-two") Промышленность 2
+                            input#industry-one(type="radio" name="industry")
+        .filters__item 
+            .filters__item-caption.text-text8-medium Регионы
+            .custom-select
+                .custom-select__button 
+                    span.custom-select__text.text-text5-flex Нижний Новгород
+                .custom-select__dropdown 
+                    ul.custom-select__list
+                        li.custom-select__item
+                            label(for="region-all") Все регионы
+                            input#region-all(type="checkbox" name="region")
+                        li.custom-select__item
+                            label(for="region-nn") Нижний Новгород
+                            input#region-nn(type="checkbox" name="region")
+                        li.custom-select__item
+                            label(for="region-nn") Москва
+                            input#region-nn(type="checkbox" name="region")
+        button(type="reset").filters__btn-reset Сбросить фильтры 
+        .filters__actions
+            button(type="button").btn Применить

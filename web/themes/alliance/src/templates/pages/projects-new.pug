@@ -1,0 +1,16 @@
+extends ../layout/main
+
+block append variables
+	- const pageTitle = "Проекты";
+	//- - const pageTitle_OFF = true;
+	- const bodyClass = "project-page";
+
+block content
+	main.projects
+		include ../blocks/breadcrumbs
+		.container
+			include ../blocks/filters
+			ul.project-list__body 
+				each project, index in projectList
+					+projectCard(project)
+			include ../blocks/pager.pug
