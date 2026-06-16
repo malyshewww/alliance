@@ -25,3 +25,22 @@
     display: none;
   }
 }
+
+@mixin scrollbar {
+  // Для Firefox
+  scrollbar-width: thin;
+  scrollbar-color: $grey2 transparent;
+  // Для WebKit
+  &::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $grey2;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+}

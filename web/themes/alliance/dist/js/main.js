@@ -1070,3 +1070,202 @@ document.addEventListener("DOMContentLoaded", function () {
     cookiePopup.classList.add("active");
   }
 });
+
+const deactivateAllSelects = () => {
+  const activeSelectButtons = document.querySelectorAll(
+    ".custom-select__button.active",
+  );
+  if (activeSelectButtons.length) {
+    [...activeSelectButtons].forEach((elem) => {
+      elem.classList.remove("active");
+    });
+  }
+};
+
+const handleActions = (event) => {
+  const target = event.target;
+  if (target.matches(".custom-select__button")) {
+    if (target.classList.contains("active")) {
+      target.classList.remove("active");
+    } else {
+      deactivateAllSelects();
+      target.classList.add("active");
+    }
+  }
+  if (target.closest("[data-filter-reset]")) {
+    resetFilters();
+  }
+  if (target.closest(".filters__btn-sticky")) {
+    window.innerWidth > 1024 ? scrollToAnchor("filters") : openFilters();
+  }
+  if (target.closest("[data-filter-close]")) {
+    closeFilters();
+  }
+  if (target.closest(".filters") && !target.closest(".filters__body")) {
+    closeFilters();
+  }
+  if (target.closest(".filters__body")) {
+    event.stopPropagation();
+  }
+};
+
+function openFilters() {
+  const filters = document.querySelector(".filters");
+  if (filters) filters.classList.add("active");
+  lockScroll();
+}
+
+function closeFilters() {
+  const filters = document.querySelector(".filters");
+  if (filters) filters.classList.remove("active");
+  unlockScroll();
+}
+
+const headerHeight = () => {
+  const headerHeight = getComputedStyle(
+    document.documentElement,
+  ).getPropertyValue("--header-height");
+  const cleanedNumber = headerHeight.trim().replace("px", "");
+  return Number(cleanedNumber);
+};
+
+function scrollToAnchor(element) {
+  const targetElement = document.getElementById(element);
+  if (!targetElement) return;
+  window.scrollTo({
+    top:
+      targetElement.getBoundingClientRect().top +
+      window.scrollY -
+      headerHeight(),
+    behavior: "smooth",
+  });
+}
+
+const handleClickOutside = (event) => {
+  const target = event.target;
+  const isClickInside = target.closest(".custom-select");
+  if (!isClickInside) {
+    deactivateAllSelects();
+  }
+};
+
+function showPreloader() {
+  const pageLoader = document.querySelector(".page-loader");
+  if (pageLoader) pageLoader.classList.add("active");
+}
+
+function hidePreloader() {
+  const pageLoader = document.querySelector(".page-loader");
+  if (pageLoader) pageLoader.classList.remove("active");
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function loadData() {
+  showPreloader();
+  await delay(500);
+  hidePreloader();
+}
+
+const customSelects = document.querySelectorAll(".custom-select");
+
+if (customSelects.length > 0) {
+  customSelects.forEach((select) => {
+    const inputs = select.querySelectorAll(
+      'input[type="radio"], input[type="checkbox"]',
+    );
+    const text = select.querySelector(".custom-select__text");
+    const dropdown = select.querySelector(".custom-select__dropdown");
+    // Обработка изменения значений
+    inputs.forEach((input) => {
+      input.addEventListener("change", () => {
+        // Вызываем функцию имитации загрузки данных
+        loadData();
+
+        const allCheckbox = dropdown.querySelector(
+          '.custom-select__item--default input[type="checkbox"]',
+        );
+
+        if (allCheckbox) {
+          if (input === allCheckbox && input.checked) {
+            dropdown
+              .querySelectorAll(
+                'input[type="checkbox"]:not(.custom-select__item--default input)',
+              )
+              .forEach((cb) => (cb.checked = false));
+          } else if (input.type === "checkbox" && input !== allCheckbox) {
+            allCheckbox.checked = false;
+            const otherChecked = dropdown.querySelectorAll(
+              'input[type="checkbox"]:not(.custom-select__item--default input):checked',
+            );
+            if (otherChecked.length === 0) allCheckbox.checked = true;
+          }
+        }
+        updateText(select, text);
+      });
+    });
+  });
+}
+
+function updateText(select, text) {
+  const dropdown = select.querySelector(".custom-select__dropdown");
+  const defaultItem = dropdown.querySelector(".custom-select__item--default");
+  const allCheckbox = defaultItem?.querySelector('input[type="checkbox"]');
+
+  // Радио - берем первый выбранный
+  const radio = dropdown.querySelector('input[type="radio"]:checked');
+  if (radio) {
+    const label = dropdown.querySelector(`label[for="${radio.id}"]`);
+    text.textContent = label ? label.textContent : radio.value;
+    return;
+  }
+
+  // Чекбоксы
+  const checkboxes = dropdown.querySelectorAll(
+    'input[type="checkbox"]:checked',
+  );
+
+  if (allCheckbox?.checked) {
+    const label = dropdown.querySelector(`label[for="${allCheckbox.id}"]`);
+    text.textContent = label ? label.textContent : "Все";
+  } else if (checkboxes.length) {
+    const labels = Array.from(checkboxes)
+      .filter((cb) => cb !== allCheckbox)
+      .map((cb) => {
+        const label = dropdown.querySelector(`label[for="${cb.id}"]`);
+        return label ? label.textContent : cb.value;
+      });
+    text.textContent = labels.join(", ");
+  } else {
+    const firstCheckbox = dropdown.querySelector('input[type="checkbox"]');
+    if (firstCheckbox) {
+      firstCheckbox.checked = true;
+      const label = dropdown.querySelector(`label[for="${firstCheckbox.id}"]`);
+      text.textContent = label ? label.textContent : firstCheckbox.value;
+    } else {
+      text.textContent = "Выберите";
+    }
+  }
+}
+
+document.addEventListener("click", handleActions, false);
+
+document.addEventListener("click", handleClickOutside, false);
+
+function resetFilters() {
+  const filters = document.querySelector(".filters");
+  filters.querySelectorAll("input").forEach((input) => (input.checked = false));
+  filters.querySelectorAll(".custom-select").forEach((select) => {
+    const defaultCheckbox = select.querySelector(
+      ".custom-select__item--default input",
+    );
+    const defaultRadio = select.querySelector(
+      '.custom-select__item--default input[type="radio"]',
+    );
+    if (defaultCheckbox) defaultCheckbox.checked = true;
+    if (defaultRadio) defaultRadio.checked = true;
+    updateText(select, select.querySelector(".custom-select__text"));
+  });
+}

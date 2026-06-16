@@ -11,8 +11,6 @@ block content
 		.container
 			include ../blocks/filters
 			button(type="button").filters__btn-sticky.btn.active Фильтры
-			ul.project-list__body
-				each project, index in projectList
-					+projectCard(project)
-			include ../blocks/pager.pug
-			.page-loader
+			.projects__empty
+				.projects__empty-text.title-h5 Нет подходящих проектов
+				button(type="button" data-filter-reset).btn.projects__empty-btn Сбросить фильтры 

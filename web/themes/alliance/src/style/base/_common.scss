@@ -213,3 +213,10 @@
     gap: 76px;
   }
 }
+
+.top {
+  margin-top: 48px;
+  @include media($md) {
+    margin-top: 24px;
+  }
+}

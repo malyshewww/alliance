@@ -1,48 +1,63 @@
-.filters 
+.filters#filters
     .filters__body
-        button(type="button").filters__close
+        button(type="button" data-filter-close).filters__close
         .filters__item
             .filters__item-caption.text-text8-medium Освещение
             .custom-select
                 .custom-select__button 
                     span.custom-select__text.text-text5-flex Уличное
                 .custom-select__dropdown 
-                    ul.custom-select__list
-                        li.custom-select__item
+                    .custom-select__options
+                        .custom-select__item.custom-select__item--default
+                            input#lum-all(type="radio" name="lum" value="Все типы освещения")
                             label(for="lum-all") Все типы освещения
-                            input#lum-all(type="radio" name="lum")
-                        li.custom-select__item
-                            label(for="lum-arch") Архитектурное освещение
-                            input#lum-arch(type="radio" name="lum")
+                        ul.custom-select__list
+                            li.custom-select__item
+                                input#lum-arch(type="radio" name="lum" value="Архитектурное освещение")
+                                label(for="lum-arch") Архитектурное освещение
+                            li.custom-select__item
+                                input#lum-street(type="radio" name="lum" value="Уличное")
+                                label(for="lum-street") Уличное
         .filters__item 
             .filters__item-caption.text-text8-medium Отрасли
             .custom-select
                 .custom-select__button 
                     span.custom-select__text.text-text5-flex Промышленность
                 .custom-select__dropdown 
-                    ul.custom-select__list
-                        li.custom-select__item
-                            label(for="industry-one") Промышленность 1
-                            input#industry-one(type="radio" name="industry")
-                        li.custom-select__item
-                            label(for="industry-two") Промышленность 2
-                            input#industry-one(type="radio" name="industry")
+                    .custom-select__options
+                        .custom-select__item.custom-select__item--default
+                            input#industry-all(type="radio" name="industry" value="Все виды промышленности")
+                            label(for="industry-all") Все виды промышленности
+                        ul.custom-select__list
+                            li.custom-select__item
+                                input#industry-one(type="radio" name="industry" value="Промышленность 1")
+                                label(for="industry-one") Промышленность 1
+                            li.custom-select__item
+                                input#industry-two(type="radio" name="industry" value="Промышленность 2")
+                                label(for="industry-two") Промышленность 2
         .filters__item 
             .filters__item-caption.text-text8-medium Регионы
             .custom-select
                 .custom-select__button 
                     span.custom-select__text.text-text5-flex Нижний Новгород
                 .custom-select__dropdown 
-                    ul.custom-select__list
-                        li.custom-select__item
+                    .custom-select__options
+                        .custom-select__item.custom-select__item--default 
+                            input#region-all(type="checkbox" name="region" value="Все регионы")
                             label(for="region-all") Все регионы
-                            input#region-all(type="checkbox" name="region")
-                        li.custom-select__item
-                            label(for="region-nn") Нижний Новгород
-                            input#region-nn(type="checkbox" name="region")
-                        li.custom-select__item
-                            label(for="region-nn") Москва
-                            input#region-nn(type="checkbox" name="region")
-        button(type="reset").filters__btn-reset Сбросить фильтры 
+                        ul.custom-select__list
+                            li.custom-select__item
+                                input#region-nn(type="checkbox" name="region" value="Нижний Новгород")
+                                label(for="region-nn") Нижний Новгород
+                            li.custom-select__item
+                                input#region-msk(type="checkbox" name="region" value="Москва")
+                                label(for="region-msk") Москва
+                            li.custom-select__item
+                                input#region-spb(type="checkbox" name="region" value="Санкт-Петербург")
+                                label(for="region-spb") Санкт-Петербург
+                            li.custom-select__item
+                                input#region-samara(type="checkbox" name="region" value="Самара")
+                                label(for="region-samara") Самара
+        button(type="reset" data-filter-reset).filters__btn-reset Сбросить фильтры 
         .filters__actions
-            button(type="button").btn Применить
+            button(type="button" data-filter-close).btn Применить
