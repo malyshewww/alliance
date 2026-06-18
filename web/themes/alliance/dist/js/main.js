@@ -1264,10 +1264,8 @@ function resetFilters() {
     const defaultRadio = select.querySelector(
       '.custom-select__item--default input[type="radio"]',
     );
-    const buttonSticky = document.querySelector(".filters__btn-sticky");
     if (defaultCheckbox) defaultCheckbox.checked = true;
     if (defaultRadio) defaultRadio.checked = true;
-    if (buttonSticky) buttonSticky.classList.add("hidden");
     updateText(select, select.querySelector(".custom-select__text"));
   });
 }

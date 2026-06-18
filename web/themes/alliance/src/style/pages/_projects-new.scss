@@ -112,6 +112,7 @@
     @include media($md) {
       max-width: calc(100% - var(--container-padding));
       left: calc(var(--container-padding) / 2);
+      margin: 0;
     }
     &.hidden {
       opacity: 0;

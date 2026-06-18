@@ -539,6 +539,9 @@ strong {
 }
 
 @media (max-width: 411px) {
+  :root {
+    --container-padding: 20px;
+  }
   .table-wrap {
     width: calc(100% + 20px);
     padding-left: 10px;
