@@ -96,7 +96,6 @@
   }
   // .filters__btn-mobile
   &__btn-sticky {
-    display: block;
     position: fixed;
     margin: 0 auto;
     left: 0;
@@ -105,8 +104,19 @@
     width: fit-content;
     z-index: 10;
     max-width: 173px;
+    display: none;
     @include media($lg) {
-      bottom: 30px;
+      bottom: 32px;
+      display: block;
+    }
+    @include media($md) {
+      max-width: calc(100% - var(--container-padding));
+      left: calc(var(--container-padding) / 2);
+    }
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
     }
     &.active {
       &::after {
