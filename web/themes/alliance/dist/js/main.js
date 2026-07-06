@@ -709,6 +709,39 @@ if (realizeProjectSlider) {
   });
 }
 
+const industriesSlider = document.querySelector(".industries__slider");
+
+if (industriesSlider) {
+  const slides = industriesSlider.querySelectorAll(
+    ".swiper-slide:not(.swiper-slide-duplicate)",
+  );
+  new Swiper(industriesSlider, {
+    speed: 600,
+    loop: slides.length > 3 ? true : false,
+    updateOnWindowResize: true,
+    preventInteractionOnTransition: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: ".service-details-industries .slider-button--next",
+      prevEl: ".service-details-industries .slider-button--prev",
+    },
+    breakpoints: {
+      300: {
+        spaceBetween: 8,
+        slidesPerView: 1.11,
+      },
+      767.98: {
+        spaceBetween: 20,
+        slidesPerView: 2,
+      },
+      1024: {
+        spaceBetween: 30,
+        slidesPerView: 3,
+      },
+    },
+  });
+}
+
 const aboutGall = document.querySelector(".about__gall-swiper");
 if (aboutGall) {
   const aboutGallBody = new Swiper(aboutGall, {

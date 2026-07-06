@@ -1,0 +1,25 @@
+section.realize-projects
+    .container 
+        .section-heading
+            h2.section-heading__title.title-h2 Реализованные проекты
+            .slider-controls 
+                button(type="button").slider-button.slider-button--prev 
+                button(type="button").slider-button.slider-button--next
+        .realize-projects__slider
+            .swiper 
+                .swiper-wrapper 
+                    each project, index in realizeProjects
+                        .swiper-slide
+                            .realize-projects__item
+                                .realize-projects__image.image-ibg
+                                    img(src=`img/index/realize-img-${index+1}.jpg`, alt=project.caption)
+                                .realize-projects__content 
+                                    .realize-projects__caption.title-h5= project.caption
+                                    .realize-projects__details 
+                                        each detail in project.details
+                                            span.realize-projects__detail.text-text8-medium= detail
+                                    .realize-projects__text.text-text6-regular
+                                        each par in project.content 	
+                                            p!= par
+                                    a(href="#").btn-arrow Подробнее
+        a(href="#").realize-projects__btn.btn.btn--border Все проекты 

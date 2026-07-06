@@ -1,0 +1,48 @@
+extends ../layout/main
+
+block append variables
+	- const pageTitle = "Светотехнический расчет";
+	- const prevPage = "Услуги";
+	//- - const pageTitle_OFF = true;
+	- const bodyClass = "service-detail";
+
+block content
+	main
+		.main-sections
+			section.service-detail-intro
+				.container-fluid
+					.service-detail-intro__body
+						.service-detail-intro__top
+							+pageTop("Светотехнический расчет")
+								.service-detail-intro__text.text-text2-regular Мы сопровождаем проект на всех этапах — от анализа объекта и светотехнического расчёта до поставки оборудования, монтажа и последующего сопровождения. Подбираем решения с учетом особенностей объекта, требований нормативной документации и задач заказчика
+								.service-detail-intro__button
+									button(type="button" data-popup="popup-request").btn Получить расчёт
+									.btn-badge Бесплатно
+						.service-detail-intro__image 
+							img(src="img/services/service-detail-bg@2x.png", alt="")
+			section.industries.service-details-industries
+				.container 
+					.section-heading 
+						h2.section-heading__title.title-h2 Где применяется
+						.slider-controls 
+							button(type="button").slider-button.slider-button--prev 
+							button(type="button").slider-button.slider-button--next
+					.industries__slider.swiper 
+						.swiper-wrapper 
+							each card in industriesCards
+								.swiper-slide
+									.industries-card(class=`industries-card--${card.key}`)
+										.industries-card__image 
+											picture
+												source(srcset=`img/index/industries-${card.key}-img.png` media="(min-width: 767.98px)")
+												source(srcset=`img/index/industries-${card.key}-img-mob.png` media="(min-width: 300px)")
+												img(src=`img/index/industries-${card.key}-img.png` alt=card.title)
+											</picture>
+										.industries-card__title.title-h5= card.title
+										.industries-card__sub-title.text-text6-regular= card.subTitle
+			section.includes-service 
+				.container 
+					.includes-service__title.title-h2 Что входит в услугу
+			include ../blocks/realizeProjects
+			include ../blocks/faqBlock
+			include ../blocks/whyChooseUs

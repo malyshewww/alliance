@@ -16,3 +16,33 @@ mixin projectCard(item)
                     <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.7454 0.495752C11.8372 0.58749 15.4532 4.2035 17.2498 6.00004M17.2498 6.00004L11.7455 11.5044M17.2498 6.00004L-2.33378e-05 6.00004" stroke="#303030" stroke-width="1.37608"/>
                     </svg>
+
+mixin serviceCard(card)
+    a(href="service-detail.html").service-card
+        .service-card__image 
+            img(src=`img/services/${card.img}@2x.jpg`, alt=card.title)
+        .service-card__content 
+            .service-card__title.text-text4-medium= card.title
+            .service-card__descr.text-text7-regular= card.descr
+            .service-card__button.text-button 
+                | Подробнее
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4.16666 10H15.8333" stroke="#8F8F8F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 4.16663L15.8333 9.99996L10 15.8333" stroke="#8F8F8F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+mixin pageTop(title)
+    .top
+        .container
+            ul.breadcrumbs
+                li
+                    a(href="index.html") Главная
+                if prevPage
+                    li 
+                        a(href=prevPage.href)=prevPage.text
+                li
+                    span #{pageTitle}
+            if !pageTitle_OFF
+                h1.page-title.title-h1!= title || pageTitle
+            if block 
+                block

@@ -424,25 +424,7 @@
   }
   & .slider-controls {
     @include media($md) {
-      position: relative;
-      width: 76px;
-      height: 48px;
-    }
-  }
-  & .slider-button {
-    @include media($md) {
-      position: absolute;
-      top: 0;
-    }
-    &--prev {
-      @include media($md) {
-        left: 0;
-      }
-    }
-    &--next {
-      @include media($md) {
-        right: 0;
-      }
+      gap: 20px;
     }
   }
   &__item {
@@ -561,6 +543,7 @@
   background-repeat: no-repeat;
   background-position: right bottom;
   transition: background-color 0.3s;
+  position: relative;
   @include hover {
     cursor: pointer;
     background-color: $grey6;
@@ -578,6 +561,14 @@
   }
   &__sub-title {
     color: $grey;
+  }
+  &__image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    & img {
+      object-position: right bottom;
+    }
   }
 
   &--commerce {

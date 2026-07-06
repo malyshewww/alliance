@@ -22,6 +22,10 @@
 
 @import "pages/_projects-new.scss";
 
+@import "pages/_services.scss";
+
+@import "pages/_service-detail.scss";
+
 // Если шапка закреплена, добавить ей сдвиг в админке
 // body.user-logged-in .header{
 //     top: 79px;
@@ -777,8 +781,8 @@
 
       span {
         width: 863px;
-        font-weight: 400;
-        font-size: 22px;
+        font-weight: 600;
+        font-size: 18px;
         line-height: 22px;
         margin-right: 97px;
       }
@@ -790,14 +794,22 @@
 
     &-body {
       padding-left: 333px;
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 22px;
+
       color: $black2;
       max-height: 0;
       height: 100%;
       overflow: hidden;
       transition: max-height 0.2s ease-out;
+      &:not([class*="text"]) {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+      }
+      & p {
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
     }
   }
 
@@ -4611,9 +4623,7 @@ main {
 .page-title {
   margin: 0 auto;
   margin-top: 68px;
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 1, 2em;
+  line-height: 100%;
 
   font-variation-settings:
     "GRAD" 69,
@@ -4629,7 +4639,10 @@ main {
     "YTFI" 738,
     "opsz" 46;
   text-align: center;
-  max-width: 881px;
+  max-width: 1048px;
+  @include media($md) {
+    margin-top: 36px;
+  }
 }
 
 .pager {
@@ -4710,10 +4723,10 @@ main {
     padding: 16px 50px;
   }
 
-  .page-title {
-    font-size: 22px;
-    margin-top: 36px;
-  }
+  // .page-title {
+  //   font-size: 22px;
+  //   margin-top: 36px;
+  // }
 
   .pager {
     margin-top: 40px;

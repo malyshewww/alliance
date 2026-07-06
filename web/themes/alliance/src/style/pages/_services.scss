@@ -1,0 +1,109 @@
+.container-fluid {
+}
+.services-intro {
+  // .services-intro__body
+  &__body {
+    border-radius: 60px;
+    background: $grey6;
+    padding-top: 40px;
+    @include media($lg) {
+      border-radius: 0 0 20px 20px;
+      padding-top: 24px;
+    }
+  }
+  // .services-intro__text
+  &__text {
+    margin: 36px auto 32px;
+    max-width: 864px;
+    text-align: center;
+    @include media($lg) {
+      margin: 24px 0 48px;
+    }
+  }
+  // .services-intro__image
+  &__image {
+    max-width: 864px;
+    margin: 0 auto;
+    aspect-ratio: 864 / 421;
+    @include media($lg) {
+      margin: 0 calc(var(--container-padding) / 2 * -1);
+    }
+  }
+  & .top {
+    margin: 0;
+  }
+  @include media($lg) {
+    & .container-fluid {
+      padding: 0;
+    }
+  }
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 30px;
+  @include media($lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media($md) {
+    grid-template-columns: 100%;
+    gap: 30px;
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  overflow: hidden;
+  @include hover {
+    & .service-card__button {
+      color: $orange;
+      gap: 16px;
+    }
+  }
+  // .service-card__image
+  &__image {
+    aspect-ratio: 417 / 234;
+  }
+  // .service-card__content
+  &__content {
+    background-color: $grey6;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 auto;
+    @include media($md) {
+      padding: 24px;
+    }
+  }
+  // .service-card__title
+  &__title {
+    @include media($md) {
+      font-size: 16px;
+      line-height: 140%;
+      letter-spacing: unset;
+    }
+  }
+  // .service-card__descr
+  &__descr {
+    margin-bottom: 8px;
+    color: $black2;
+  }
+  // .service-card__button
+  &__button {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: $grey;
+    transition:
+      gap $time,
+      color $time;
+    & svg path {
+      stroke: currentColor;
+    }
+  }
+}

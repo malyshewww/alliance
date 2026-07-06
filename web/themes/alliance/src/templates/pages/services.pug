@@ -1,0 +1,23 @@
+extends ../layout/main
+
+block append variables
+	- const pageTitle = "Услуги";
+	//- - const pageTitle_OFF = true;
+	- const bodyClass = "services-page";
+
+block content
+	main
+		.main-sections
+			section.services-intro 
+				.container-fluid
+					.services-intro__body
+						+pageTop("Инженерные услуги в сфере светодиодного освещения")
+							.services-intro__text.text-text2-regular Мы сопровождаем проект на всех этапах — от анализа объекта и светотехнического расчёта до поставки оборудования, монтажа и последующего сопровождения. Подбираем решения с учетом особенностей объекта, требований нормативной документации и задач заказчика
+							.services-intro__image 
+								img(src="img/services/services-intro@2x.png", alt="")
+			.services
+				.container
+					.services-list
+						each card in servicesList
+							+serviceCard(card)
+			include ../blocks/whyChooseUs

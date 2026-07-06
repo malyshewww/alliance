@@ -1,0 +1,15 @@
+section.why-choose-us
+    .container 
+        .section-heading 
+            h2.section-heading__title.title-h2 Почему выбирают нас
+        .why-choose-us__body 
+            .why-choose-us__advantages
+                each advantage, index in whyChooseUsAdvantages
+                    .why-choose-us__advantage(class=`why-choose-us__advantage--${index+1}`)
+                        .why-choose-us__advantage-icon
+                        .why-choose-us__advantage-title.title-h5= advantage.title
+                        .why-choose-us__advantage-text.text-text6-regular= advantage.text
+            .why-choose-us__main 
+                .why-choose-us__main-title.title-h4 Получите бесплатный светотехнический расчёт
+                .why-choose-us__main-text.text-text2-regular Подберём эффективное решение под задачи вашего объекта и подготовим расчёт освещённости
+                button(type="button" data-popup="popup-request").btn Получить расчёт

@@ -50,31 +50,7 @@ block content
 						each i in [1, 2, 3, 4, 5, 6]
 							.our-clients__image
 								img(src=`img/index/clients-${i}.svg` alt=`Клиент ${i}`)
-			section.realize-projects
-				.container 
-					.section-heading
-						h2.section-heading__title.title-h2 Реализованные проекты
-						.slider-controls 
-							button(type="button").slider-button.slider-button--prev 
-							button(type="button").slider-button.slider-button--next
-					.realize-projects__slider
-						.swiper 
-							.swiper-wrapper 
-								each project, index in realizeProjects
-									.swiper-slide
-										.realize-projects__item
-											.realize-projects__image.image-ibg
-												img(src=`img/index/realize-img-${index+1}.jpg`, alt=project.caption)
-											.realize-projects__content 
-												.realize-projects__caption.title-h5= project.caption
-												.realize-projects__details 
-													each detail in project.details
-														span.realize-projects__detail.text-text8-medium= detail
-												.realize-projects__text.text-text6-regular
-													each par in project.content 	
-														p!= par
-												a(href="#").btn-arrow Подробнее
-					a(href="#").realize-projects__btn.btn.btn--border Все проекты 
+			include ../blocks/realizeProjects
 			section.industries
 				.container 
 					.section-heading 
@@ -84,19 +60,5 @@ block content
 							.industries-card(class=`industries-card--${card.key}`)
 								.industries-card__title.title-h5= card.title
 								.industries-card__sub-title.text-text6-regular= card.subTitle
-			section.why-choose-us
-				.container 
-					.section-heading 
-						h2.section-heading__title.title-h2 Почему выбирают нас
-					.why-choose-us__body 
-						.why-choose-us__advantages
-							each advantage, index in whyChooseUsAdvantages
-								.why-choose-us__advantage(class=`why-choose-us__advantage--${index+1}`)
-									.why-choose-us__advantage-icon
-									.why-choose-us__advantage-title.title-h5= advantage.title
-									.why-choose-us__advantage-text.text-text6-regular= advantage.text
-						.why-choose-us__main 
-							.why-choose-us__main-title.title-h4 Получите бесплатный светотехнический расчёт
-							.why-choose-us__main-text.text-text2-regular Подберём эффективное решение под задачи вашего объекта и подготовим расчёт освещённости
-							button(type="button" data-popup="popup-request").btn Получить расчёт
+			include ../blocks/whyChooseUs
 
