@@ -327,7 +327,8 @@ if (faqItems.length) {
     item.classList.add("active");
     let panel = item.nextElementSibling;
     panel.style.maxHeight = panel.scrollHeight + "px";
-    item.closest(".FAQ__item").style.paddingBottom = "30px";
+    item.closest(".FAQ__item").style.paddingBottom =
+      window.innerWidth > 767.98 ? "30px" : "24px";
   }
 
   function closeAcc(item) {
@@ -702,9 +703,43 @@ if (realizeProjectSlider) {
     slidesPerView: 1,
     updateOnWindowResize: true,
     preventInteractionOnTransition: true,
+    freeMode: true,
     navigation: {
       nextEl: ".realize-projects .slider-button--next",
       prevEl: ".realize-projects .slider-button--prev",
+    },
+  });
+}
+
+const industriesSlider = document.querySelector(".industries__slider");
+
+if (industriesSlider) {
+  const slides = industriesSlider.querySelectorAll(
+    ".swiper-slide:not(.swiper-slide-duplicate)",
+  );
+  new Swiper(industriesSlider, {
+    speed: 600,
+    loop: slides.length > 3 ? true : false,
+    updateOnWindowResize: true,
+    preventInteractionOnTransition: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: ".service-details-industries .slider-button--next",
+      prevEl: ".service-details-industries .slider-button--prev",
+    },
+    breakpoints: {
+      300: {
+        spaceBetween: 8,
+        slidesPerView: "auto",
+      },
+      767.98: {
+        spaceBetween: 20,
+        slidesPerView: 2,
+      },
+      1024: {
+        spaceBetween: 30,
+        slidesPerView: 3,
+      },
     },
   });
 }

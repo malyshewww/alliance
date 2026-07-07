@@ -42,7 +42,16 @@ block content
 										.industries-card__sub-title.text-text6-regular= card.subTitle
 			section.includes-service 
 				.container 
-					.includes-service__title.title-h2 Что входит в услугу
+					.section-heading
+						.includes-service__title.title-h2 Что входит в услугу
+					.includes-service__list 
+						each item in serviceIncludes
+							.includes-service-card
+								.includes-service-card__title.title-h6= item.title
+								.includes-service-card__text.text-text5-flex= item.descr
+					.includes-service__result 
+						.includes-service__result-title.title-h2 Результат
+						.includes-service__result-text.text-text2-regular По итогам оказания услуги вы получаете готовое техническое решение, адаптированное под&nbsp;особенности объекта, требования нормативной документации и задачи вашего проекта
 			include ../blocks/realizeProjects
 			include ../blocks/faqBlock
 			include ../blocks/whyChooseUs

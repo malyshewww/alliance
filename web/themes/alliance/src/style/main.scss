@@ -905,6 +905,7 @@
 
     &__item {
       &-title {
+        padding: 24px 0;
         span {
           font-size: 16px;
         }
@@ -4625,19 +4626,19 @@ main {
   margin-top: 68px;
   line-height: 100%;
 
-  font-variation-settings:
-    "GRAD" 69,
-    "wdth" 135,
-    "slnt" 0,
-    "XTRA" 468,
-    "XOPQ" 96,
-    "YOPQ" 79,
-    "YTLC" 552,
-    "YTUC" 712,
-    "YTAS" 750,
-    "YTDE" -203,
-    "YTFI" 738,
-    "opsz" 46;
+  // font-variation-settings:
+  //   "GRAD" 69,
+  //   "wdth" 135,
+  //   "slnt" 0,
+  //   "XTRA" 468,
+  //   "XOPQ" 96,
+  //   "YOPQ" 79,
+  //   "YTLC" 552,
+  //   "YTUC" 712,
+  //   "YTAS" 750,
+  //   "YTDE" -203,
+  //   "YTFI" 738,
+  //   "opsz" 46;
   text-align: center;
   max-width: 1048px;
   @include media($md) {

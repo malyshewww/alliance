@@ -327,7 +327,8 @@ if (faqItems.length) {
     item.classList.add("active");
     let panel = item.nextElementSibling;
     panel.style.maxHeight = panel.scrollHeight + "px";
-    item.closest(".FAQ__item").style.paddingBottom = "30px";
+    item.closest(".FAQ__item").style.paddingBottom =
+      window.innerWidth > 767.98 ? "30px" : "24px";
   }
 
   function closeAcc(item) {
@@ -702,6 +703,7 @@ if (realizeProjectSlider) {
     slidesPerView: 1,
     updateOnWindowResize: true,
     preventInteractionOnTransition: true,
+    freeMode: true,
     navigation: {
       nextEl: ".realize-projects .slider-button--next",
       prevEl: ".realize-projects .slider-button--prev",
@@ -728,7 +730,7 @@ if (industriesSlider) {
     breakpoints: {
       300: {
         spaceBetween: 8,
-        slidesPerView: 1.11,
+        slidesPerView: "auto",
       },
       767.98: {
         spaceBetween: 20,
